@@ -3,6 +3,6 @@
 @section('main-section')
 
 
-<h1>Hello</h1>
+<h1>Hi I am biren, Chodu</h1>
     
 @endsection
