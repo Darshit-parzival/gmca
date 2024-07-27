@@ -3,6 +3,6 @@
 @section('main-section')
 
 
-<h1>This is demo test</h1>
+<h1>This is demo testing</h1>
     
 @endsection
