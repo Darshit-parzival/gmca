@@ -19,8 +19,8 @@
         </div>
     </div>
 
-    <table class="table bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
-        <tr>
+    <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
+        <tr class="table-dark">
             <th>Id</th>
             <th>Username</th>
             <th>Email</th>

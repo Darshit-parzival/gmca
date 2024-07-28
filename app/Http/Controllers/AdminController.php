@@ -12,12 +12,12 @@ class AdminController extends Controller
     }
     function add(Request $req){
         $req->validate([
-            "txtname" => "required|string|max:255",
-            "txtemail" => "required|email|max:255",
-            "txtphone" => "required|numeric",
-            "txtdesignation" => "required|string|max:255",
+            "txtname" => "required|string|max:50",
+            "txtemail" => "required|email|max:50",
+            "txtphone" => "required|numeric|min:12",
+            "txtdesignation" => "required|string|max:40",
             "txtexp_year" => "required|integer",
-            "txtpass"=>"required",
+            "txtpass"=>"required|min:8",
             "txtphoto"=>"required|mimes:png,jpg,webp",
         ], [
             'txtemail.regex' => 'Please enter a valid email address.',
@@ -53,10 +53,10 @@ class AdminController extends Controller
     }
     function edit(Request $req){
         $req->validate([
-            "txtname" => "required|string|max:255",
-            "txtemail" => "required|email|max:255",
-            "txtphone" => "required|numeric",
-            "txtdesignation" => "required|string|max:255",
+            "txtname" => "required|string|max:50",
+            "txtemail" => "required|email|max:50",
+            "txtphone" => "required|numeric|max:12",
+            "txtdesignation" => "required|string|max:40",
             "txtexp_year" => "required|integer",
         ], [
             'txtemail.regex' => 'Please enter a valid email address.',
