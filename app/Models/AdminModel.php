@@ -10,4 +10,8 @@ class AdminModel extends Model
     use HasFactory;
     protected $table="staff_data";
     protected $primaryKey="staff_id";
+    public function experiences()
+    {
+        return $this->hasMany(ExperienceModel::class, 'staff_id', 'staff_id');
+    }
 }

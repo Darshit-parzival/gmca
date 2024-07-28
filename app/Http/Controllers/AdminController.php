@@ -14,7 +14,7 @@ class AdminController extends Controller
         $req->validate([
             "txtname" => "required|string|max:50",
             "txtemail" => "required|email|max:50",
-            "txtphone" => "required|numeric|min:12",
+            "txtphone" => "required|numeric|min:10|max:12",
             "txtdesignation" => "required|string|max:40",
             "txtexp_year" => "required|integer",
             "txtpass"=>"required|min:8",
@@ -37,9 +37,9 @@ class AdminController extends Controller
         $admin->password = bcrypt($req->txtpass); 
 
         if ($req->hasFile('txtphoto')) {
-        $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
-        $req->file('txtphoto')->move(public_path('assets/images/admins'), $filename);
-        $admin->photo = $filename;
+            $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
+            $req->file('txtphoto')->move(public_path('assets/images/admins'), $filename);
+            $admin->photo = $filename;
         }
         $admin->isadmin = $req->has('txtisadmin') ? 1 : 0;
         $admin->isfaculty = $req->has('txtisfaculty') ? 1 : 0;
@@ -55,7 +55,7 @@ class AdminController extends Controller
         $req->validate([
             "txtname" => "required|string|max:50",
             "txtemail" => "required|email|max:50",
-            "txtphone" => "required|numeric|max:12",
+            "txtphone" => "required|numeric",
             "txtdesignation" => "required|string|max:40",
             "txtexp_year" => "required|integer",
         ], [
@@ -64,7 +64,7 @@ class AdminController extends Controller
             'txtexp_year.integer' => 'Experience year must be an integer.',
         ]);
     
-        $admin = AdminModel::where( "email",$req->staff_id);
+        $admin = AdminModel::where( "email",$req->txtemail)->first();
         if ($admin) {
             $admin->name = $req->txtname;
             $admin->email = $req->txtemail;
