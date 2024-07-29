@@ -124,8 +124,7 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <div class="logo">
-                                    <!-- <a href="index.php"><img src="img/logo.png" alt="GMCA"></a> -->
-                                    <a href="index.php"><img src=" $Logo " alt="GMCA"></a>
+                                    <a href="index.php"><img src="{{ asset('assets/images/static/logo_with_name.png') }}" alt="GMCA"></a>
 
                                 </div>
                             </div>
