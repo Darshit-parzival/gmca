@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('staff_id');
             $table->string('name', 50)->nullable(false);
             $table->string('email', 50)->nullable(false)->unique();
-            $table->bigInteger('phone',12)->unique()->nullable(false);
+            $table->string('phone',12)->unique()->nullable(false);
             $table->string('password', 60)->nullable(false);
             $table->char('gender',1)->nullable(false);
             $table->string('photo', 30)->nullable(false);
