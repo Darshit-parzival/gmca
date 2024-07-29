@@ -16,7 +16,7 @@
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
-      text-anchor: middle;
+      text-anchor: middle;  
       -webkit-user-select: none;
       -moz-user-select: none;
       user-select: none;
@@ -299,11 +299,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="/admin/events">
                   <svg class="bi">
                     <use xlink:href="#people" />
                   </svg>
-                  Feedback
+                  Events
                 </a>
               </li>
               <li class="nav-item">
