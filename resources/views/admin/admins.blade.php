@@ -18,36 +18,34 @@
     </div>
 
     <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
-        <thead>
-            <tr class="table-dark">
-                <th>Id</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Photo</th>
-                <th colspan="2">Operation</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if(!$admins->isEmpty())
-                @foreach ($admins as $i => $user)
-                <tr>
-                    <td>{{ $i + 1 }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->phone }}</td>
-                    <td><img src="{{ url('/assets/images/admins/') }}/{{ $user->photo }}" alt="Photo" width="50"></td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $user->staff_id }}">
-                            Edit
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
+        <tr class="table-dark">
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Photo</th>
+            <th colspan="2">Operation</th>
+        </tr>
+        <?php $i=0; ?>
+        @foreach ($admins as $user)
+        <tr>
+            <td>{{$i=$i+1;}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->phone}}</td>
+            <td><img src="{{ url('/assets/images/admins/') }}/{{$user->photo}}" alt="Photo" width="50"></td>
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#editModal{{$user->staff_id}}">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
+                    Delete
+                </button>
+            </td>
 
                 <!-- Confirm Delete Modal -->
                 <div class="modal fade" id="confirmDeleteModal{{ $user->staff_id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel{{ $user->staff_id }}" aria-hidden="true">
@@ -113,7 +111,8 @@
                                     <div class="mb-3">
                                         <label for="txtphoto{{ $user->staff_id }}" class="form-label">Photo</label>
                                         <div>
-                                            <img src="{{ url('/assets/images/admins/') }}/{{ $user->photo }}" alt="Photo" width="150">
+                                            <img src="{{ url('/assets/images/admins/') }}/{{$user->photo}}" alt="Photo"
+                                                width="150">
                                         </div>
                                         <input type="file" class="form-control" id="txtphoto{{ $user->staff_id }}" name="txtphoto">
                                     </div>

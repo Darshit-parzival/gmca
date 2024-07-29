@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/client/css/footer.css') }}">
 
 <div class="footer-widget-area">
     <div class="container" style="padding-bottom:2%;">
@@ -235,21 +235,21 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 
-<script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.meanmenu.js') }}"></script>
-<script src="{{ asset('js/wow.min.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
-<script src="{{ asset('js/waypoints.min.js') }}"></script>
-<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset('js/slick.min.js') }}"></script>
-<script src="{{ asset('js/animated-headlines.js') }}"></script>
-<script src="{{ asset('js/textilate.js') }}"></script>
-<script src="{{ asset('js/lettering.js') }}"></script>
-<script src="{{ asset('js/ajax-mail.js') }}"></script>
-<script src="{{ asset('js/plugins.js') }}"></script>
-<script src="{{ asset('js/plugins.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('assets/client/js/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/jquery.meanmenu.js') }}"></script>
+<script src="{{ asset('assets/client/js/wow.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/jquery.scrollUp.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/animated-headlines.js') }}"></script>
+<script src="{{ asset('assets/client/js/textilate.js') }}"></script>
+<script src="{{ asset('assets/client/js/lettering.js') }}"></script>
+<script src="{{ asset('assets/client/js/ajax-mail.js') }}"></script>
+<script src="{{ asset('assets/client/js/plugins.js') }}"></script>
+<script src="{{ asset('assets/client/js/plugins.js') }}"></script>
+<script src="{{ asset('assets/client/js/main.js') }}"></script>
 
 </body>

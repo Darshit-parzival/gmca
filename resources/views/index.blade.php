@@ -27,21 +27,21 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{ asset('assets/images/static/1.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/static/1.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">First Title</h1>
                     <p style="font-size: 20px;">First Description</p>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('assets/images/static/2.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/static/2.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">Second Title</h1>
                     <p style="font-size: 20px;">Second Description</p>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('assets/images/static/3.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/static/3.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">Third Title</h1>
                     <p style="font-size: 20px;">Third Description</p>
@@ -73,7 +73,7 @@
                             Government MCA college Maninagar, Ahmedabad is the first Government MCA College in Gujarat. It was established in June 2012 with facilities to run Master of Computer Application. In the year 2012, course was introduced with an intake of 60 students. The college has well-established Central Learning resource centers like Central library, Central Computer Centre, Entrepreneurship Development Cell, Continuing Education Centre and Physical Education Section.
                         </p>
                         <a class="button-default" href="About.php">More</a>	      
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>

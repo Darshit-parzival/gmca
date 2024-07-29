@@ -51,6 +51,13 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
+* {
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+::-webkit-scrollbar {
+    display: none;
+}
 html, body {height: 100%;}
 .floatleft {float:left !important;}
 .floatright {float:right !important;}
@@ -1052,7 +1059,7 @@ body {
 /*  4. About Area
 /*----------------------------------------*/
 .about-area {
-    background: rgba(0, 0, 0, 0) url("../assets/images/static/gmca_students-removebg-preview.png") no-repeat scroll center top;
+    background: #2d3e50 url("../../static/gmca_students-removebg-preview.png") no-repeat scroll right top;
     color: #ffffff;
     margin-top: 80px;
     padding-bottom: 54px;
