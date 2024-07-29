@@ -14,10 +14,10 @@ class AdminController extends Controller
         $req->validate([
             "txtname" => "required|string|max:50",
             "txtemail" => "required|email|max:50",
-            "txtphone" => "required|numeric|min:10|max:12",
+            "txtphone" => "required|numeric",
             "txtdesignation" => "required|string|max:40",
             "txtexp_year" => "required|integer",
-            "txtpass"=>"required|min:8",
+            "txtpass"=>"required",
             "txtphoto"=>"required|mimes:png,jpg,webp",
         ], [
             'txtemail.regex' => 'Please enter a valid email address.',
@@ -34,7 +34,7 @@ class AdminController extends Controller
         $admin->email = $req->txtemail;
         $admin->phone = $req->txtphone;
         $admin->gender = $req->txtgender;
-        $admin->password = bcrypt($req->txtpass); 
+        $admin->password = md5($req->txtpass); 
 
         if ($req->hasFile('txtphoto')) {
             $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
@@ -55,7 +55,7 @@ class AdminController extends Controller
         $req->validate([
             "txtname" => "required|string|max:50",
             "txtemail" => "required|email|max:50",
-            "txtphone" => "required|numeric",
+            "txtphone" => "required",
             "txtdesignation" => "required|string|max:40",
             "txtexp_year" => "required|integer",
         ], [
