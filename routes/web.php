@@ -26,3 +26,5 @@ route::get('/admin/delete/{id}',[AdminController::class,'delete']);
 
 //Event Routes
 route::get('/admin/events',[EventController::class,'view_events']);
+route::get('/admin/add',[EventController::class,'add']);
+
