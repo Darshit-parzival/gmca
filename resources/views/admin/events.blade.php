@@ -81,7 +81,13 @@
                     <td>{{ $event->name }}</td>
                     <td>{{ $event->date }}</td>
                     <td>{{ $event->details }}</td>
-                    <td>{{$event->status}}</td>
+                    <td>
+                        @if ($event->status)
+                          <div class="text-success">Active</div>  
+                        @else
+                          <div class="text-danger">Inactive</div>  
+                        @endif
+                    </td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $event->id }}">
                             Edit

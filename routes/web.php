@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
-
+use App\Http\Controllers\GalleryController;
 
 
 Route::get('/', function () {
@@ -29,6 +29,10 @@ route::get('/admin/events',[EventController::class,'view_events']);
 route::post('/event/add',[EventController::class,'add']);
 route::post('/event/delete/{id}',[EventController::class,'delete']);
 route::post('/event/edit/',[EventController::class,'edit']);
+
+//Gallery Routes
+route::get('/admin/gallery',[GalleryController::class,'view_gallery']);
+
 
 
 
