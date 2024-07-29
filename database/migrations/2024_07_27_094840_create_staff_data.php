@@ -27,7 +27,7 @@ return new class extends Migration
             $table->boolean('islibrarian')->nullable(false);
             $table->boolean('isstaff')->nullable(false);
             $table->string('designation', 40)->nullable(false);
-            $table->integer('exp_year',2)->nullable();
+            $table->string('exp_year',2)->nullable();
             $table->timestamps(); 
         });
     }
