@@ -739,6 +739,76 @@ body {
     background: transparent;
     font-size: 24px
 }
+#nav li ul {
+    display: none; /* Hide submenu initially */
+    position: absolute;
+    padding: 0;
+    margin-top: -40px;
+    min-width: max-content;
+    max-height: max-content;
+    padding: 9px 1px;
+    top: 100%; /* Position submenu below the parent */
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+#nav li:hover ul {
+    display: block; /* Show submenu on hover */
+}
+
+#nav li ul li {
+    display: block; /* Make submenu items block elements */
+    margin: 0;
+    width: auto;
+}
+
+#nav li ul li a {
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    font-family: "montserratregular";
+    width: 250px; /* Adjust as needed */
+}
+
+#nav li ul li a:hover {
+    background-color: #f0f0f0; /* Add hover effect for submenu items */
+}
+
+#dropdown li ul.submenu {
+    display: none; /* Hide submenu initially */
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%; /* Position submenu below the parent */
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1000; /* Ensure the submenu appears above other content */
+}
+
+#dropdown li:hover ul.submenu {
+    display: block; /* Show submenu on hover */
+}
+
+#dropdown li ul.submenu li {
+    display: block; /* Make submenu items block elements */
+    margin: 0;
+}
+
+#dropdown li ul.submenu li a {
+    padding: 10px 20px; /* Add padding for better spacing */
+    width: 200px; /* Adjust width for submenu items */
+    box-sizing: border-box;
+    color: black; /* Change text color for submenu items */
+    background-color: white;
+    font-weight: bold;
+}
+
+#dropdown li ul.submenu li a:hover {
+    background-color: #f0f0f0; /* Add hover effect for submenu items */
+}
 .search-form button[type="submit"] {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: medium none;

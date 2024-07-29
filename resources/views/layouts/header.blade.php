@@ -86,7 +86,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
 </head>
@@ -139,7 +139,12 @@
                                                 <li><a href="staff.php">Staff</a> </li>
                                                 <li><a href="event.php">Event</a></li>
                                                 <li><a href="Gallery.php">Gallery</a></li>
-                                                <li><a href="academic.php">Academic</a></li>
+                                                <li>
+                                                    <a href="academic.php">Academic</a>
+                                                    <ul>
+                                                        <li><a href="">Student Section</a></li>
+                                                    </ul>
+                                                </li>
                                                 <li><a href="contact.php">Contact</a></li>
                                             </ul>
                                         </nav>
@@ -179,7 +184,16 @@
                                             <li><a href="staff.php">Staff</a></li>
                                             <li><a href="event.php">Event</a> </li>
                                             <li><a href="Gallery.php">Gallery</a></li>
-                                            <li><a href="academic.php">Academic</a></li>
+                                            <li>
+                                                <a href="academic.php">Academic</a>
+                                                <ul class="submenu">
+                                                    <li><a href="courses.php">Courses</a></li>
+                                                    <li><a href="faculty.php">Faculty</a></li>
+                                                    <li><a href="admissions.php">Admissions</a></li>
+                                                    <li><a href="student_section.php">Student Section</a></li>
+                                                    <!-- Add more submenu items here -->
+                                                </ul>
+                                            </li>
                                             <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </nav>
