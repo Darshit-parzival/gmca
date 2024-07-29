@@ -7,7 +7,7 @@
 
     <!-- favicon
     ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/client/images/logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/static/logo.png') }}">
 
     <!-- Google Fonts
     ============================================ -->
@@ -122,7 +122,7 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <div class="logo">
-                                    <a href="index.php"><img src="{{ asset('assets/client/images/logo_with_name.png') }}" alt="GMCA"></a>
+                                    <a href="index.php"><img src="{{ asset('assets/static/logo_with_name.png') }}" alt="GMCA"></a>
 
                                 </div>
                             </div>

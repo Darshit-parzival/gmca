@@ -1059,7 +1059,7 @@ body {
 /*  4. About Area
 /*----------------------------------------*/
 .about-area {
-    background: #2d3e50 url("../assets/images/static/gmca_students-removebg-preview.png") no-repeat scroll right top;
+    background: #2d3e50 url("../../static/gmca_students-removebg-preview.png") no-repeat scroll right top;
     color: #ffffff;
     margin-top: 80px;
     padding-bottom: 54px;

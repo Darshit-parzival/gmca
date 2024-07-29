@@ -143,7 +143,7 @@
                                     <div class="mb-3">
                                         <label for="txtphoto" class="form-label">Photo</label>
                                         <div>
-                                            <img src="{{ url('/assets/images/admins/') }}/{{$user->photo}}" alt="Photo"
+                                            <img src="{{ url('/assets/admin/images/admins/') }}/{{$user->photo}}" alt="Photo"
                                                 width="150">
                                         </div>
                                         <input type="file" class="form-control" id="txtphoto" name="txtphoto" />
