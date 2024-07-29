@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id('staff_id');
             $table->string('name', 50)->nullable(false);
             $table->string('email', 50)->nullable(false)->unique();
-            $table->bigInteger('phone')->unique()->nullable(false);
+            $table->string('phone',12)->unique()->nullable(false);
             $table->string('password', 60)->nullable(false);
-            $table->char('gender')->nullable(false);
+            $table->char('gender',1)->nullable(false);
             $table->string('photo', 30)->nullable(false);
             $table->boolean('isadmin')->nullable(false);
             $table->boolean('isfaculty')->nullable(false);
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->boolean('islibrarian')->nullable(false);
             $table->boolean('isstaff')->nullable(false);
             $table->string('designation', 40)->nullable(false);
-            $table->integer('exp_year')->nullable();
+            $table->string('exp_year',2)->nullable();
             $table->timestamps(); 
         });
     }

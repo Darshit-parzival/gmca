@@ -44,10 +44,8 @@
     ============================================ -->
     <link rel="stylesheet" href="{{ asset('css/animated-headlines.css') }}">
 
-    <!-- Nivo slider CSS
-            ============================================ -->
-    <!-- <link rel="stylesheet" href="assets/css/nivo-slider.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/preview.css" type="text/css" media="screen" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/nivo-slider.css" type="text/css" /> 
+    <link rel="stylesheet" href="assets/css/preview.css" type="text/css" media="screen" />
 
     <!-- Metarial Iconic Font CSS
     ============================================ -->
@@ -124,8 +122,7 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <div class="logo">
-                                    <!-- <a href="index.php"><img src="img/logo.png" alt="GMCA"></a> -->
-                                    <a href="index.php"><img src=" $Logo " alt="GMCA"></a>
+                                    <a href="index.php"><img src="{{ asset('assets/images/static/logo_with_name.png') }}" alt="GMCA"></a>
 
                                 </div>
                             </div>
