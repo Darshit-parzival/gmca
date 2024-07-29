@@ -73,7 +73,7 @@
                             Government MCA college Maninagar, Ahmedabad is the first Government MCA College in Gujarat. It was established in June 2012 with facilities to run Master of Computer Application. In the year 2012, course was introduced with an intake of 60 students. The college has well-established Central Learning resource centers like Central library, Central Computer Centre, Entrepreneurship Development Cell, Continuing Education Centre and Physical Education Section.
                         </p>
                         <a class="button-default" href="About.php">More</a>	      
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>

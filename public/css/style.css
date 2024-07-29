@@ -51,6 +51,10 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
+
+::-webkit-scrollbar {
+    display: none;
+}
 html, body {height: 100%;}
 .floatleft {float:left !important;}
 .floatright {float:right !important;}
