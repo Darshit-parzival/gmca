@@ -3,6 +3,6 @@
 @section('main-section')
 
 
-<h1>Nothing to do</h1>
+<h1>Fuck You biren</h1>
     
 @endsection
