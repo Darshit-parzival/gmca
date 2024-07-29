@@ -38,7 +38,7 @@ class AdminController extends Controller
 
         if ($req->hasFile('txtphoto')) {
             $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
-            $req->file('txtphoto')->move(public_path('assets/images/admins'), $filename);
+            $req->file('txtphoto')->move(public_path('assets/admin/images/admins'), $filename);
             $admin->photo = $filename;
         }
         $admin->isadmin = $req->has('txtisadmin') ? 1 : 0;
@@ -73,9 +73,9 @@ class AdminController extends Controller
 
             if ($req->hasFile('txtphoto')) {
                 $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
-                $req->file('txtphoto')->move(public_path('assets/images/admins'), $filename);
-                if ($admin->photo && file_exists(public_path('assets/images/admins/' . $admin->photo))) {
-                    unlink(public_path('assets/images/admins/' . $admin->photo));
+                $req->file('txtphoto')->move(public_path('assets/admin/images/admins'), $filename);
+                if ($admin->photo && file_exists(public_path('assets/admin/images/admins/' . $admin->photo))) {
+                    unlink(public_path('assets/admin/images/admins/' . $admin->photo));
                 }
                 $admin->photo = $filename;
             }

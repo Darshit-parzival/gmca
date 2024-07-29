@@ -17,6 +17,7 @@
         </div>
     </div>
 
+    @if (count($admins) > 0)
     <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
         <tr class="table-dark">
             <th>Id</th>
@@ -33,7 +34,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->phone}}</td>
-            <td><img src="{{ url('/assets/images/admins/') }}/{{$user->photo}}" alt="Photo" width="50"></td>
+            <td><img src="{{ url('/assets/admin/images/admins/') }}/{{$user->photo}}" alt="Photo" width="50"></td>
             <td>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#editModal{{$user->staff_id}}">
@@ -111,7 +112,7 @@
                                     <div class="mb-3">
                                         <label for="txtphoto{{ $user->staff_id }}" class="form-label">Photo</label>
                                         <div>
-                                            <img src="{{ url('/assets/images/admins/') }}/{{$user->photo}}" alt="Photo"
+                                            <img src="{{ url('/assets/admin/images/admins/') }}/{{$user->photo}}" alt="Photo"
                                                 width="150">
                                         </div>
                                         <input type="file" class="form-control" id="txtphoto{{ $user->staff_id }}" name="txtphoto">
@@ -137,134 +138,28 @@
                                         <input type="checkbox" class="form-check-input" name="txtisstaff" id="txtisstaff{{ $user->staff_id }}" value="1" {{ $user->isstaff ? 'checked' : '' }}>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="txtdesignation{{ $user->staff_id }}" class="form-label">Designation</label>
-                                        <input type="text" class="form-control" name="txtdesignation" id="txtdesignation{{ $user->staff_id }}" value="{{ $user->designation }}">
-                                        <span class="text-danger mt-2">@error('txtdesignation') {{ $message }} @enderror</span>
+                                        <label for="txtisadvisor{{ $user->staff_id }}" class="form-label">Advisor</label>
+                                        <input type="checkbox" class="form-check-input" name="txtisadvisor" id="txtisadvisor{{ $user->staff_id }}" value="1" {{ $user->isadvisor ? 'checked' : '' }}>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="txtexp_year{{ $user->staff_id }}" class="form-label">Experience Year</label>
-                                        <input type="text" class="form-control" name="txtexp_year" id="txtexp_year{{ $user->staff_id }}" value="{{ $user->exp_year }}">
-                                        <span class="text-danger mt-2">@error('txtexp_year') {{ $message }} @enderror</span>
+                                        <label for="txtispanel{{ $user->staff_id }}" class="form-label">Panel</label>
+                                        <input type="checkbox" class="form-check-input" name="txtispanel" id="txtispanel{{ $user->staff_id }}" value="1" {{ $user->ispanel ? 'checked' : '' }}>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                @endforeach
-            @else
-            <div class="p-5 m-5 text-center">
-                <h1>No admins</h1>
-            </div>
-            @endif
-        </tbody>
+        </tr>
+        @endforeach
     </table>
+    @else
+    <p>No admins to display.</p>
+    @endif
 
-    <!-- Add Modal -->
-    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addModalLabel">Add Admin</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form method="post" action="{{ url('/admin/add') }}" enctype="multipart/form-data">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="txtname" class="form-label">Username</label>
-                            <input type="text" class="form-control" name="txtname" id="txtname">
-                            <span class="text-danger mt-2">@error('txtname') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtemail" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="txtemail" id="txtemail">
-                            <span class="text-danger mt-2">@error('txtemail') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtpass" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="txtpass" id="txtpass">
-                            <span class="text-danger mt-2">@error('txtpass') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtphone" class="form-label">Phone</label>
-                            <input type="text" class="form-control" name="txtphone" id="txtphone">
-                            <span class="text-danger mt-2">@error('txtphone') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Gender</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="txtgender" id="genderMale" value="m" checked>
-                                <label class="form-check-label" for="genderMale">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="txtgender" id="genderFemale" value="f">
-                                <label class="form-check-label" for="genderFemale">Female</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="txtgender" id="genderOther" value="o">
-                                <label class="form-check-label" for="genderOther">Other</label>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtphoto" class="form-label">Photo</label>
-                            <input type="file" class="form-control" id="txtphoto" name="txtphoto">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtisadmin" class="form-label">Admin</label>
-                            <input type="checkbox" class="form-check-input" name="txtisadmin" id="txtisadmin" value="1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtisfaculty" class="form-label">Faculty</label>
-                            <input type="checkbox" class="form-check-input" name="txtisfaculty" id="txtisfaculty" value="1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtisclubco" class="form-label">Club Coordinator</label>
-                            <input type="checkbox" class="form-check-input" name="txtisclubco" id="txtisclubco" value="1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtislibrarian" class="form-label">Librarian</label>
-                            <input type="checkbox" class="form-check-input" name="txtislibrarian" id="txtislibrarian" value="1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtisstaff" class="form-label">Staff</label>
-                            <input type="checkbox" class="form-check-input" name="txtisstaff" id="txtisstaff" value="1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtdesignation" class="form-label">Designation</label>
-                            <input type="text" class="form-control" name="txtdesignation" id="txtdesignation">
-                            <span class="text-danger mt-2">@error('txtdesignation') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtexp_year" class="form-label">Experience Year</label>
-                            <input type="text" class="form-control" name="txtexp_year" id="txtexp_year">
-                            <span class="text-danger mt-2">@error('txtexp_year') {{ $message }} @enderror</span>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-4">
-        @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
-    </div>
 </div>
 @endsection
