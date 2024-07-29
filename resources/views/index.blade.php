@@ -27,21 +27,21 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{ asset('assets/images/static/1.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/client/images/1.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">First Title</h1>
                     <p style="font-size: 20px;">First Description</p>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('assets/images/static/2.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/client/images/2.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">Second Title</h1>
                     <p style="font-size: 20px;">Second Description</p>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('assets/images/static/3.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/client/images/3.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">Third Title</h1>
                     <p style="font-size: 20px;">Third Description</p>

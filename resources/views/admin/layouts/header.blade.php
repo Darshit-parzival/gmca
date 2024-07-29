@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-  <script src="{{ asset('/js/color-modes.js')}}"></script>
+  <script src="{{ asset('assets/admin/js/color-modes.js')}}"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -96,8 +96,8 @@
   <!-- Custom styles for this template -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="{{ asset('css/dashboard.css')}}" rel="stylesheet">
-  <link href="{{ asset('css/admin.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/css/dashboard.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/css/admin.css')}}" rel="stylesheet">
 
 </head>
 

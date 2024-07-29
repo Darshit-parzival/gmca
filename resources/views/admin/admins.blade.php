@@ -35,7 +35,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->phone}}</td>
-            <td><img src="{{ url('/assets/images/admins/') }}/{{$user->photo}}" alt="Photo" width="50"></td>
+            <td><img src="{{ url('/assets/admin/images/admins/') }}/{{$user->photo}}" alt="Photo" width="50"></td>
             <td>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#editModal{{$user->staff_id}}">
