@@ -44,10 +44,8 @@
     ============================================ -->
     <link rel="stylesheet" href="{{ asset('css/animated-headlines.css') }}">
 
-    <!-- Nivo slider CSS
-            ============================================ -->
-    <!-- <link rel="stylesheet" href="assets/css/nivo-slider.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/preview.css" type="text/css" media="screen" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/nivo-slider.css" type="text/css" /> 
+    <link rel="stylesheet" href="assets/css/preview.css" type="text/css" media="screen" />
 
     <!-- Metarial Iconic Font CSS
     ============================================ -->
