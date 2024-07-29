@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email', 50)->nullable(false)->unique();
             $table->bigInteger('phone',12)->unique()->nullable(false);
             $table->string('password', 60)->nullable(false);
-            $table->char('gender')->nullable(false);
+            $table->char('gender',1)->nullable(false);
             $table->string('photo', 30)->nullable(false);
             $table->boolean('isadmin')->nullable(false);
             $table->boolean('isfaculty')->nullable(false);
