@@ -93,13 +93,10 @@
     }
   </style>
 
-
-  <!-- Custom styles for this template -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
   <link href="{{ asset('assets/admin/css/dashboard.css')}}" rel="stylesheet">
   <link href="{{ asset('assets/admin/css/admin.css')}}" rel="stylesheet">
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>

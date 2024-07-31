@@ -42,3 +42,9 @@ route::post('/event/edit/', [EventController::class, 'edit']);
 
 //Gallery Routes
 route::get('/admin/gallery', [GalleryController::class, 'view_gallery']);
+route::post('/admin/gallery/add', [GalleryController::class, 'add']);
+route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete']);
+route::get('/admin/gallery/op/{id}', [GalleryController::class, 'change_status']);
+
+
+
