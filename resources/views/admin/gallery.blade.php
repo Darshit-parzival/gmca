@@ -1,7 +1,5 @@
 @extends('admin.layouts.main')
-
 @section('main-section')
-
 <style>
 .image-container {
     position: relative;
@@ -26,12 +24,12 @@
     color: white;
     display: flex; 
     justify-content: space-between;
-    opacity: 0; /* Hide initially */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .position-relative:hover .image-actions {
-    opacity: 1; /* Show on hover */
+    opacity: 1; 
 }
 
 </style>
@@ -51,14 +49,15 @@
                 <div id="collapse{{ $i }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $i }}" data-bs-parent="#eventsAccordion">
                     <div class="accordion-body">
                         <div class="row">
-                            <div class="col-md-3 mb-3 border position-relative">
-                                    <button class="d-flex justify-center btn btn-primary align-items-center">Add New</button>
-                            </div> 
+                            <div class="col-md-3 mb-3 border d-flex justify-content-center align-items-center">
+                                <button class="btn btn-primary">Add New</button>
+                            </div>
+                            
                             @foreach ($event->galleries as $image)
                             <div class="col-md-3 mb-3 border position-relative">
-                                <div class="image-container" style="background-image: url('{{ asset('/assets/admin/images/gallery/' . $image->image) }}');">
+                                <div class="image-container" style="background-image: url('{{ asset('/assets/admin/images/gallery/' . $image->image) }}');height:200px">
                                     <div class="image-actions d-flex flex-row px-2 py-1">
-                                        <a href="" class="btn btn-primary btn-sm me-2">Edit</a>
+                                        <a href="" class="btn btn-success btn-sm me-2">Active</a>
                                         <a href="#" class="btn btn-danger btn-sm ms-auto">Delete</a>
                                     </div>
                                 </div>
