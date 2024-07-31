@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\NewsController;
+
 
 
 //Client Routes
@@ -45,6 +47,12 @@ route::get('/admin/gallery', [GalleryController::class, 'view_gallery']);
 route::post('/admin/gallery/add', [GalleryController::class, 'add']);
 route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete']);
 route::get('/admin/gallery/op/{id}', [GalleryController::class, 'change_status']);
+
+//News Routes
+route::get('/admin/news', [NewsController::class, 'view_news']);
+route::post('/news/add', [NewsController::class, 'add']);
+route::post('/news/edit', [NewsController::class, 'edit']);
+route::get('/news/delete/{id}', [NewsController::class, 'delete']);
 
 
 
