@@ -37,7 +37,7 @@
 </style>
 <div class="container p-5">
     <div>
-        <h1>Events</h1>
+        <h1>Event Gallery</h1>
     </div>
     @if($events->count())
         <div class="accordion" id="eventsAccordion">
@@ -51,6 +51,9 @@
                 <div id="collapse{{ $i }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $i }}" data-bs-parent="#eventsAccordion">
                     <div class="accordion-body">
                         <div class="row">
+                            <div class="col-md-3 mb-3 border position-relative">
+                                    <button class="d-flex justify-center btn btn-primary align-items-center">Add New</button>
+                            </div> 
                             @foreach ($event->galleries as $image)
                             <div class="col-md-3 mb-3 border position-relative">
                                 <div class="image-container" style="background-image: url('{{ asset('/assets/admin/images/gallery/' . $image->image) }}');">
@@ -66,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            @endforeach
+            @endforeach 
         </div>
     @else
         <div class="p-5 m-5 text-center">
