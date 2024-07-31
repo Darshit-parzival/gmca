@@ -16,56 +16,19 @@
         <div class="product-container">
             <div class="product-card">
                 <div class="product-image">
-                    <img src="assets/img/1.jpg" class="product-thumb" alt="">
+                    <img src="{{asset('assets/static/1.jpg')}}" class="product-thumb" alt="">
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="assets/img/event/2.jpg" class="product-thumb" alt="">
+                    <img src="{{asset('assets/static/2.jpg')}}" class="product-thumb" alt="">
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="assets/img/event/3.jpg" class="product-thumb" alt="">
+                    <img src="{{asset('assets/static/3.jpg')}}" class="product-thumb" alt="">
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/5.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/4.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/6.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/7.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/8.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/9.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/img/event/10.jpg" class="product-thumb" alt="">
-                </div>
-            </div>
-            
-        </div>
     </section>
                                 <!-- <div class="carousel slide media-carousel" id="media">
                                     <div class="carousel-inner">
@@ -118,9 +81,9 @@
                     <!-- </div> -->
                     <!-- <p>GOVERNMENT MCA COLLEGE,MANINAGAR,AHMEDABAD</p> -->
                     <div class="social-icons" style="padding-top: 20px;">
-                        <a target="_blank" href="https://www.facebook.com/people/Government-MCA-collegeManinagar/100064855353738/"><i class="zmdi zmdi-facebook"></i></a>
-                        <a target="_blank" href="https://twitter.com/GMCA_Maninagar"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a target="_blank" href="https://www.youtube.com/channel/UCqELfLg-8aKMD6-L9MUWDMw/featured"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/people/Government-MCA-collegeManinagar/100064855353738/"><i class="fa fa-facebook iconmt"></i></a>
+                        <a target="_blank" href="https://twitter.com/GMCA_Maninagar"><i class="fa fa-twitter iconmt" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCqELfLg-8aKMD6-L9MUWDMw/featured"><i class="fa fa-youtube iconmt" aria-hidden="true"></i></a>
                         <!-- <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
                         <a href="#"><i class="zmdi zmdi-instagram"></i></a> -->
                     </div>
@@ -157,9 +120,9 @@
                 <div class="single-footer-widget">
                     <h3><span style="color: #2d3e50">Useful</span> Links</h3>
                     <hr>
-                    <a class="noborder" href="index.php">Home</a>
+                    <a class="noborder" href="/">Home</a>
                     <a class="noborder" href="staff.php">Teachers &amp; Staff</a>
-                    <a class="noborder" href="About.php">About</a>
+                    <a class="noborder" href="/about">About</a>
                     <a class="noborder" href="event.php">Events</a>
                     <a class="noborder" href="Gallery.php">Gallery</a>
                     <a class="noborder" href="academic.php">Academics</a>

@@ -16,9 +16,9 @@
 
     <!-- Bootstrap CSS
     ============================================ -->
-    <link rel="stylesheet" href="{{ asset('assets/client/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/client/css/bootstrap.min.css') }}"> --}}
 
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Fontawsome CSS
     ============================================ -->
@@ -131,8 +131,8 @@
                                     <div class="mainmenu hidden-sm hidden-xs">
                                         <nav>
                                             <ul id="nav">
-                                                <li class="current"><a href="index.php">Home</a></li>
-                                                <li><a href="About.php">About</a></li>
+                                                <li class="current"><a href="/">Home</a></li>
+                                                <li><a href="/about">About</a></li>
                                                 <li><a href="staff.php">Staff</a> </li>
                                                 <li><a href="event.php">Event</a></li>
                                                 <li><a href="Gallery.php">Gallery</a></li>
