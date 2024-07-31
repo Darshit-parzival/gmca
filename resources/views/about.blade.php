@@ -3,7 +3,6 @@
 @section('main-section')
     <style>
         .abtimg {
-            /* background: url(asset('assets/static/gmca_photo.jpg')); */
             height: 400px;
             width: 100%;
         }

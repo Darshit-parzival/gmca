@@ -121,7 +121,7 @@
                     <h3><span style="color: #2d3e50">Useful</span> Links</h3>
                     <hr>
                     <a class="noborder" href="/">Home</a>
-                    <a class="noborder" href="staff.php">Teachers &amp; Staff</a>
+                    <a class="noborder" href="/staff">Teachers &amp; Staff</a>
                     <a class="noborder" href="/about">About</a>
                     <a class="noborder" href="event.php">Events</a>
                     <a class="noborder" href="Gallery.php">Gallery</a>

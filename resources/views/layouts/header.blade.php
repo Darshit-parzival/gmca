@@ -133,7 +133,7 @@
                                             <ul id="nav">
                                                 <li class="current"><a href="/">Home</a></li>
                                                 <li><a href="/about">About</a></li>
-                                                <li><a href="staff.php">Staff</a> </li>
+                                                <li><a href="/staff">Staff</a> </li>
                                                 <li><a href="event.php">Event</a></li>
                                                 <li><a href="Gallery.php">Gallery</a></li>
                                                 <li>
@@ -176,9 +176,9 @@
                                 <div class="mobile-menu">
                                     <nav id="dropdown">
                                         <ul>
-                                            <li><a href="index.php">HOME</a></li>
-                                            <li><a href="About.php">About Us</a></li>
-                                            <li><a href="staff.php">Staff</a></li>
+                                            <li><a href="/">HOME</a></li>
+                                            <li><a href="/about">About Us</a></li>
+                                            <li><a href="/staff">Staff</a></li>
                                             <li><a href="event.php">Event</a> </li>
                                             <li><a href="Gallery.php">Gallery</a></li>
                                             <li>
