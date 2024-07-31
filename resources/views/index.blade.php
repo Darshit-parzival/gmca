@@ -20,7 +20,7 @@
         }
 
         .vis:hover {
-            color: blue !important;
+            color: #6d7d90 !important;
         }
     </style>
 
