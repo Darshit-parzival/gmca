@@ -104,4 +104,9 @@ class AdminController extends Controller
             return redirect('/admin/admins')->with('error','Something went wrong!');
         }
     }
+
+    function view_faculties(){
+        $admins = AdminModel::where('isfaculty',1)->get();
+        return view('admin.faculties', compact('admins'));
+    }
 }

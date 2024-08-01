@@ -54,5 +54,6 @@ route::post('/news/add', [NewsController::class, 'add']);
 route::post('/news/edit', [NewsController::class, 'edit']);
 route::get('/news/delete/{id}', [NewsController::class, 'delete']);
 
-
+//Faculties routes
+route::get('/admin/faculties', [AdminController::class, 'view_faculties']);
 
