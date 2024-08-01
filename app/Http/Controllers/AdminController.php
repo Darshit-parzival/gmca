@@ -57,8 +57,7 @@ class AdminController extends Controller
             "txtemail" => "required|email|max:50",
             "txtphone" => "required",
             "txtdesignation" => "required|string|max:40",
-            "txtexp_year" => "required|integer",
-        ], [
+            "txtexp_year" => "required|integer",], [
             'txtemail.regex' => 'Please enter a valid email address.',
             'txtphone.numeric' => 'Phone number must be numeric.',
             'txtexp_year.integer' => 'Experience year must be an integer.',
