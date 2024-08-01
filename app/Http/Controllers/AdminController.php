@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     function view_admin() {
-        $admins = AdminModel::all();
+        $admins = AdminModel::where('isadmin',1)->get();
         return view('admin.admins', compact('admins'));
     }
     function add(Request $req){
