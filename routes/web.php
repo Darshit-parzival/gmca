@@ -30,7 +30,7 @@ Route::get('/admin/logout', [AuthController::class, 'logout']);
 Route::post('/admin/login', [AuthController::class, 'login']);
 
 // Protected Routes (Require Authentication)
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     // Admin Routes
     Route::get('/admin', [AdminHomeController::class, 'view_admin']);
     Route::get('/admin/admins', [AdminController::class, 'view_admin']);
@@ -58,4 +58,4 @@ Route::middleware(['auth'])->group(function () {
 
     // Faculties Routes
     Route::get('/admin/faculties', [AdminController::class, 'view_faculties']);
-});
+// });
