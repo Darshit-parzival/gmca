@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\DummyController;
 use App\Http\Controllers\NewsController;
 
 
@@ -23,6 +24,7 @@ Route::get('/news', function () {
 Route::get('/notice', function () {
     return view('notice');
 });
+route::get('/gallery', [DummyController::class, 'fetch_gallery']);
 
 //Authentication Routes
 route::get('/admin/login', [AuthController::class, 'view']);
