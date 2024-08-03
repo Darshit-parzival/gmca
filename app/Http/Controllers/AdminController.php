@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     function view_admin() {
-        $admins = AdminModel::all();
+        $admins = AdminModel::where('isadmin',1)->get();
         return view('admin.admins', compact('admins'));
     }
     function add(Request $req){
@@ -57,8 +57,7 @@ class AdminController extends Controller
             "txtemail" => "required|email|max:50",
             "txtphone" => "required",
             "txtdesignation" => "required|string|max:40",
-            "txtexp_year" => "required|integer",
-        ], [
+            "txtexp_year" => "required|integer",], [
             'txtemail.regex' => 'Please enter a valid email address.',
             'txtphone.numeric' => 'Phone number must be numeric.',
             'txtexp_year.integer' => 'Experience year must be an integer.',
@@ -103,5 +102,10 @@ class AdminController extends Controller
         else{
             return redirect('/admin/admins')->with('error','Something went wrong!');
         }
+    }
+
+    function view_faculties(){
+        $admins = AdminModel::where('isfaculty',1)->get();
+        return view('admin.faculties', compact('admins'));
     }
 }

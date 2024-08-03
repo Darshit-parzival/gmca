@@ -75,7 +75,7 @@
                 <td>{{ $notice->details }}</td>
                 <td>
                     @if($notice->report)
-                    <a href="{{asset('/admin/news_reports') .'/'. $notice->report }}" target="_blank">View Report</a>
+                      <a href="{{ asset('assets/admin/news_reports/' . $notice->report) }}" target="_blank">View Report</a>
                     @else
                     No Report
                     @endif
