@@ -93,15 +93,18 @@ class AdminController extends Controller
             return back()->with('error', 'Admin not found!');
         }
     }
-    function delete($id){
-        $admin=AdminModel::find($id);
-        if(!is_null($admin)){
+    function delete($id)
+    {
+        $admin = AdminModel::find($id);
+        if ($admin) {
+            $imagePath = public_path('assets/admin/images/admins/' . $admin->photo);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
             $admin->delete();
-            return redirect('/admin/admins')->with('success','Admin has been deleted!');
+            return redirect()->back()->with('success', 'admin deleted successfully.');
         }
-        else{
-            return redirect('/admin/admins')->with('error','Something went wrong!');
-        }
+        return redirect()->back()->with('error', 'admin not found.');
     }
 
     function view_faculties(){
