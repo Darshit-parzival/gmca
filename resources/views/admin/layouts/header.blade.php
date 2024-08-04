@@ -277,7 +277,7 @@
                   <svg class="bi">
                     <use xlink:href="#house-fill" />
                   </svg>
-                  Home
+                  Dashboard
                 </a>
               </li>
               <li class="nav-item">
