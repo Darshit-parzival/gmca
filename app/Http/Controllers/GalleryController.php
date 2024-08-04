@@ -23,7 +23,7 @@ class GalleryController extends Controller
         $event_id = $req->input('event_id');
         $images = $req->file('images');
         foreach ($images as $image) {
-            $imageName = time() . '-' . $image->getClientOriginalName();
+            $imageName = time() . '.' . $req->file('images')->extension();
             $image->move(public_path('assets/admin/images/events'), $imageName);
             $gallery = new GalleryModel;
             $gallery->event_id = $event_id;
