@@ -23,7 +23,7 @@ class GalleryController extends Controller
         $event_id = $req->input('event_id');
         $images = $req->file('images');
         foreach ($images as $image) {
-            $imageName = time() . '.' . $req->file('images')->extension();
+            $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move(public_path('assets/admin/images/events'), $imageName);
             $gallery = new GalleryModel;
             $gallery->event_id = $event_id;
@@ -31,6 +31,7 @@ class GalleryController extends Controller
             $gallery->status = 1;
             $gallery->save();
         }
+        
         return redirect()->back()->with('success', 'Images uploaded successfully.');
     }
     public function delete($id)
