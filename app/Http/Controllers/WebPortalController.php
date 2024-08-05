@@ -18,67 +18,57 @@ class WebPortalController extends Controller
 
     public function add(Request $req)
     {
+        $req->validate([
+            'webportal_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'webportal_title' => 'required|string|max:50',
+            'webportal_details' => 'required|string|max:2000',
+            'webportal_status' => 'nullable|boolean',
+        ]);
 
-        switch ($req->webportal_type) {
-            case 'slider':
-                $req->validate([
-                    'webportal_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-                    'webportal_title' => 'required|string|max:50',
-                    'webportal_details' => 'required|string|max:2000',
-                    'webportal_status' => 'nullable|boolean',
-                ]);
-        
-                $imageName = time() . '.' . $req->file('webportal_file')->extension();
-                $req->file('webportal_file')->move(public_path('assets/admin/images/slider'), $imageName);
-        
-                $webportal = new WebPortalModel;
-                $webportal->webportal_type = 'slider';
-                $webportal->webportal_file = $imageName;
-                $webportal->webportal_title = $req->webportal_title;
-                $webportal->webportal_details = $req->webportal_details;
-                $webportal->webportal_status = $req->has('webportal_status') ? 1 : 0;
-        
-                $webportal->save();
-        
-                return redirect()->back()->with('success', 'Slider Added successfully!');
-            
-            case 'about':
-                $req->validate([
-                    'about_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-                    'about_details' => 'required|string|max:2000',
-                ]);
-        
-                $imageName = time() . '.' . $req->file('about_file')->extension();
-                $req->file('about_file')->move(public_path('assets/admin/images/about'), $imageName);
-        
-                $webportal = WebPortalModel::where('webportal_type', 'about')->first();
-        
-                if ($webportal) {
-                    $oldImage = public_path('assets/admin/images/about/') . $webportal->webportal_file;
-                    if (File::exists($oldImage))
-                        File::delete($oldImage);
-        
-                    $webportal->webportal_file = $imageName;
-                    $webportal->webportal_details = $req->about_details;
-                } else {
-                    $webportal = new WebPortalModel;
-                    $webportal->webportal_type = 'about';
-                    $webportal->webportal_file = $imageName;
-                    $webportal->webportal_details = $req->about_details;
-                }
-        
-                $webportal->save();
-        
-                return redirect()->back()->with('success', 'About section added/updated successfully!');
-        }
+        $imageName = time() . '.' . $req->file('webportal_file')->extension();
+        $req->file('webportal_file')->move(public_path('assets/admin/images/slider'), $imageName);
 
-        
+        $webportal = new WebPortalModel;
+        $webportal->webportal_type = 'slider';
+        $webportal->webportal_file = $imageName;
+        $webportal->webportal_title = $req->webportal_title;
+        $webportal->webportal_details = $req->webportal_details;
+        $webportal->webportal_status = $req->has('webportal_status') ? 1 : 0;
+
+        $webportal->save();
+
+        return redirect()->back()->with('success', 'Slider Added successfully!');
     }
 
     public function about_add(Request $req)
     {
-        
-        
+        $req->validate([
+            'about_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'about_details' => 'required|string|max:2000',
+        ]);
+
+        $imageName = time() . '.' . $req->file('about_file')->extension();
+        $req->file('about_file')->move(public_path('assets/admin/images/about'), $imageName);
+
+        $webportal = WebPortalModel::where('webportal_type', 'about')->first();
+
+        if ($webportal) {
+            $oldImage = public_path('assets/admin/images/about/') . $webportal->webportal_file;
+            if (File::exists($oldImage))
+                File::delete($oldImage);
+
+            $webportal->webportal_file = $imageName;
+            $webportal->webportal_details = $req->about_details;
+        } else {
+            $webportal = new WebPortalModel;
+            $webportal->webportal_type = 'about';
+            $webportal->webportal_file = $imageName;
+            $webportal->webportal_details = $req->about_details;
+        }
+
+        $webportal->save();
+
+        return redirect()->back()->with('success', 'About section added/updated successfully!');
     }
 
     public function vision_add(Request $req)
