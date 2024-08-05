@@ -198,7 +198,7 @@
                         <div class="container mt-5">
                             <div class="d-flex justify-content-between w-100">
                                 <h5 class="mb-4">Update Vision</h5>
-                                <h5 class="mb-4"><a href=""> Current Vision</a></h5>
+                                <h5 class="mb-4"><a href="" data-bs-toggle="modal" data-bs-target="#visionModal"> Current Vision</a></h5>
                             </div>
                         </div>
                         <form action="{{ url('/admin/webportal/vision/add') }}" class="mb-4" method="POST"
@@ -303,7 +303,7 @@
     </div>
 
      <!-- Modal for Current Vision -->
-     <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+     <div class="modal fade" id="visionModal" tabindex="-1" aria-labelledby="visionModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -312,12 +312,12 @@
                 </div>
                 <div class="modal-body">
                     @if ($vision_data)
-                        <a src="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
-                            class="img-fluid mb-3">Vision File</a>
-                        <h6><u>About Page Description</u></h6>
+                        <a href="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
+                           target="_blank" class="img-fluid mb-3">Vision File</a>
+                        <h6><u>Vision Description</u></h6>
                         <p>{{ $vision_data->webportal_details }}</p>
                     @else
-                        <p>No about page data available.</p>
+                        <p>No Vision data available.</p>
                     @endif
                 </div>
             </div>

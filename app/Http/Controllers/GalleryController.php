@@ -15,7 +15,6 @@ class GalleryController extends Controller
         return view('admin.gallery', compact('events'));
     }
 
-    //gallary code
     public function add(Request $req)
     {
         $req->validate([
