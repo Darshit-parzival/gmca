@@ -14,6 +14,8 @@ class GalleryController extends Controller
         $events = EventModel::with('galleries')->get();
         return view('admin.gallery', compact('events'));
     }
+
+    //gallary code
     public function add(Request $req)
     {
         $req->validate([
