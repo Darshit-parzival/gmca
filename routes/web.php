@@ -60,9 +60,19 @@ Route::get('/news/delete/{id}', [NewsController::class, 'delete']);
 // Faculties Routes
 Route::get('/admin/faculties', [AdminController::class, 'view_faculties']);
 
-// Web Portal Routes
+// Web Portal Routes (Slider)
 Route::get('/admin/webportal', [WebPortalController::class, 'view_webportal']);
 Route::post('/admin/webportal/add', [WebPortalController::class, 'add']);
 Route::get('/admin/webportal/op/{id}', [WebPortalController::class, 'change_status']);
 Route::get('/admin/webportal/delete/{id}', [WebPortalController::class, 'delete']);
+
+// Web Portal Routes (About)
+Route::get('/admin/webportal/about', [WebPortalController::class, 'view_webportal']);
+Route::post('/admin/webportal/about/add', [WebPortalController::class, 'about_add']);
+
+// Web Portal Routes (Vision & Mission)
+Route::get('/admin/webportal/vision', [WebPortalController::class, 'view_webportal']);
+Route::post('/admin/webportal/vision/add', [WebPortalController::class, 'vision_add']);
+Route::post('/admin/webportal/mission', [WebPortalController::class, 'view_webportal']);
+Route::post('/admin/webportal/mission/add', [WebPortalController::class, 'mission_add']);
 // });
