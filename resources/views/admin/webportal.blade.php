@@ -167,7 +167,6 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="aboutText" class="form-label">Detail</label>
-                                        <input class="form-control" type="hidden" value="slider" name="webportal_type" required>
                                         <textarea class="form-control" name="about_details" id="aboutText" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
@@ -295,6 +294,28 @@
                             class="img-fluid mb-3" alt="about image">
                         <h6><u>About Page Description</u></h6>
                         <p>{{ $about_data->webportal_details }}</p>
+                    @else
+                        <p>No about page data available.</p>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal for Current Vision -->
+     <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">Current Vision Page</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @if ($vision_data)
+                        <a src="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
+                            class="img-fluid mb-3">Vision File</a>
+                        <h6><u>About Page Description</u></h6>
+                        <p>{{ $vision_data->webportal_details }}</p>
                     @else
                         <p>No about page data available.</p>
                     @endif
