@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     function view_admin() {
-        $admins = AdminModel::all();
+        $admins = AdminModel::where('isadmin',1)->get();
         return view('admin.admins', compact('admins'));
     }
     function add(Request $req){
@@ -38,7 +38,7 @@ class AdminController extends Controller
 
         if ($req->hasFile('txtphoto')) {
             $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
-            $req->file('txtphoto')->move(public_path('assets/images/admins'), $filename);
+            $req->file('txtphoto')->move(public_path('assets/admin/images/admins'), $filename);
             $admin->photo = $filename;
         }
         $admin->isadmin = $req->has('txtisadmin') ? 1 : 0;
@@ -57,8 +57,7 @@ class AdminController extends Controller
             "txtemail" => "required|email|max:50",
             "txtphone" => "required",
             "txtdesignation" => "required|string|max:40",
-            "txtexp_year" => "required|integer",
-        ], [
+            "txtexp_year" => "required|integer",], [
             'txtemail.regex' => 'Please enter a valid email address.',
             'txtphone.numeric' => 'Phone number must be numeric.',
             'txtexp_year.integer' => 'Experience year must be an integer.',
@@ -73,9 +72,9 @@ class AdminController extends Controller
 
             if ($req->hasFile('txtphoto')) {
                 $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
-                $req->file('txtphoto')->move(public_path('assets/images/admins'), $filename);
-                if ($admin->photo && file_exists(public_path('assets/images/admins/' . $admin->photo))) {
-                    unlink(public_path('assets/images/admins/' . $admin->photo));
+                $req->file('txtphoto')->move(public_path('assets/admin/images/admins'), $filename);
+                if ($admin->photo && file_exists(public_path('assets/admin/images/admins/' . $admin->photo))) {
+                    unlink(public_path('assets/admin/images/admins/' . $admin->photo));
                 }
                 $admin->photo = $filename;
             }
@@ -94,14 +93,22 @@ class AdminController extends Controller
             return back()->with('error', 'Admin not found!');
         }
     }
-    function delete($id){
-        $admin=AdminModel::find($id);
-        if(!is_null($admin)){
+    function delete($id)
+    {
+        $admin = AdminModel::find($id);
+        if ($admin) {
+            $imagePath = public_path('assets/admin/images/admins/' . $admin->photo);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
             $admin->delete();
-            return redirect('/admin/admins')->with('success','Admin has been deleted!');
+            return redirect()->back()->with('success', 'admin deleted successfully.');
         }
-        else{
-            return redirect('/admin/admins')->with('error','Something went wrong!');
-        }
+        return redirect()->back()->with('error', 'admin not found.');
+    }
+
+    function view_faculties(){
+        $admins = AdminModel::where('isfaculty',1)->get();
+        return view('admin.faculties', compact('admins'));
     }
 }

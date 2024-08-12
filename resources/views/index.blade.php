@@ -20,28 +20,28 @@
         }
 
         .vis:hover {
-            color: blue !important;
+            color: #6d7d90 !important;
         }
     </style>
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{ asset('assets/images/static/1.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/static/1.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">First Title</h1>
                     <p style="font-size: 20px;">First Description</p>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('assets/images/static/2.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/static/2.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">Second Title</h1>
                     <p style="font-size: 20px;">Second Description</p>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('assets/images/static/3.jpg') }}" alt="alt">
+                <img src="{{ asset('assets/static/3.jpg') }}" alt="alt">
                 <div class="carousel-caption">
                     <h1 class="title1">Third Title</h1>
                     <p style="font-size: 20px;">Third Description</p>
@@ -72,7 +72,7 @@
                         <p style=" text-align: justify;font-size: 15px;">
                             Government MCA college Maninagar, Ahmedabad is the first Government MCA College in Gujarat. It was established in June 2012 with facilities to run Master of Computer Application. In the year 2012, course was introduced with an intake of 60 students. The college has well-established Central Learning resource centers like Central library, Central Computer Centre, Entrepreneurship Development Cell, Continuing Education Centre and Physical Education Section.
                         </p>
-                        <a class="button-default" href="About.php">More</a>	      
+                        <a class="button-default" href="/about">More</a>	      
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 </div>
 
             </div>
-            <a class="button-default" href="news.php">Read All News</a>
+            <a class="button-default" href="/news">Read All News</a>
 
             <!-- Notice --><!--
         <div class="latest-area bg-white">
@@ -133,13 +133,12 @@
                             <marquee direction="up" scrollamount="2" onmouseover="stop()"; onmouseout="start();">
                                 <h4>
                                     <a href='2.pdf' target=_blank>Notices</a>
-
                                 </h4>
                             </marquee>
                         </div>
                     </div>
                 </div>
-            </div><a class="button-default" href="notice.php">View All Notice </a>
+            </div><a class="button-default" href="/notice">View All Notice </a>
         </div>
     </div>
 
@@ -149,7 +148,6 @@
         <div class="container">
             <div class="row" style="margin-bottom: 25px;">
                 <div class="col-md-12">
-
                     <div class="col-md-6">
                         <div class= "section-title-wrapper white" style="margin-top: 10px;margin-bottom:36px;">
                             <div class="section-title">

@@ -1061,7 +1061,7 @@ body {
 /*  4. About Area
 /*----------------------------------------*/
 .about-area {
-    background: #2d3e50 url("../assets/images/static/gmca_students-removebg-preview.png") no-repeat scroll right top;
+    background: #2d3e50 url("../../static/gmca_students-removebg-preview.png") no-repeat scroll right top;
     color: #ffffff;
     margin-top: 80px;
     padding-bottom: 54px;
@@ -1187,7 +1187,7 @@ body {
 /*  6. Fun Factor Area
 /*----------------------------------------*/
 .fun-factor-area {
-    background: rgba(0, 0, 0, 0) url("../img/banner/2.jpg") repeat scroll 0 0;
+    background: #2d3e50 url("../../static/vision-mission-bg.jpg") repeat scroll 0 0;
     color: #ffffff;
     padding: 100px 0;
 }

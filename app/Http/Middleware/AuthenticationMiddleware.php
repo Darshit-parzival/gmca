@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AuthGuard
+class AuthenticationMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,6 +16,9 @@ class AuthGuard
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (session('email')!=NULL) {
+            return $next($request);
+        }
+        return redirect('/admin/login');
     }
 }

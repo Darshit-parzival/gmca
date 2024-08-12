@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-  <script src="{{ asset('/js/color-modes.js')}}"></script>
+  <script src="{{ asset('assets/admin/js/color-modes.js')}}"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -10,6 +10,7 @@
   <meta name="generator" content="Hugo 0.122.0">
   <title>Gmca admin</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/static/logo.png') }}">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -92,13 +93,10 @@
     }
   </style>
 
-
-  <!-- Custom styles for this template -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="{{ asset('css/dashboard.css')}}" rel="stylesheet">
-  <link href="{{ asset('css/admin.css')}}" rel="stylesheet">
-
+  <link href="{{ asset('assets/admin/css/dashboard.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/css/admin.css')}}" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -279,19 +277,20 @@
                   <svg class="bi">
                     <use xlink:href="#house-fill" />
                   </svg>
-                  Home
+                  Dashboard
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="/admin/admins">
                   <svg class="bi">
-                    <use xlink:href="#file-earmark" />
+                    <use xlink:href="#people" />
                   </svg>
+                  
                   Admins
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="/admin/faculties">
                   <svg class="bi">
                     <use xlink:href="#cart" />
                   </svg>
@@ -307,15 +306,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="/admin/gallery">
                   <svg class="bi">
                     <use xlink:href="#graph-up" />
                   </svg>
-                  Result
+                  Gallery
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="/admin/news">
                   <svg class="bi">
                     <use xlink:href="#puzzle" />
                   </svg>
@@ -324,24 +323,16 @@
               </li>
             </ul>
 
-            <h6
-              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-              <span>Saved reports</span>
-              <a class="link-secondary" href="#" aria-label="Add a new report">
-                <svg class="bi">
-                  <use xlink:href="#plus-circle" />
-                </svg>
-              </a>
-            </h6>
             <ul class="nav flex-column mb-auto">
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="/admin/webportal">
                   <svg class="bi">
                     <use xlink:href="#file-earmark-text" />
                   </svg>
-                  Current month
+                  Web Portal Data
                 </a>
               </li>
+              <hr>
               <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="#">
                   <svg class="bi">

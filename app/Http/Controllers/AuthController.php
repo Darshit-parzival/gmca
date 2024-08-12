@@ -11,24 +11,37 @@ class AuthController extends Controller
         return view('admin.login');
     }
     
-    public function login(Request $req){
-        $req->validate([
-                "email"=>"required|email",
-                "password"=>"required"
+    public function login(Request $req)
+    {
+    $req->validate([
+        "email" => "required|email",
+        "password" => "required"
+    ]);
+
+    $existingUser = AdminModel::where('email', $req->email)->first();
+
+    if ($existingUser) {
+        // if (md5($req->password) == $existingUser->password) {
+        if (($req->password) == $existingUser->password) {
+
+            session([
+                'email' => $req->email,
+                'isadmin' => $existingUser->isadmin,
+                'isfaculty' => $existingUser->isfaculty,
+                'isclubco' => $existingUser->isclubco,
+                'islibrarian' => $existingUser->islibrarian,
+                'isstaff' => $existingUser->isstaff
             ]);
-        $existingUser = AdminModel::where('email', $req->email)->first();
-        if ($existingUser) {
-            if (md5($req->password) == $existingUser->password) {
-                // if ($req->password == $existingUser->password) {
-                session(['email' => $req->email]);
-                return redirect("/admin");
-            } else {
-                return redirect()->back()->with('error', 'Invalid email or password');
-            }
+
+            return redirect("/admin");
         } else {
             return redirect()->back()->with('error', 'Invalid email or password');
         }
-    } 
+    } else {
+        return redirect()->back()->with('error', 'Invalid email or password');
+    }
+    }
+ 
     public function logout(Request $req){
         $req->session()->flush();
         return redirect("/");
