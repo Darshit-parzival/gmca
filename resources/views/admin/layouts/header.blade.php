@@ -332,6 +332,14 @@
                   Web Portal Data
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="/admin/students">
+                  <svg class="bi">
+                    <use xlink:href="#file-earmark-text" />
+                  </svg>
+                   Student Data
+                </a>
+              </li>
               <hr>
               <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="#">

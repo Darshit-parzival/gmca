@@ -9,7 +9,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DummyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\WebPortalController;
-
+use App\Http\Controllers\StudentController;
 // Client Routes
 Route::get('/', function () {
     return view('index');
@@ -77,4 +77,11 @@ Route::get('/admin/webportal/vision', [WebPortalController::class, 'view_webport
 Route::post('/admin/webportal/vision/add', [WebPortalController::class, 'vision_add']);
 Route::post('/admin/webportal/mission', [WebPortalController::class, 'view_webportal']);
 Route::post('/admin/webportal/mission/add', [WebPortalController::class, 'mission_add']);
+
+
+//Student Routes
+Route::get('/admin/students', [StudentController::class, 'view_students']);
+Route::post('/student/add', [StudentController::class, 'add']);
+Route::post('/student/edit', [StudentController::class, 'edit']);
+Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
 // });
