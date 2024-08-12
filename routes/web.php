@@ -11,6 +11,9 @@ use App\Http\Controllers\EventController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/student', function () {
+    return view('students/index');
+});
 
 //Authentication Routes
 route::get('/admin/login',[AuthController::class,'view']);
