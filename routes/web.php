@@ -10,6 +10,7 @@ use App\Http\Controllers\DummyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\WebPortalController;
 
+
 // Client Routes
 
 route::get('/', [IndexController::class, 'view_index']);

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\WebPortalModel;
 use App\Models\NewsModel;
 use Illuminate\Support\Facades\File;
-
 class IndexController extends Controller
 {
     function view_index()
