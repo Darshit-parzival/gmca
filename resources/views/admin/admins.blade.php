@@ -30,7 +30,7 @@
         @if (!$admins->isEmpty())
             <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
                 <thead>
-                    <tr class="table-dark">
+                    <tr>
                         <th>Id</th>
                         <th>Username</th>
                         <th>Email</th>

@@ -47,19 +47,19 @@
                     <td>{{ $student->graduation_stream }}</td>
                     <td>{{ $student->admission_cat }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editStudentModal{{ $student->id }}">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editStudentModal{{ $student->stud_id }}">
                             Edit
                         </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteStudentModal{{ $student->id }}">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteStudentModal{{ $student->stud_id }}">
                             Delete
                         </button>
                     </td>
                 </tr>
 
                 <!-- Confirm Delete Modal -->
-                <div class="modal fade" id="confirmDeleteStudentModal{{ $student->id }}" tabindex="-1" aria-labelledby="confirmDeleteStudentModalLabel{{ $student->id }}" aria-hidden="true">
+                <div class="modal fade" id="confirmDeleteStudentModal{{ $student->stud_id }}" tabindex="-1" aria-labelledby="confirmDeleteStudentModalLabel{{ $student->stud_id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -71,18 +71,18 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <a href="{{ url('/student/delete/' . $student->id) }}" class="btn btn-danger">Delete</a>
+                                <a href="{{ url('/student/delete/' . $student->stud_id) }}" class="btn btn-danger">Delete</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Edit Modal -->
-                <div class="modal fade" id="editStudentModal{{ $student->id }}" tabindex="-1" aria-labelledby="editStudentModalLabel{{ $student->id }}" aria-hidden="true">
+                <div class="modal fade" id="editStudentModal{{ $student->stud_id }}" tabindex="-1" aria-labelledby="editStudentModalLabel{{ $student->stud_id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editStudentModalLabel{{ $student->id }}">Edit Student</h5>
+                                <h5 class="modal-title" id="editStudentModalLabel{{ $student->stud_id }}">Edit Student</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form method="post" action="{{ url('/student/edit') }}" enctype="multipart/form-data">
@@ -281,6 +281,18 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="mt-4">
+            @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
+            @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+        </div>
     </div>
         @else
         <div class="p-5 m-5 text-center">

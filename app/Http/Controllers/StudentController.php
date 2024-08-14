@@ -76,11 +76,11 @@ class StudentController extends Controller
         
         $student->save();
     
-        return redirect('/students')->with('success', 'Student added successfully.');
+        return redirect('/admin/students')->with('success', 'Student added successfully.');
     }
     
     public function edit(Request $req){
-        $student = StudentModel::find($req->id);
+        $student = StudentModel::find($req->stud_id);
     
         $student->enroll = $req->enroll;
         $student->fname = $req->fname;
@@ -93,7 +93,7 @@ class StudentController extends Controller
         $student->email = $req->email;
         $student->admission_year = $req->admission_year;
         $student->aadhar = $req->aadhar;
-        $student->isstudent = $req->isstudent;
+        $student->isstudent = 1;
         $student->caste_type = $req->caste_type;
         $student->abc_id = $req->abc_id;
         $student->address = $req->address;
@@ -120,6 +120,6 @@ class StudentController extends Controller
         
         $student->save();
     
-        return redirect('/students')->with('success', 'Student updated successfully.');
+        return redirect('/admin/students')->with('success', 'Student updated successfully.');
     }
 }
