@@ -123,7 +123,7 @@
                     </div>
                     <div class="social-plateforms">
                         <div class="header-top-right">
-                            <!-- <div class="content">
+                            <div class="content">
                                 <a href="#"><i class="zmdi zmdi-account"></i> My Account</a>
                                 <ul class="account-dropdown">
                                     <li><a href="#">My Account</a></li>
@@ -131,7 +131,7 @@
                                     <li><a href="#">Register</a></li>
                                     <li><a href="#">Blog</a></li>
                                 </ul>
-                            </div> -->
+                            </div>
                             <div class="content">
                                 <a href="https://www.facebook.com/profile.php?id=100083537171825" target="_blank"><i class="bi bi-facebook"></i></a>
                             </div>
@@ -158,18 +158,44 @@
                                     <div class="mainmenu hidden-sm hidden-xs">
                                         <nav>
                                             <ul id="nav">
-                                                <li class="current"><a href="/">Home</a></li>
-                                                <li><a href="/about">About</a></li>
-                                                <li><a href="/staff">Staff</a> </li>
-                                                <li><a href="event.php">Event</a></li>
-                                                <li><a href="/gallery">Gallery</a></li>
+                                                <li class="current"><a href="/">Home</a>
+                                                <ul class="account-dropdown">
+                                                    <li><a href="#">Menu 1</a></li>
+                                                    <li><a href="">Menu 2</a></li>
+                                                    <li><a href="">Menu 3</a></li>
+                                                </ul>
+                                                </li>
+                                                <li><a href="/about">About</a><ul>
+                                                    <li><a href="">Menu 1</a></li>
+                                                    <li><a href="">Menu 2</a></li>
+                                                    <li><a href="">Menu 3</a></li>
+                                                </ul></li>
+                                                <li><a href="/staff">Staff</a><ul>
+                                                    <li><a href="">Menu 1</a></li>
+                                                    <li><a href="">Menu 2</a></li>
+                                                    <li><a href="">Menu 3</a></li>
+                                                </ul> </li>
+                                                <li><a href="event.php">Event</a><ul>
+                                                    <li><a href="">Menu 1</a></li>
+                                                    <li><a href="">Menu 2</a></li>
+                                                    <li><a href="">Menu 3</a></li>
+                                                </ul></li>
+                                                <li><a href="/gallery">Gallery</a><ul>
+                                                    <li><a href="">Menu 1</a></li>
+                                                    <li><a href="">Menu 2</a></li>
+                                                    <li><a href="">Menu 3</a></li>
+                                                </ul></li>
                                                 <li>
                                                     <a href="academic.php">Academic</a>
                                                     <ul>
                                                         <li><a href="/student">Student Section</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="contact.php">Contact</a><ul>
+                                                    <li><a href="">Menu 1</a></li>
+                                                    <li><a href="">Menu 2</a></li>
+                                                    <li><a href="">Menu 3</a></li>
+                                                </ul></li>
                                             </ul>
                                         </nav>
                                     </div>

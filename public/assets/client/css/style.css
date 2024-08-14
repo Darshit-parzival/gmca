@@ -752,27 +752,36 @@ body {
     font-size: 24px
 }
 #nav li ul {
-    display: none; /* Hide submenu initially */
-    position: absolute;
-    padding: 0;
-    margin-top: -40px;
     min-width: max-content;
     max-height: max-content;
-    padding: 9px 1px;
-    top: 100%; /* Position submenu below the parent */
-    left: 0;
+    /* padding: 9px 1px; */
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: -40px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    padding: 5px 19px 6px;
+    position: absolute;
+    left: 0;
+    text-align: left;
+    top: 100%;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+    -webkit-transition: all 0.1s ease 0s;
+    transition: all 0.1s ease 0s;
+    z-index: -99;
 }
 
 #nav li:hover ul {
-    display: block; /* Show submenu on hover */
-}
-
-#nav li ul li {
-    display: block; /* Make submenu items block elements */
-    margin: 0;
-    width: auto;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    z-index: 9999; 
 }
 
 #nav li ul li a {
@@ -782,11 +791,13 @@ body {
     font-size: 12px;
     text-transform: uppercase;
     font-family: "montserratregular";
-    width: 250px; /* Adjust as needed */
+    display: block;
+    padding: 5px 0;
 }
 
 #nav li ul li a:hover {
-    background-color: #f0f0f0; /* Add hover effect for submenu items */
+    color: #e67f22; 
+    text-decoration: underline;
 }
 
 #dropdown li ul.submenu {

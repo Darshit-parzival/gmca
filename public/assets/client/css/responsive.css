@@ -398,6 +398,9 @@
         line-height: 46px;
         padding-bottom: 22px;
     }
+    .logo{
+        padding-top: 20px;
+    }
     .single-event-text {padding: 29px 21px 35px;}
     .footer-img {height: 59px; width: 59px;}
     .footer-img a::after {margin: -13px auto 0;}
