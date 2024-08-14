@@ -17,6 +17,9 @@ use App\Http\Controllers\IndexController;
 route::get('/', [IndexController::class, 'view_index']);
 
 
+Route::get('/student', function () {
+    return view('students/index');
+});
 Route::get('/about', function () {
     return view('about');
 });
