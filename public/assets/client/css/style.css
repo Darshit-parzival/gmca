@@ -754,7 +754,6 @@ body {
 #nav li ul {
     min-width: max-content;
     max-height: max-content;
-    /* padding: 9px 1px; */
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin-top: -40px;
