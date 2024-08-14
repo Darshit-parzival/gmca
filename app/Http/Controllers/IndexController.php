@@ -15,5 +15,6 @@ class IndexController extends Controller
         $about_data = WebPortalModel::where('webportal_type', 'about')->first();
         $vision_data = WebPortalModel::where('webportal_type', 'vision')->first();
         return view('index', compact('webportal_datas'));
+        // hello
     }
 }
