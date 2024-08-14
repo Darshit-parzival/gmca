@@ -13,7 +13,8 @@ class WebPortalController extends Controller
         $webportal_datas = WebPortalModel::where('webportal_type', 'slider')->get();
         $about_data = WebPortalModel::where('webportal_type', 'about')->first();
         $vision_data = WebPortalModel::where('webportal_type', 'vision')->first();
-        return view('admin.webportal', compact('webportal_datas', 'about_data', 'vision_data'));
+        $mission_data = WebPortalModel::where('webportal_type', 'mission')->first();
+        return view('admin.webportal', compact('webportal_datas', 'about_data', 'vision_data','mission_data'));
     }
 
     public function add(Request $req)
@@ -101,6 +102,38 @@ class WebPortalController extends Controller
         $webportal->save();
 
         return redirect()->back()->with('success', 'Vision section added/updated successfully!');
+    }
+
+    public function mission_add(Request $req)
+    {
+        $req->validate([
+            'mission_file' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf,doc,docx',
+            'mission_details' => 'required|string|max:2000',
+        ]);
+
+        $fileName = time() . '.' . $req->file('mission_file')->extension();
+        $req->file('mission_file')->move(public_path('assets/admin/static/mission'), $fileName);
+
+        $webportal = WebPortalModel::where('webportal_type', 'mission')->first();
+
+        if ($webportal) {
+            $oldFile = public_path('assets/admin/static/mission/') . $webportal->webportal_file;
+            if (File::exists($oldFile)) {
+                File::delete($oldFile);
+            }
+
+            $webportal->webportal_file = $fileName;
+            $webportal->webportal_details = $req->mission_details;
+        } else {
+            $webportal = new WebPortalModel;
+            $webportal->webportal_type = 'mission';
+            $webportal->webportal_file = $fileName;
+            $webportal->webportal_details = $req->mission_details;
+        }
+
+        $webportal->save();
+
+        return redirect()->back()->with('success', 'Mission section added/updated successfully!');
     }
 
     public function change_status($id)

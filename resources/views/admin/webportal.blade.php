@@ -198,7 +198,8 @@
                         <div class="container mt-5">
                             <div class="d-flex justify-content-between w-100">
                                 <h5 class="mb-4">Update Vision</h5>
-                                <h5 class="mb-4"><a href="" data-bs-toggle="modal" data-bs-target="#visionModal"> Current Vision</a></h5>
+                                <h5 class="mb-4"><a href="" data-bs-toggle="modal"
+                                        data-bs-target="#visionModal"> Current Vision</a></h5>
                             </div>
                         </div>
                         <form action="{{ url('/admin/webportal/vision/add') }}" class="mb-4" method="POST"
@@ -217,7 +218,8 @@
                         <div class="container mt-5">
                             <div class="d-flex justify-content-between w-100">
                                 <h5 class="mb-4">Update Mission</h5>
-                                <h5 class="mb-4"><a href=""> Current Mission</a></h5>
+                                <h5 class="mb-4"><a href="" data-bs-toggle="modal"
+                                    data-bs-target="#missionModal"> Current Mission</a></h5>
                             </div>
                         </div>
                         <form action="{{ url('/admin/webportal/mission/add') }}" method="POST"
@@ -302,8 +304,8 @@
         </div>
     </div>
 
-     <!-- Modal for Current Vision -->
-     <div class="modal fade" id="visionModal" tabindex="-1" aria-labelledby="visionModalLabel" aria-hidden="true">
+    <!-- Modal for Current Vision -->
+    <div class="modal fade" id="visionModal" tabindex="-1" aria-labelledby="visionModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -313,11 +315,33 @@
                 <div class="modal-body">
                     @if ($vision_data)
                         <a href="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
-                           target="_blank" class="img-fluid mb-3">Vision File</a>
-                        <h6><u>Vision Description</u></h6>
+                            target="_blank" class="img-fluid mb-3">Vision File</a>
+                        <h6 class="mt-3"><u>Vision Description</u></h6>
                         <p>{{ $vision_data->webportal_details }}</p>
                     @else
                         <p>No Vision data available.</p>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Current Mission -->
+    <div class="modal fade" id="missionModal" tabindex="-1" aria-labelledby="missionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">Current Mission Page</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @if ($mission_data)
+                        <a href="{{ asset('assets/admin/static/mission/' . $mission_data->webportal_file) }}"
+                            target="_blank" class="img-fluid mb-3">Mission File</a>
+                        <h6 class="mt-3"><u>Mission Description</u></h6>
+                        <p>{{ $mission_data->webportal_details }}</p>
+                    @else
+                        <p>No Mission data available.</p>
                     @endif
                 </div>
             </div>
