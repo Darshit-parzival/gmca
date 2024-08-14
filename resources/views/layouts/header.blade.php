@@ -71,6 +71,7 @@
     {{--
     <link rel="stylesheet" href="../css/responsive.css"> --}}
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/startpopup.css') }}">
 
     <!-- Modernizr JS
     ============================================ -->

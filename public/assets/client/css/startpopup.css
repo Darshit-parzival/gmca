@@ -1,0 +1,58 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    margin-top: -10px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content ul {
+    list-style-type: disc; /* Sets the bullet style */
+    padding-left: 20px; /* Adds some space before the bullets */
+    margin-top: 10px; /* Adds space above the list */
+}
+
+.modal-content li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+.modal-content h2 {
+    text-align: center; /* Centers the text */
+    margin-top: 20px; /* Adds space above the header */
+    margin-bottom: 20px; /* Adds space below the header */
+}
