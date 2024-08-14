@@ -10,6 +10,7 @@ use App\Http\Controllers\DummyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\WebPortalController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\StudentController;
 
 
 // Client Routes
