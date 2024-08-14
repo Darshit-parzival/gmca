@@ -90,7 +90,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"/>
 
     <style>
         .header-top {
@@ -133,13 +133,13 @@
                                 </ul>
                             </div> -->
                             <div class="content">
-                                <a href="https://www.facebook.com/profile.php?id=100083537171825" target="_blank"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100083537171825" target="_blank"><i class="mdi mdi-facebook"></i></a>
                             </div>
                             <div class="content">
-                                <a href="https://www.instagram.com/gmca_maninagar/" target="_blank"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.instagram.com/gmca_maninagar/" target="_blank"><i class="mdi mdi-instagram"></i></a>
                             </div>
                             <div class="content">
-                                <a href="https://www.linkedin.com/school/government-mca-college-maninagar-ahmedabad/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/school/government-mca-college-maninagar-ahmedabad/" target="_blank"><i class="mdi mdi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
