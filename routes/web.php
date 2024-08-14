@@ -12,6 +12,7 @@ use App\Http\Controllers\WebPortalController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\StudentController;
 
+
 // Client Routes
 
 route::get('/', [IndexController::class, 'view_index']);
