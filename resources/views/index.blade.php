@@ -224,34 +224,39 @@
                 <p> To provide a conducive environment so as to achieve excellence in teaching-learning, and research and development activities.</p>
             </li>
         </ul>
+        <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank">Vision & Mission</a>
     </div>
 </div>
 <script>
     // Get the modal
-    var modal = document.getElementById("visionMissionModal");
+var modal = document.getElementById("visionMissionModal");
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-    // Show the modal when the page loads
-    window.onload = function () {
-        modal.style.display = "block";
-        // if (!sessionStorage.getItem('visited')) {
-        //     sessionStorage.setItem('visited', 'true');
-        // }
-    };
+// Show the modal when the page loads
+window.onload = function() {
+    modal.style.display = "block";
+    document.body.classList.add('no-scroll'); // Disable scrolling
+    // if (!sessionStorage.getItem('visited')) {
+    //     sessionStorage.setItem('visited', 'true');
+    // }
+};
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+    document.body.classList.remove('no-scroll'); // Enable scrolling
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
         modal.style.display = "none";
-    };
+        document.body.classList.remove('no-scroll'); // Enable scrolling
+    }
+};
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
 
 </script>
 <!--End of Fun Factor Area-->

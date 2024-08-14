@@ -56,3 +56,7 @@
     margin-top: 20px; /* Adds space above the header */
     margin-bottom: 20px; /* Adds space below the header */
 }
+
+.no-scroll {
+    overflow: hidden; /* Disables scrolling */
+}
