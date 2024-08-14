@@ -9,11 +9,11 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DummyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\WebPortalController;
+use App\Http\Controllers\IndexController;
 
 // Client Routes
-Route::get('/', function () {
-    return view('index');
-});
+
+route::get('/', [IndexController::class, 'view_index']);
 
 
 Route::get('/about', function () {

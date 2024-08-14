@@ -26,27 +26,28 @@
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="{{ asset('assets/static/1.jpg') }}" alt="alt">
-                <div class="carousel-caption">
-                    <h1 class="title1">First Title</h1>
-                    <p style="font-size: 20px;">First Description</p>
+            @php
+                $active = false;
+            @endphp
+            @foreach ($webportal_datas as $index => $item)
+                @if ($item->webportal_status === 1)
+                    <div class="item {{ !$active ? 'active' : '' }}">
+                        @php
+                            $active = true;
+                        @endphp
+                        <img src="{{ asset('/assets/admin/images/slider/' . $item->webportal_file) }}" alt="alt">
+                        <div class="carousel-caption">
+                            <h1 class="title1">{{ $item->webportal_title }}</h1>
+                            <p style="font-size: 20px;">{{ $item->webportal_details }}</p>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+            @if (!$active)
+                <div class="item active">
+                    <p>No slides available</p>
                 </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('assets/static/2.jpg') }}" alt="alt">
-                <div class="carousel-caption">
-                    <h1 class="title1">Second Title</h1>
-                    <p style="font-size: 20px;">Second Description</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('assets/static/3.jpg') }}" alt="alt">
-                <div class="carousel-caption">
-                    <h1 class="title1">Third Title</h1>
-                    <p style="font-size: 20px;">Third Description</p>
-                </div>
-            </div>
+            @endif
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -56,8 +57,6 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
-
     </div>
     <!-- Button trigger modal -->
 
@@ -70,9 +69,13 @@
                     <div class="about-container">
                         <h3>About GMCA</h3>
                         <p style=" text-align: justify;font-size: 15px;">
-                            Government MCA college Maninagar, Ahmedabad is the first Government MCA College in Gujarat. It was established in June 2012 with facilities to run Master of Computer Application. In the year 2012, course was introduced with an intake of 60 students. The college has well-established Central Learning resource centers like Central library, Central Computer Centre, Entrepreneurship Development Cell, Continuing Education Centre and Physical Education Section.
+                            Government MCA college Maninagar, Ahmedabad is the first Government MCA College in Gujarat. It
+                            was established in June 2012 with facilities to run Master of Computer Application. In the year
+                            2012, course was introduced with an intake of 60 students. The college has well-established
+                            Central Learning resource centers like Central library, Central Computer Centre,
+                            Entrepreneurship Development Cell, Continuing Education Centre and Physical Education Section.
                         </p>
-                        <a class="button-default" href="/about">More</a>	      
+                        <a class="button-default" href="/about">More</a>
                     </div>
                 </div>
             </div>
@@ -111,8 +114,8 @@
             <a class="button-default" href="/news">Read All News</a>
 
             <!-- Notice --><!--
-        <div class="latest-area bg-white">
-            <div class="container"> -->
+                <div class="latest-area bg-white">
+                    <div class="container"> -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title-wrapper">
@@ -156,8 +159,7 @@
                         </div>
                         <p style=" text-align: justify;">
                         <ul>
-                            <li>Provide value-based quality education for computer science applications which enable
-                                students to solve real-life problems of society.</li>
+                            <li>Provide value-based quality education for computer science applications which enable students to solve real-life problems of society.</li>
                             <li><br />
                                 <a href="assets/pdf/Vision Document GMCA.pdf" class="text-white vis" target="_blank"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

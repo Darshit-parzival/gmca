@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('news_notice_data', function (Blueprint $table) {
             $table->id();
+            $table->string('type',7);
             $table->string('title', 30);
             $table->string('details', 250);
             $table->string('report', 30);
