@@ -16,7 +16,8 @@
 
     <!-- Bootstrap CSS
     ============================================ -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/client/css/bootstrap.min.css') }}"> --}}
+    {{--
+    <link rel="stylesheet" href="{{ asset('assets/client/css/bootstrap.min.css') }}"> --}}
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -67,7 +68,8 @@
 
     <!-- Responsive CSS
     ============================================ -->
-    {{-- <link rel="stylesheet" href="../css/responsive.css"> --}}
+    {{--
+    <link rel="stylesheet" href="../css/responsive.css"> --}}
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
 
     <!-- Modernizr JS
@@ -86,9 +88,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
+    <style>
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically centers the content if needed */
+        }
+
+        .container {
+            flex-grow: 1;
+            /* This allows the container to take up all available space */
+        }
+    </style>
 </head>
 
 <body>
@@ -102,19 +118,28 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
-                                <div class="header-top-right">
-                                    <!-- <div class="content">
-                                            <a href="#"><i class="zmdi zmdi-account"></i> My Account</a>
-                                            <ul class="account-dropdown">
-                                                <li><a href="#">My Account</a></li>
-                                                <li><a href="#">Log In</a></li>
-                                                <li><a href="#">Register</a></li>
-                                                <li><a href="#">Blog</a></li>
-                                            </ul>
-                                        </div> -->
-                                    <!--                                                            <div class="content"><a href="#"><i class="zmdi zmdi-favorite"></i> Wishlist</a></div>
-                                        <div class="content"><a href="#"><i class="zmdi zmdi-shopping-basket"></i> Chechout</a></div>-->
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-plateforms">
+                        <div class="header-top-right">
+                            <!-- <div class="content">
+                                <a href="#"><i class="zmdi zmdi-account"></i> My Account</a>
+                                <ul class="account-dropdown">
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Log In</a></li>
+                                    <li><a href="#">Register</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+                            </div> -->
+                            <div class="content">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                            </div>
+                            <div class="content">
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                            </div>
+                            <div class="content">
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>

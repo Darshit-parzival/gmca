@@ -23,6 +23,10 @@
 @media (min-width: 992px) and (max-width: 1169px) {
     .container {width:970px}
     .as-mainwrapper.wrapper-boxed {width: 970px}
+    .social-plateforms{
+        width: 100%;
+        justify-content: flex-start;
+    }
     .as-mainwrapper.wrapper-boxed .header-logo-menu.stick {width: 970px}
     .header-top::before {width: 53%;}
     .header-top::after {right: 53%;}
@@ -176,22 +180,26 @@
 @media (max-width: 767px) {
     .container {width:300px}
     .as-mainwrapper.wrapper-boxed {width:300px}
+    .social-plateforms{
+        width: 527%;
+        justify-content: flex-start;
+    }
     .mobile-menu-area {display: block}
     .as-mainwrapper.wrapper-boxed .header-logo-menu.stick {width: 300px;}
     .header-logo-menu.stick, .as-mainwrapper.wrapper-boxed .header-logo-menu.stick, .header-logo-menu.sticker.fixed {position: inherit;}
     .btn {margin-bottom: 10px; padding: 6px 10px;}
-    .header-top-right > .content {
+    /* .header-top-right > .content {
         margin-left: 7px;
         padding-left: 0;
         z-index: 9;
-    }
-    .header-top-right > .content:first-child {margin: 0; padding: 0;}
+    } */
+    /* .header-top-right > .content:first-child {margin: 0; padding: 0;} */
     .header-top::before {width: 91%;}
     .header-top::after {right: 91%;}
     .header-top-right > .content i {margin-right: 4px;}
-    .header-top-right > .content::after, .nivo-directionNav, .slider-two .preview-2 .nivo-controlNav, .banner-content h1::after, .subscribe-form::before, .header-two .header-top-right span:first-child, .slider-three .preview-2 .nivo-controlNav {
+    /* .header-top-right > .content::after, .nivo-directionNav, .slider-two .preview-2 .nivo-controlNav, .banner-content h1::after, .subscribe-form::before, .header-two .header-top-right span:first-child, .slider-three .preview-2 .nivo-controlNav {
         display: none;
-    }
+    } */
     .banner-content h1 {
         font-size: 22px;
         line-height: 30px;
