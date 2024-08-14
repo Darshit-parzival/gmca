@@ -133,13 +133,13 @@
                                 </ul>
                             </div> -->
                             <div class="content">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100083537171825" target="_blank"><i class="bi bi-facebook"></i></a>
                             </div>
                             <div class="content">
-                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.instagram.com/gmca_maninagar/" target="_blank"><i class="bi bi-instagram"></i></a>
                             </div>
                             <div class="content">
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/school/government-mca-college-maninagar-ahmedabad/" target="_blank"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
