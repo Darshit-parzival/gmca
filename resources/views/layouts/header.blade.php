@@ -122,11 +122,10 @@
                 <div class="header-logo-menu sticker headerdisplaynone headerdisplayblock">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-sm-12">
-                                <div class="logo">
+                            <div class="col-md-4 col-sm-12" style="display: grid; place-items: center;">
+                                <div class="logo" style="padding: 0px; align-items: center;">
                                     <a href="/"><img src="{{ asset('assets/static/logo_with_name.png') }}"
                                             alt="GMCA"></a>
-
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -142,7 +141,7 @@
                                                 <li>
                                                     <a href="academic.php">Academic</a>
                                                     <ul>
-                                                        <li><a href="">Student Section</a></li>
+                                                        <li><a href="/student">Student Section</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="contact.php">Contact</a></li>

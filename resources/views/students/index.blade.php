@@ -2,19 +2,19 @@
 
 @section('main-section')
 <style>
-    body {
+    /* body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f8f9fa;
         color: #333;
-    }
+    } */
 
-    .container {
+    /* .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
-    }
+    } */
 
     main {
         display: grid;

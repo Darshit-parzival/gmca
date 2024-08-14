@@ -382,7 +382,8 @@ body {
     background: #2d3e50 none repeat scroll 0 0;
     color: #ffffff;
     font-size: 13px;
-    position: relative
+    position: relative;
+    height: 42px;
 }
 .header-top:before, .about-area:before, .newsletter-area:before {
     content: "";
@@ -408,7 +409,7 @@ body {
     top: 10px;
     width: 0;
 }
-.header-top span {padding: 14px 0; display: inline-block}
+.header-top span {padding: 20px 0; display: inline-block}
 .header-top-right > .content {
     display: inline-block;
     font-family: "montserratregular";
