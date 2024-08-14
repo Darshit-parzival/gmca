@@ -4,7 +4,8 @@
     <title>GMCA Admin</title>
     <link href="{{asset('assets/admin/css/style.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/admin/css/custom.css')}}" rel="stylesheet" />
-
+    
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"/>
   </head>
 
   <body>
@@ -115,7 +116,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/admins"
                   aria-expanded="false"
-                  ><i class="mdi mdi-chart-bar"></i
+                  ><i class="mdi mdi-account-tie"></i
                   ><span class="hide-menu">Admins</span></a
                 >
               </li>
@@ -124,7 +125,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/faculties"
                   aria-expanded="false"
-                  ><i class="mdi mdi-chart-bubble"></i
+                  ><i class="mdi mdi-human-male-board-poll"></i
                   ><span class="hide-menu">Faculties</span></a
                 >
               </li>
@@ -133,7 +134,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/events"
                   aria-expanded="false"
-                  ><i class="mdi mdi-border-inside"></i
+                  ><i class="mdi mdi-calendar-clock"></i
                   ><span class="hide-menu">Events</span></a
                 >
               </li>
@@ -142,7 +143,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/gallery"
                   aria-expanded="false"
-                  ><i class="mdi mdi-blur-linear"></i
+                  ><i class="mdi mdi-image-multiple"></i
                   ><span class="hide-menu">Gallery</span></a
                 >
               </li>
@@ -151,7 +152,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/news"
                   aria-expanded="false"
-                  ><i class="mdi mdi-blur-linear"></i
+                  ><i class="mdi mdi-newspaper"></i
                   ><span class="hide-menu">Notice</span></a
                 >
               </li>
@@ -160,7 +161,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/webportal"
                   aria-expanded="false"
-                  ><i class="mdi mdi-blur-linear"></i
+                  ><i class="mdi mdi-account-wrench-outline"></i
                   ><span class="hide-menu">Web Portal</span></a
                 >
               </li>
@@ -169,7 +170,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="/admin/students"
                   aria-expanded="false"
-                  ><i class="mdi mdi-blur-linear"></i
+                  ><i class="mdi mdi-account-school"></i
                   ><span class="hide-menu">Students</span></a
                 >
               </li>
