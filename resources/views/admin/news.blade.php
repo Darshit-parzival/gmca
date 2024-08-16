@@ -34,6 +34,13 @@
                             <span class="text-danger mt-2">@error('txttitle') {{ $message }} @enderror</span>
                         </div>
                         <div class="mb-3">
+                            <label for="txttype" class="form-label">Type</label>
+                            <select class="form-control" name="txttype" id="txttype">
+                                <option value="news">News</option>
+                                <option value="notice">Notice</option>
+                            </select>
+                        </div>                        
+                        <div class="mb-3">
                             <label for="txtdetails" class="form-label">Details</label>
                             <textarea class="form-control" name="txtdetails" id="txtdetails"></textarea>
                         </div>
