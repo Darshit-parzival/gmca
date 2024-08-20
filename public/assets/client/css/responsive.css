@@ -179,6 +179,12 @@
 /* small mobile :320px. */
 @media (max-width: 767px) {
     .container {width:300px}
+    .about-area .container {width:90%}
+    .about-container h3{
+        margin-top: 7px;
+        margin-bottom: 35px;
+    }
+
     .as-mainwrapper.wrapper-boxed {width:300px}
     .social-plateforms{
         width: 527%;
@@ -236,8 +242,8 @@
     .section-margin {margin: 60px 0 80px 0}
     .section-bottom-padding {padding: 0 0 60px;}
     .course-page {padding-top: 80px;}
-    .about-area::before {width: 74%;}    
-    .about-area::after {left: 74%;}
+    .about-area::before {width: 74%; height: 80px;}    
+    .about-area::after {left: 74%; border-width: 40px 20px;}
     .single-item {margin-bottom: 80px;padding: 0 16px;}
     .single-item-image {top: -20px;}
     .button-large.button-default {margin-top: 5px;}
