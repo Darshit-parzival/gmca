@@ -209,7 +209,7 @@
                 <p>Provide value-based quality education for computer science applications which enable students to solve real-life problems of society.</p>
             </li>
             <li>
-                <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank">Vision Document</a>
+                <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank"><i class="mdi mdi-paperclip"></i> Vision Document</a>
             </li>
         </ul>
         <h4>Our Mission</h4>
@@ -227,7 +227,7 @@
                 <p> To provide a conducive environment so as to achieve excellence in teaching-learning, and research and development activities.</p>
             </li>
             <li>
-                <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank">Mission Document</a>
+                <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank"><i class="mdi mdi-paperclip"></i> Mission Document</a>
             </li>
         </ul>
     </div>
