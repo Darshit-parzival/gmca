@@ -197,6 +197,14 @@
     .header-top::before {width: 91%;}
     .header-top::after {right: 91%;}
     .header-top-right > .content i {margin-right: 4px;}
+    .modal .modal-content{
+        width: 90%;
+    }
+    .modal .modal-content .popup-logo{
+        width: 80%;
+        align-self: center;
+    }
+    
     /* .header-top-right > .content::after, .nivo-directionNav, .slider-two .preview-2 .nivo-controlNav, .banner-content h1::after, .subscribe-form::before, .header-two .header-top-right span:first-child, .slider-three .preview-2 .nivo-controlNav {
         display: none;
     } */

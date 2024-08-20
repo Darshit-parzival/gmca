@@ -199,17 +199,20 @@
 </div>
 <div id="visionMissionModal" class="modal">
     <div class="modal-content">
-        <div style="width: 50%;">
+        <div class="popup-logo">
             <img src="{{asset('assets/static/logo_with_name.png')}}" alt="">
         </div>
         <span class="mdi mdi-close close"></span>
-        <h2>Our Vision</h2>
+        <h4>Our Vision</h4>
         <ul>
             <li>
                 <p>Provide value-based quality education for computer science applications which enable students to solve real-life problems of society.</p>
             </li>
+            <li>
+                <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank">Vision Document</a>
+            </li>
         </ul>
-        <h2>Our Mission</h2>
+        <h4>Our Mission</h4>
         <ul>
             <li>
                 <p> To equip our students with good knowledge, skills and attitude to solve real-life problems in the domain of computer applications.</p>
@@ -223,8 +226,10 @@
             <li>
                 <p> To provide a conducive environment so as to achieve excellence in teaching-learning, and research and development activities.</p>
             </li>
+            <li>
+                <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank">Mission Document</a>
+            </li>
         </ul>
-        <a href="{{asset('assets/static/dummy.pdf')}}" target="_blank">Vision & Mission</a>
     </div>
 </div>
 <script>
