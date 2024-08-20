@@ -2,6 +2,7 @@
 
 @section('main-section')
 <style>
+    
     .carousel-inner .item img {
         width: 100%;
         height: 600px;
@@ -241,8 +242,8 @@ var span = document.getElementsByClassName("close")[0];
 
 // Show the modal when the page loads
 window.onload = function() {
-    modal.style.display = "block";
     document.body.classList.add('no-scroll'); // Disable scrolling
+    modal.style.display = "block";
     // if (!sessionStorage.getItem('visited')) {
     //     sessionStorage.setItem('visited', 'true');
     // }

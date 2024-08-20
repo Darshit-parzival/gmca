@@ -205,6 +205,10 @@
         align-self: center;
     }
     
+    .sticker .container .row .gg .logo{
+        padding-top: 20px;
+    }
+    
     /* .header-top-right > .content::after, .nivo-directionNav, .slider-two .preview-2 .nivo-controlNav, .banner-content h1::after, .subscribe-form::before, .header-two .header-top-right span:first-child, .slider-three .preview-2 .nivo-controlNav {
         display: none;
     } */
@@ -406,7 +410,7 @@
         line-height: 46px;
         padding-bottom: 22px;
     }
-    .logo{
+    .sticker .container .row .gg .logo{
         padding-top: 20px;
     }
     .single-event-text {padding: 29px 21px 35px;}

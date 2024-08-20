@@ -148,8 +148,8 @@
                 <div class="header-logo-menu sticker headerdisplaynone headerdisplayblock">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-sm-12" style="display: grid; place-items: center;">
-                                <div class="logo" style="padding: 0px; align-items: center;">
+                            <div class="col-md-4 col-sm-12 gg" style="display: grid; place-items: center;">
+                                <div class="logo" style="align-items: center;">
                                     <a href="/"><img src="{{ asset('assets/static/logo_with_name.png') }}"
                                             alt="GMCA"></a>
                                 </div>

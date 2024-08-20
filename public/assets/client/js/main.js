@@ -5,10 +5,12 @@
      Menu Stick
      ---------------------------------*/
     $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 1) {
-            $('.sticker').addClass("stick");
-        } else {
-            $('.sticker').removeClass("stick");
+        if($(this).width() > 767){
+            if ($(this).scrollTop() > 1) {
+                $('.sticker').addClass("stick");
+            } else {
+                $('.sticker').removeClass("stick");
+            }
         }
     });
 
