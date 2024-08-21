@@ -75,7 +75,7 @@
 
     <!-- Modernizr JS
     ============================================ -->
-    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <!-- <script src="../js/modernizr-2.8.3.min.js"></script> -->
     <script src="{{ asset('assets/client/js/modernizr-2.8.3.min.js') }}"></script>
 
     <!-- Tab CSS from w3scholl
@@ -141,6 +141,9 @@
                             </div>
                             <div class="content">
                                 <a href="https://www.linkedin.com/school/government-mca-college-maninagar-ahmedabad/" target="_blank"><i class="mdi mdi-linkedin"></i></a>
+                            </div>
+                            <div class="content">
+                                <a href="https://www.youtube.com/channel/UCqELfLg-8aKMD6-L9MUWDMw/featured" target="_blank"><i class="mdi mdi-youtube"></i></a>
                             </div>
                         </div>
                     </div>

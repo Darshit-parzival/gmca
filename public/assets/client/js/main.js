@@ -106,13 +106,13 @@
     /*------------------------------------
      Video Player
      --------------------------------------*/
-    $(".player").YTPlayer({
-        showControls: false
-    });
+    // $(".player").YTPlayer({
+    //     showControls: false
+    // });
 
-    $(".player-small").YTPlayer({
-        showControls: false
-    });
+    // $(".player-small").YTPlayer({
+    //     showControls: false
+    // });
 
 
 

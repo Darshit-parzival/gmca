@@ -181,7 +181,7 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 
-<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
 
 <script>
     function initialize() {

@@ -204,7 +204,7 @@ body {
     width: 230px;
 }
 .section-title-wrapper:after {
-    background: rgba(0, 0, 0, 0) url("../img/icon/cap-dark.jpg") no-repeat scroll 0 0;
+    /* background: rgba(0, 0, 0, 0) url("../img/icon/cap-dark.jpg") no-repeat scroll 0 0; */
     bottom: -8px;
     color: #1bb4b9;
     content: "";
@@ -220,7 +220,7 @@ body {
 }
 .white .section-title h3, .white .section-title p {color: #ffffff;}
 .section-title-wrapper.white:before {background: #ffffff none repeat scroll 0 0;}
-.white.section-title-wrapper:after {background: rgba(0, 0, 0, 0) url("../img/icon/cap-white.jpg") repeat scroll 0 0;}
+/* .white.section-title-wrapper:after {background: rgba(0, 0, 0, 0) url("../img/icon/cap-white.jpg") repeat scroll 0 0;} */
 .carousel-style-one.owl-theme .owl-controls .owl-nav div {
     color: #2d3e50;
     display: inline-block;
@@ -418,7 +418,7 @@ body {
     display: inline-block;
     font-family: "montserratregular";
     margin-left: 13px;
-    padding-left: 17px;
+    padding-left: 25px;
     position: relative;
 }
 .header-top-right > .content > a {color: #fff}
@@ -428,7 +428,7 @@ body {
 .header-top-right > .content:after {
     background: #2d3e50 none repeat scroll 0 0;
     content: "";
-    height: 10px;
+    height: 17px;
     left: 0;
     position: absolute;
     top: 6px;
