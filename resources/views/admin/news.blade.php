@@ -62,6 +62,7 @@
             <tr class="table-dark">
                 <th>Id</th>
                 <th>Title</th>
+                <th>Type</th>
                 <th>Details</th>
                 <th>Report</th>
                 <th>Status</th>
@@ -73,6 +74,8 @@
             <tr>
                 <td>{{ $i + 1 }}</td>
                 <td>{{ $notice->title }}</td>
+                <td>{{ $notice->type }}</td>
+
                 <td>{{ $notice->details }}</td>
                 <td>
                     @if($notice->report)
