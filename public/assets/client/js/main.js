@@ -5,10 +5,12 @@
      Menu Stick
      ---------------------------------*/
     $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 1) {
-            $('.sticker').addClass("stick");
-        } else {
-            $('.sticker').removeClass("stick");
+        if($(this).width() > 767){
+            if ($(this).scrollTop() > 1) {
+                $('.sticker').addClass("stick");
+            } else {
+                $('.sticker').removeClass("stick");
+            }
         }
     });
 
@@ -104,13 +106,13 @@
     /*------------------------------------
      Video Player
      --------------------------------------*/
-    $(".player").YTPlayer({
-        showControls: false
-    });
+    // $(".player").YTPlayer({
+    //     showControls: false
+    // });
 
-    $(".player-small").YTPlayer({
-        showControls: false
-    });
+    // $(".player-small").YTPlayer({
+    //     showControls: false
+    // });
 
 
 
