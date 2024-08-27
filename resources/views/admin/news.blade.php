@@ -34,6 +34,13 @@
                             <span class="text-danger mt-2">@error('txttitle') {{ $message }} @enderror</span>
                         </div>
                         <div class="mb-3">
+                            <label for="txttype" class="form-label">Type</label>
+                            <select class="form-control" name="txttype" id="txttype" required>
+                                <option value="news">News</option>
+                                <option value="notice">Notice</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label for="txtdetails" class="form-label">Details</label>
                             <textarea class="form-control" name="txtdetails" id="txtdetails"></textarea>
                         </div>
@@ -45,6 +52,7 @@
                             <label for="txtstatus" class="form-label">Active</label>
                             <input type="checkbox" class="form-check-input" name="txtstatus" id="txtstatus" value="1">
                         </div>
+                       
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -134,6 +142,13 @@
                                     <label for="txttitle" class="form-label">Title</label>
                                     <input type="text" class="form-control" name="txttitle" id="txttitle" value="{{$notice->title}}">
                                     <span class="text-danger mt-2">@error('txttitle') {{ $message }} @enderror</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="txttype" class="form-label">Type</label>
+                                    <select class="form-control" name="txttype" id="txttype" required>
+                                        <option value="news" {{ $notice->type == 'news' ? 'selected' : '' }}>News</option>
+                                        <option value="notice" {{ $notice->type == 'notice' ? 'selected' : '' }}>Notice</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="txtdetails" class="form-label">Details</label>

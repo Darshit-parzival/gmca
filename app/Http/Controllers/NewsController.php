@@ -10,9 +10,8 @@ class NewsController extends Controller
 {
     public function view_news()
     {
-        $news= NewsModel::where('type','news')->get();
-        $notice= NewsModel::where('type','notice')->get();
-        return view('admin.news')->with(compact('news','notice')); 
+        $news= NewsModel::all();
+        return view('admin.news')->with(compact('news')); 
         // dd($notice);
         // dd($news);
     }
@@ -54,6 +53,7 @@ class NewsController extends Controller
         $id=$req->txtid;
         $news = NewsModel::findOrFail($id);
         $news->title = $req->input('txttitle');
+        $news->type = $req->input('txttype');
         $news->details = $req->input('txtdetails');
         $news->status = $req->input('txtstatus') ? true : false;
         if ($req->hasFile('txtreport')) {

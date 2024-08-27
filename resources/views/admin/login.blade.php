@@ -38,6 +38,10 @@
             @enderror
           </span>
         </div>
+        <div class="mb-3">
+          <optio
+        </div>
+        
         <div class="d-grid gap-2">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
