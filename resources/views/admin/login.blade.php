@@ -9,6 +9,7 @@
   <meta name="generator" content="Hugo 0.122.0">
   <title>Gmca admin</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+  <script src="{{asset('assets/admin/js/bootstrap.bundle.min.js')}}"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -54,14 +55,45 @@
         <div class="d-grid gap-2">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
-          <a href="#" class="text-sm-left d-block mt-3">Forgot Password?</a>
-          
-        @if(session('error'))
-              <div class="alert alert-danger">
-                  {{session('error') }}
-              </div>
-        @endif
+          <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" class="text-sm-left d-block mt-3">Forgot Password?</a>
+        <div class="mt-4">
+          @if(session('error'))
+          <div class="alert alert-danger">
+              {{ session('error') }}
+          </div>
+          @endif
+          @if(session('success'))
+          <div class="alert alert-success">
+              {{ session('success') }}
+          </div>
+          @endif
+        </div>
       </form>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="forgotPasswordForm" method="POST" action="/admin/forgot-password">
+            @csrf
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="txtemail" name="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Password</button>
+            <div id="responseMessage" class="mt-3"></div>
+          </form>
+          
+          <div id="responseMessage" class="mt-3"></div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

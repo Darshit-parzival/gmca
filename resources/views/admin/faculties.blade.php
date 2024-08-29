@@ -27,7 +27,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Designation</th>
-                <th colspan="2">Operation</th>
+                <th colspan="3">Operation</th>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +48,13 @@
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
                             Delete
                         </button>
+                    </td>
+                    <td>
+                        <form action="/admin/generate-password" method="post">
+                            @csrf
+                            <input type="hidden" id="txtid" name="txtid" value="{{$user->staff_id}}"/>
+                            <button type="submit" class="btn btn-warning btn-sm">Generate Password</button>
+                        </form>
                     </td>
                 </tr>
 

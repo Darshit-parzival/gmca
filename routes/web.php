@@ -35,6 +35,8 @@ route::get('/gallery', [DummyController::class, 'fetch_gallery']);
 Route::get('/admin/login', [AuthController::class, 'view']);
 Route::get('/admin/logout', [AuthController::class, 'logout']);
 Route::post('/admin/login', [AuthController::class, 'login']);
+Route::post('/admin/forgot-password', [AuthController::class, 'forgotPassword']);
+
 
 // Protected Routes (Require Authentication)
 Route::get('/admin', [AdminHomeController::class, 'view_admin']);
@@ -46,6 +48,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/admin/edit', [AdminController::class, 'edit']);
     Route::post('/admin/add', [AdminController::class, 'add']);
     Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
+    Route::post('/admin/generate-password', [AdminController::class, 'generatePassword']);
 
     // News Routes
     Route::get('/admin/news', [NewsController::class, 'view_news']);

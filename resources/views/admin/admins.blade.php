@@ -54,12 +54,14 @@
                                     Edit
                                 </button>
                             </td>
+                            
                             <td>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
                                     Delete
                                 </button>
                             </td>
+                            
                         </tr>
 
                         <!-- Confirm Delete Modal -->

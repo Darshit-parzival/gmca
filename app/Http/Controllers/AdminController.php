@@ -3,7 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminModel;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 class AdminController extends Controller
 {
     function view_admin() {
@@ -34,7 +35,7 @@ class AdminController extends Controller
         $admin->email = $req->txtemail;
         $admin->phone = $req->txtphone;
         $admin->gender = $req->txtgender;
-        $admin->password = md5($req->txtpass); 
+        $admin->password = bcrypt($req->txtpass); 
 
         if ($req->hasFile('txtphoto')) {
             $filename = time() . '.' . $req->file('txtphoto')->getClientOriginalExtension();
@@ -111,4 +112,21 @@ class AdminController extends Controller
         $admins = AdminModel::where('isfaculty',1)->get();
         return view('admin.faculties', compact('admins'));
     }
+    
+    public function generatePassword(Request $req)
+    {
+        $staff_id=$req->txtid;
+        $staff = AdminModel::findOrFail($staff_id);
+        $password = Str::random(8);
+        $staff->password = bcrypt($password);
+        $staff->save();
+        $details = [
+            'title' => 'Your New Password',
+            'body' => "Your new password is: $password"
+        ];
+        Mail::to($staff->email)->send(new \App\Mail\PasswordMail($details));
+        return redirect()->back()->with('success', 'Password generated and emailed successfully!');
+    }
+
+   
 }

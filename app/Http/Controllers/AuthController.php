@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminModel;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 class AuthController extends Controller
 {
     function view(){
@@ -50,4 +51,28 @@ class AuthController extends Controller
             return 'staff';
         }
     }
+    public function forgotPassword(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email',
+    ]);
+
+    $admin = AdminModel::where('email', $request->email)->first();
+    if ($admin) {
+        $password = Str::random(8);
+        $admin->password = bcrypt($password);
+        $admin->save();
+
+        $details = [
+            'title' => 'Your New Password',
+            'body' => "Your new password is: $password"
+        ];
+
+        Mail::to($admin->email)->send(new \App\Mail\PasswordMail($details));
+
+        return redirect('admin/login')->with('success','Password generated and emailed successfully!');
+    } else {
+        return redirect('admin/login')->with('error','This email is not registered!');
+    }
+}
 }
