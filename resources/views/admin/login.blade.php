@@ -38,9 +38,18 @@
             @enderror
           </span>
         </div>
-        <div class="mb-3">
-          <optio
+        {{-- <div class="mb-3">
+          <div class="mb-3">
+            <label for="txtrole" class="form-label">Choose role</label>
+            <select class="form-control" name="txtrole" id="txtrole" required>
+              <option value="admin">Admin</option>
+              <option value="faculty">Faculty</option>
+              <option value="librarian">Librarian</option>
+              <option value="staff">Staff</option>
+              <option value="coordinator">Coordinator</option>
+          </select>
         </div>
+        </div> --}}
         
         <div class="d-grid gap-2">
           <button type="submit" class="btn btn-primary">Login</button>

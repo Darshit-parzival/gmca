@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('type',7);
             $table->string('title', 30);
             $table->string('details', 250);
-            $table->string('report', 30);
+            $table->string('report', 30)->nullable();
             $table->boolean('status'); 
             $table->timestamps();
         });

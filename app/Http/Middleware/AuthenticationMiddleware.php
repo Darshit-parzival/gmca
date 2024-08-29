@@ -7,18 +7,20 @@ use Illuminate\Http\Request;
 
 class AuthenticationMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
-        if (session('email')!=NULL) {
-            return $next($request);
+        // Check if the user is logged in by verifying the 'email' session key
+        if (session('email') != null) {
+            $userRole = session('role');
+
+            // Allow if user role matches any of the allowed roles or is an admin
+            if (in_array($userRole, $roles) || $userRole === 'admin') {
+                return $next($request);
+            }
+
+            return redirect()->back()->with('error', "You don't have access to this page.");
         }
+
         return redirect('/admin/login');
     }
 }

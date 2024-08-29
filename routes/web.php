@@ -17,7 +17,6 @@ use App\Http\Controllers\StudentController;
 
 route::get('/', [IndexController::class, 'view_index']);
 
-
 Route::get('/student', function () {
     return view('students/index');
 });
@@ -38,55 +37,62 @@ Route::get('/admin/logout', [AuthController::class, 'logout']);
 Route::post('/admin/login', [AuthController::class, 'login']);
 
 // Protected Routes (Require Authentication)
-// Route::middleware(['auth'])->group(function () {
-// Admin Routes
 Route::get('/admin', [AdminHomeController::class, 'view_admin']);
-Route::get('/admin/admins', [AdminController::class, 'view_admin']);
-Route::post('/admin/edit', [AdminController::class, 'edit']);
-Route::post('/admin/add', [AdminController::class, 'add']);
-Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
 
-// Event Routes
-Route::get('/admin/events', [EventController::class, 'view_events']);
-Route::post('/event/add', [EventController::class, 'add']);
-Route::get('/event/delete/{id}', [EventController::class, 'delete']);
-Route::post('/event/edit/', [EventController::class, 'edit']);
+// Admin Routes (only admin role should have access)
+Route::middleware(['auth:admin'])->group(function () {
+    
+    Route::get('/admin/admins', [AdminController::class, 'view_admin']);
+    Route::post('/admin/edit', [AdminController::class, 'edit']);
+    Route::post('/admin/add', [AdminController::class, 'add']);
+    Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
 
-// Gallery Routes
-Route::get('/admin/gallery', [GalleryController::class, 'view_gallery']);
-Route::post('/admin/gallery/add', [GalleryController::class, 'add']);
-Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete']);
-Route::get('/admin/gallery/op/{id}', [GalleryController::class, 'change_status']);
+    // News Routes
+    Route::get('/admin/news', [NewsController::class, 'view_news']);
+    Route::post('/news/add', [NewsController::class, 'add']);
+    Route::post('/news/edit', [NewsController::class, 'edit']);
+    Route::get('/news/delete/{id}', [NewsController::class, 'delete']);
 
-// News Routes
-Route::get('/admin/news', [NewsController::class, 'view_news']);
-Route::post('/news/add', [NewsController::class, 'add']);
-Route::post('/news/edit', [NewsController::class, 'edit']);
-Route::get('/news/delete/{id}', [NewsController::class, 'delete']);
+    // Faculties Routes
+    Route::get('/admin/faculties', [AdminController::class, 'view_faculties']);
 
-// Faculties Routes
-Route::get('/admin/faculties', [AdminController::class, 'view_faculties']);
+    // Web Portal Routes (Slider)
+    Route::get('/admin/webportal', [WebPortalController::class, 'view_webportal']);
+    Route::post('/admin/webportal/add', [WebPortalController::class, 'add']);
+    Route::get('/admin/webportal/op/{id}', [WebPortalController::class, 'change_status']);
+    Route::get('/admin/webportal/delete/{id}', [WebPortalController::class, 'delete']);
 
-// Web Portal Routes (Slider)
-Route::get('/admin/webportal', [WebPortalController::class, 'view_webportal']);
-Route::post('/admin/webportal/add', [WebPortalController::class, 'add']);
-Route::get('/admin/webportal/op/{id}', [WebPortalController::class, 'change_status']);
-Route::get('/admin/webportal/delete/{id}', [WebPortalController::class, 'delete']);
+    // Web Portal Routes (About)
+    Route::get('/admin/webportal/about', [WebPortalController::class, 'view_webportal']);
+    Route::post('/admin/webportal/about/add', [WebPortalController::class, 'about_add']);
 
-// Web Portal Routes (About)
-Route::get('/admin/webportal/about', [WebPortalController::class, 'view_webportal']);
-Route::post('/admin/webportal/about/add', [WebPortalController::class, 'about_add']);
+    // Web Portal Routes (Vision & Mission)
+    Route::get('/admin/webportal/vision', [WebPortalController::class, 'view_webportal']);
+    Route::post('/admin/webportal/vision/add', [WebPortalController::class, 'vision_add']);
+    Route::post('/admin/webportal/mission', [WebPortalController::class, 'view_webportal']);
+    Route::post('/admin/webportal/mission/add', [WebPortalController::class, 'mission_add']);
+});
 
-// Web Portal Routes (Vision & Mission)
-Route::get('/admin/webportal/vision', [WebPortalController::class, 'view_webportal']);
-Route::post('/admin/webportal/vision/add', [WebPortalController::class, 'vision_add']);
-Route::post('/admin/webportal/mission', [WebPortalController::class, 'view_webportal']);
-Route::post('/admin/webportal/mission/add', [WebPortalController::class, 'mission_add']);
+Route::middleware(['auth:faculty,admin'])->group(function () {
+    // Student Routes
+    Route::get('/admin/students', [StudentController::class, 'view_students']);
+    Route::post('/student/add', [StudentController::class, 'add']);
+    Route::post('/student/edit', [StudentController::class, 'edit']);
+    Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
+});
 
+Route::middleware(['auth:faculty,admin,clubco'])->group(function () {
 
-//Student Routes
-Route::get('/admin/students', [StudentController::class, 'view_students']);
-Route::post('/student/add', [StudentController::class, 'add']);
-Route::post('/student/edit', [StudentController::class, 'edit']);
-Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
-// });
+    //Event Routes
+    Route::get('/admin/events', [EventController::class, 'view_events']);
+    Route::post('/event/add', [EventController::class, 'add']);
+    Route::get('/event/delete/{id}', [EventController::class, 'delete']);
+    Route::post('/event/edit/', [EventController::class, 'edit']);
+
+    // Gallery Routes
+    Route::get('/admin/gallery', [GalleryController::class, 'view_gallery']);
+    Route::post('/admin/gallery/add', [GalleryController::class, 'add']);
+    Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete']);
+    Route::get('/admin/gallery/op/{id}', [GalleryController::class, 'change_status']);
+});
+

@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 class AdminHomeController extends Controller
 {
     function view_admin(){
+        if (session('email') != NULL) {
         $sessionData = session()->all();
-
-        // return response()->json($sessionData);
         return view('admin.index');
+        }
+        else{
+            return redirect('admin/login');
+        }
     }
 }
