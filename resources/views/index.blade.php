@@ -29,26 +29,26 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             @php
-                $active = false;
+            $active = false;
             @endphp
             @foreach ($webportal_datas as $index => $item)
-                    @if ($item->webportal_status === 1)
-                            <div class="item {{ !$active ? 'active' : '' }}">
-                                @php
-                                    $active = true;
-                                @endphp
-                                <img src="{{ asset('/assets/admin/images/slider/' . $item->webportal_file) }}" alt="alt">
-                                <div class="carousel-caption">
-                                    <h1 class="title1">{{ $item->webportal_title }}</h1>
-                                    <p style="font-size: 20px;">{{ $item->webportal_details }}</p>
-                                </div>
-                            </div>
-                    @endif
+            @if ($item->webportal_status === 1)
+            <div class="item {{ !$active ? 'active' : '' }}">
+                @php
+                $active = true;
+                @endphp
+                <img src="{{ asset('/assets/admin/images/slider/' . $item->webportal_file) }}" alt="alt">
+                <div class="carousel-caption">
+                    <h1 class="title1">{{ $item->webportal_title }}</h1>
+                    <p style="font-size: 20px;">{{ $item->webportal_details }}</p>
+                </div>
+            </div>
+            @endif
             @endforeach
             @if (!$active)
-                <div class="item active">
-                    <p>No slides available</p>
-                </div>
+            <div class="item active">
+                <p>No slides available</p>
+            </div>
             @endif
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -86,7 +86,7 @@
             </div>
         </div>
     </div>
-
+    <div id="news"></div>
     <div class="latest-area bg-white" style="padding-top: 50px;">
         <div class="container">
             <div class="row">
@@ -119,9 +119,11 @@
             </div>
             <a class="button-default" href="/news">Read All News</a>
 
+
             <!-- Notice --><!--
                 <div class="latest-area bg-white">
                     <div class="container"> -->
+            <div id="notice"></div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title-wrapper">
@@ -254,8 +256,25 @@
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
+        if (window.location.href.includes('news')) {
+            const newsDiv = document.getElementById('news');
+            if (newsDiv) {
+                newsDiv.scrollIntoView();
+            }
+        }
+
+        if (window.location.href.includes('notice')) {
+            const noticeDiv = document.getElementById('notice');
+            if (noticeDiv) {
+                noticeDiv.scrollIntoView();
+            }
+        }
+
         // Show the modal when the page loads
         window.onload = function () {
+            if(window.location.href.includes('news') || window.location.href.includes('notice')) {
+                return;
+            }
             document.body.classList.add('no-scroll'); // Disable scrolling
             modal.style.display = "block";
             // if (!sessionStorage.getItem('visited')) {

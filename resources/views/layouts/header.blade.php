@@ -164,9 +164,9 @@
                                             <ul id="nav">
                                                 <li class="current"><a href="/">Home</a>
                                                 <ul class="account-dropdown">
-                                                    <li><a href="#">Menu 1</a></li>
-                                                    <li><a href="">Menu 2</a></li>
-                                                    <li><a href="">Menu 3</a></li>
+                                                    <li><a href="/" >Vision & Mission</a></li>
+                                                    <li><a href="/#news">News</a></li>
+                                                    <li><a href="/#notice">Notice</a></li>
                                                 </ul>
                                                 </li>
                                                 <li><a href="/about">About</a><ul>
@@ -234,9 +234,9 @@
                                     <nav id="dropdown">
                                         <ul>
                                             <li><a href="/">HOME</a><ul class="submenu">
-                                                <li><a href="">Menu 1</a></li>
-                                                <li><a href="">Menu 2</a></li>
-                                                <li><a href="">Menu 3</a></li>
+                                                <li><a href="/">Vision & Mission</a></li>
+                                                <li><a href="/#news">News</a></li>
+                                                <li><a href="/#notice">Notice</a></li>
                                             </ul></li>
                                             <li><a href="/about">About Us</a><ul class="submenu">
                                                 <li><a href="">Menu 1</a></li>
