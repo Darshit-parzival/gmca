@@ -284,8 +284,11 @@
     if (window.location.href.includes('vm')) {
         const modalDiv = document.getElementById("visionMissionModal");
         const modalCont = document.getElementById("modal-content");
+        const headerDiv = document.getElementsByClassName("sticker");
+
         if (modalDiv) {
             modalDiv.style.display = "block";
+            headerDiv[0].style.display = "none";
             setTimeout(() => {
     modalCont.classList.add('modal-active');
 }, 1);
@@ -314,6 +317,7 @@ window.addEventListener('hashchange', checkURLForModal);
             setTimeout(() => {
                 document.getElementById('modal-content').classList.add('modal-active');
             }, 1);
+            
             if (!sessionStorage.getItem('visited')) {
                 sessionStorage.setItem('visited', 'true');
             }
@@ -327,6 +331,8 @@ window.addEventListener('hashchange', checkURLForModal);
                 modal.style.display = "none";
             }, 300);
             document.body.classList.remove('no-scroll'); // Enable scrolling
+            const headerDiv = document.getElementsByClassName("sticker");
+            headerDiv[0].style.display = "block";
         };
         
         // When the user clicks anywhere outside of the modal, close it
@@ -338,6 +344,8 @@ window.addEventListener('hashchange', checkURLForModal);
                     modal.style.display = "none";
                 }, 300);
                 document.body.classList.remove('no-scroll');  // Enable scrolling
+                const headerDiv = document.getElementsByClassName("sticker");
+                headerDiv[0].style.display = "block";
             }
         };
 
