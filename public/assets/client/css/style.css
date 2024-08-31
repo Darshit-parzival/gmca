@@ -78,7 +78,7 @@ img {
     vertical-align:top;
 }
 .fix {overflow:hidden}
-p {}
+p {text-align: justify;}
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: 'montserratsemi_bold';
