@@ -757,7 +757,6 @@ body {
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin-top: -40px;
-    opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     padding: 5px 19px 6px;
@@ -765,12 +764,13 @@ body {
     left: 0;
     text-align: left;
     top: 100%;
+    opacity: 0;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 0 0 0;
     transform-origin: 0 0 0;
     -webkit-transition: all 0.1s ease 0s;
-    transition: all 0.1s ease 0s;
+    transition: all 0.3s ease 0s;
     z-index: -99;
 }
 

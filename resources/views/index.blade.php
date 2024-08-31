@@ -22,6 +22,16 @@
     .vis:hover {
         color: #6d7d90 !important;
     }
+
+    .modal-content {
+    transform: scale(0); /* Initially scaled down */
+    transition: all 0.6s cubic-bezier(.28,.05,.67,1.87) 0s !important /* Smooth transition for transform property */
+}
+
+.modal-content.modal-active {
+    transform: scale(1); /* Scale up to full size when .modal-active is added */
+}
+
 </style>
 
 
@@ -208,7 +218,7 @@
     </div>
 
     <div id="visionMissionModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" id="modal-content">
             <div class="popup-logo">
                 <img src="{{asset('assets/static/logo_with_name.png')}}" alt="">
             </div>
@@ -270,29 +280,64 @@
             }
         }
 
+        function checkURLForModal() {
+    if (window.location.href.includes('vm')) {
+        const modalDiv = document.getElementById("visionMissionModal");
+        const modalCont = document.getElementById("modal-content");
+        if (modalDiv) {
+            modalDiv.style.display = "block";
+            setTimeout(() => {
+    modalCont.classList.add('modal-active');
+}, 1);
+            document.body.classList.add('no-scroll');
+        }
+    }
+}
+
+// Check initially
+checkURLForModal();
+
+// Listen for changes in the URL hash
+window.addEventListener('hashchange', checkURLForModal);
+
         // Show the modal when the page loads
         window.onload = function () {
             if(window.location.href.includes('news') || window.location.href.includes('notice')) {
                 return;
             }
+            if (sessionStorage.getItem('visited')) {
+                document.body.classList.remove('no-scroll');
+                return;
+            }
             document.body.classList.add('no-scroll'); // Disable scrolling
             modal.style.display = "block";
-            // if (!sessionStorage.getItem('visited')) {
-            //     sessionStorage.setItem('visited', 'true');
-            // }
+            setTimeout(() => {
+                document.getElementById('modal-content').classList.add('modal-active');
+            }, 1);
+            if (!sessionStorage.getItem('visited')) {
+                sessionStorage.setItem('visited', 'true');
+            }
         };
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
-            modal.style.display = "none";
+            window.location.hash = '';
+            document.getElementById('modal-content').classList.remove('modal-active');
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 300);
             document.body.classList.remove('no-scroll'); // Enable scrolling
         };
-
+        
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
-                modal.style.display = "none";
-                document.body.classList.remove('no-scroll'); // Enable scrolling
+                window.location.hash = '';
+                document.getElementById('modal-content').classList.remove('modal-active');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                }, 300);
+                document.body.classList.remove('no-scroll');  // Enable scrolling
             }
         };
 

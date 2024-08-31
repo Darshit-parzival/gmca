@@ -164,7 +164,7 @@
                                             <ul id="nav">
                                                 <li class="current"><a href="/">Home</a>
                                                 <ul class="account-dropdown">
-                                                    <li><a href="/" >Vision & Mission</a></li>
+                                                    <li><a href="/#vm" id="vmlink">Vision & Mission</a></li>
                                                     <li><a href="/#news">News</a></li>
                                                     <li><a href="/#notice">Notice</a></li>
                                                 </ul>
@@ -234,7 +234,7 @@
                                     <nav id="dropdown">
                                         <ul>
                                             <li><a href="/">HOME</a><ul class="submenu">
-                                                <li><a href="/">Vision & Mission</a></li>
+                                                <li><a href="/#vm">Vision & Mission</a></li>
                                                 <li><a href="/#news">News</a></li>
                                                 <li><a href="/#notice">Notice</a></li>
                                             </ul></li>
