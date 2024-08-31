@@ -23,11 +23,20 @@ Route::get('/student', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
 Route::get('/news', function () {
     return view('news');
 });
 Route::get('/notice', function () {
     return view('notice');
+});
+Route::get('/mandatory', function () {
+    return view('mandatory');
+});
+Route::get('/rti', function () {
+    return view('rti');
 });
 route::get('/gallery', [DummyController::class, 'fetch_gallery']);
 

@@ -195,7 +195,7 @@
                                                         <li><a href="/student">Student Section</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.php">Contact</a><ul>
+                                                <li><a href="/contact">Contact</a><ul>
                                                     <li><a href="">Menu 1</a></li>
                                                     <li><a href="">Menu 2</a></li>
                                                     <li><a href="">Menu 3</a></li>

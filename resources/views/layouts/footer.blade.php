@@ -134,9 +134,9 @@
                     <a class="noborder" href="event.php">Events</a>
                     <a class="noborder" href="Gallery.php">Gallery</a>
                     <a class="noborder" href="academic.php">Academics</a>
-                    <a class="noborder" href="mandate.php">Mandatory Disclosure</a>
-                    <a class="noborder" href="contact.php">Contact US</a>
-                    <a class="noborder" href="rti.php">RTI</a>
+                    <a class="noborder" href="/mandatory">Mandatory Disclosure</a>
+                    <a class="noborder" href="/contact">Contact US</a>
+                    <a class="noborder" href="/rti">RTI</a>
                     <a class="noborder" href="https://www.gtu.ac.in" target="_blank">GTU</a>
                 </div>
             </div>
