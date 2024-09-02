@@ -270,13 +270,15 @@
             const newsDiv = document.getElementById('news');
             if (newsDiv) {
                 newsDiv.scrollIntoView();
+                document.body.classList.remove('no-scroll');
             }
         }
-
+        
         if (window.location.href.includes('notice')) {
             const noticeDiv = document.getElementById('notice');
             if (noticeDiv) {
                 noticeDiv.scrollIntoView();
+                document.body.classList.remove('no-scroll');
             }
         }
 
