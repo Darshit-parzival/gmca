@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Session;
 use App\Models\VisitCountModel;
 use Illuminate\Http\Request;
 
@@ -43,6 +44,12 @@ class AppServiceProvider extends ServiceProvider
             } else {
                 VisitCountModel::create(['ip' => $userIp]);
             }
+
+            // if(!Session::has('visited')) {
+            //     // echo "<script>alert('Session not set')</script>";
+            //     Session::put('visited', true);
+            //     VisitCountModel::create(['ip' => $userIp]);
+            // }
 
             // Get the total count of visitors
             $totalVisitors = VisitCountModel::count();
