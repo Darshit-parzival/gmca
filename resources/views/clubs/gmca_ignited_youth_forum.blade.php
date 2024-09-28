@@ -23,6 +23,7 @@
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.3s ease;
+        z-index: 100;
     }
 
     .toggle-sidebar {
@@ -35,6 +36,7 @@
         padding: 10px;
         border-radius: 5px;
         z-index: 200;
+        transition: all 0.3s ease;
         /* Above the sidebar */
     }
 
@@ -243,7 +245,9 @@
     function toggleSidebar() {
         const sidebar = document.querySelector('.club-sidebar');
         sidebar.style.transform = sidebar.style.transform === 'scaleX(1)' ? 'scaleX(0)' : 'scaleX(1)';
-        document.getElementsByClassName('toggle-sidebar')[0].style.display === 'none' ? document.getElementsByClassName('toggle-sidebar')[0].style.display = 'block' : document.getElementsByClassName('toggle-sidebar')[0].style.display = 'none';
+        const toggleBtn = document.querySelector('.toggle-sidebar');
+        toggleBtn.style.display = toggleBtn.style.display === 'none' ? 'block' : 'none';
+        
     }
 </script>
 
