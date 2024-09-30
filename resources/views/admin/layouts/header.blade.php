@@ -7,21 +7,17 @@
     
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"/>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/static/logo.png') }}">
+
+
   </head>
 
   <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
     {{-- <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
     </div> --}}
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
     <div
       id="main-wrapper"
       data-layout="vertical"
@@ -31,72 +27,42 @@
       data-header-position="absolute"
       data-boxed-layout="full"
     >
-      <!-- ============================================================== -->
-      <!-- Topbar header - style you can find in pages.scss -->
-      <!-- ============================================================== -->
+
       <header class="topbar" data-navbarbg="skin5">
         <nav class="navbar top-navbar navbar-expand-md navbar-dark">
           <div class="navbar-header" data-logobg="skin5">
-            <!-- ============================================================== -->
-            <!-- Logo -->
-            <!-- ============================================================== -->
             <a class="navbar-brand" href="/admin">
-              <!-- Logo icon -->
               <b class="logo-icon ps-2">
-                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                <!-- Dark Logo icon -->
-              
               </b>
-              <!--End Logo icon -->
-              <!-- Logo text -->
               <span class="logo-text ms-2">
-                <!-- dark Logo text -->
                 GMCA ADMIN
               </span>
-              <!--End Logo icon -->
             </a>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Toggle which is visible on mobile only -->
-            <!-- ============================================================== -->
             <a
               class="nav-toggler waves-effect waves-light d-block d-md-none"
               href="javascript:void(0)"
               ><i class="ti-menu ti-close"></i
             ></a>
           </div>
-          <!-- ============================================================== -->
-          <!-- End Logo -->
-          <!-- ============================================================== -->
-          <div
-            class="navbar-collapse collapse"
-            id="navbarSupportedContent"
-            data-navbarbg="skin5"
-          >
+          <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
             <!-- ============================================================== -->
             <!-- toggle and nav items -->
             <!-- ============================================================== -->
             <ul class="navbar-nav float-start me-auto">
               <li class="nav-item d-none d-lg-block">
-                <a
-                  class="nav-link sidebartoggler waves-effect waves-light"
-                  href="javascript:void(0)"
-                  data-sidebartype="mini-sidebar"
-                  ><i class="mdi mdi-menu font-24"></i
-                ></a>
+                <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
               </li>
+              
+            </ul>
+            <!-- ============================================================== -->
+            <!-- Right side toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav float-end">
+              <li class="me-4"><a href="/admin/profile">profile</a></li>
             </ul>
           </div>
         </nav>
       </header>
-      <!-- ============================================================== -->
-      <!-- End Topbar header -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Left Sidebar - style you can find in sidebar.scss  -->
-      <!-- ============================================================== -->
       <aside class="left-sidebar" data-sidebarbg="skin5">
         <!-- Sidebar scroll-->
         <div class="scroll-sidebar">
@@ -160,8 +126,6 @@
                     </li>
                     
                     @endif
-    
-                    <!-- Conditional visibility for Forms section -->
                     @if(session('role') === 'admin' || session('role') === 'faculty')
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
@@ -193,22 +157,9 @@
                     </li>
                 </ul>
             </nav>
-            <!-- End Sidebar navigation -->
         </div>
-        <!-- End Sidebar scroll-->
     </aside>
-    
-      <!-- ============================================================== -->
-      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Main Content  -->
-      <!-- ============================================================== -->
       <div>
-
       </div>
-      <!-- ============================================================== -->
-      <!-- End Main Content  -->
-      <!-- ============================================================== -->
     </div>
   

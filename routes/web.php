@@ -91,6 +91,11 @@ Route::middleware(['auth:faculty,admin'])->group(function () {
     Route::post('/student/add', [StudentController::class, 'add']);
     Route::post('/student/edit', [StudentController::class, 'edit']);
     Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
+    
+
+    Route::get('/admin/profile', function () {
+        return view('admin.profile');
+    });
 });
 
 Route::middleware(['auth:faculty,admin,clubco'])->group(function () {
