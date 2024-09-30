@@ -193,6 +193,7 @@
                                                     <a href="academic.php">Academic</a>
                                                     <ul>
                                                         <li><a href="/student">Student Section</a></li>
+                                                        <li><a href="/clubs">Student Clubs</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="/contact">Contact</a><ul>
@@ -262,6 +263,7 @@
                                                 <a href="academic.php">Academic</a>
                                                 <ul class="submenu">
                                                     <li><a href="/student">Student Section</a></li>
+                                                    <li><a href="/clubs">Student Clubs</a></li>
                                                     <!-- Add more submenu items here -->
                                                 </ul>
                                             </li>

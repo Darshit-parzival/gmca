@@ -32,6 +32,15 @@ Route::get('/news', function () {
 Route::get('/notice', function () {
     return view('notice');
 });
+Route::get('/clubs', function () {
+    return view('clubs/student_clubs');
+});
+Route::get('/giyf', function () {
+    return view('clubs/gmca_ignited_youth_forum');
+});
+Route::get('/gcs', function () {
+    return view('clubs/gmca_cyber_shield');
+});
 Route::get('/mandatory', function () {
     return view('mandatory');
 });

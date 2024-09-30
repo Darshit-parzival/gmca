@@ -3,6 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Session;
+use App\Models\VisitCountModel;
+use Illuminate\Http\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,8 +26,36 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
-        //
+        if (Schema::hasTable('visit_count_data')) {
+            $userIp = $request->ip();
+
+            // Check if the user IP exists in the database
+            $existingIp = VisitCountModel::where('ip', $userIp)->first();
+
+            if ($existingIp) {
+                $lastAddedTime = strtotime($existingIp->created_at);
+                $twoHoursAgo = strtotime('-2 hours');
+
+                if ($lastAddedTime < $twoHoursAgo) {
+                    VisitCountModel::create(['ip' => $userIp]);
+                }
+            } else {
+                VisitCountModel::create(['ip' => $userIp]);
+            }
+
+            // if(!Session::has('visited')) {
+            //     // echo "<script>alert('Session not set')</script>";
+            //     Session::put('visited', true);
+            //     VisitCountModel::create(['ip' => $userIp]);
+            // }
+
+            // Get the total count of visitors
+            $totalVisitors = VisitCountModel::count();
+
+            // Share the total visitor count globally
+            View::share('totalVisitors', $totalVisitors);
+        }
     }
 }

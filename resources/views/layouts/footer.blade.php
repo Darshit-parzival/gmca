@@ -156,7 +156,7 @@
         </div>
     </div>
     <div class="visitor-counter">
-        <h3 class="counter-label">VISIT COUNT : <span style="color:#2d3e50">0</span></h3>
+        <h3 class="counter-label">VISIT COUNT : <span style="color:#2d3e50">{{ $totalVisitors ?? 0 }}</span></h3>
     </div>
 </div>
 <div class="container-fluid" style="padding-bottom: 15PX;padding-top: 15PX;background-color:#2d3e50;color: white;">
