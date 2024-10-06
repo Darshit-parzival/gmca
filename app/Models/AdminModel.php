@@ -14,4 +14,9 @@ class AdminModel extends Model
     {
         return $this->hasMany(ExperienceModel::class, 'staff_id', 'staff_id');
     }
+
+    public function educations()
+    {
+        return $this->hasMany(EducationModel::class, 'staff_id', 'staff_id');
+    }
 }

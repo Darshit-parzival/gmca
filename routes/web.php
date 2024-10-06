@@ -12,7 +12,8 @@ use App\Http\Controllers\WebPortalController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\EducationController;
 
 
 // Client Routes
@@ -106,9 +107,20 @@ Route::middleware(['auth:faculty,admin'])->group(function () {
     Route::get('/admin/profile', [ProfileController::class, 'index']);
     Route::post('/admin/profile/edit_profile', [ProfileController::class, 'edit_profile']);
     Route::post('/admin/profile/edit_password', [ProfileController::class, 'edit_password']);
-
-
     
+
+    //experience
+    Route::get('/admin/experience', [ExperienceController::class, 'index']);
+    Route::post('/admin/experience/add', [ExperienceController::class, 'store']);
+    Route::post('/admin/experience/edit', [ExperienceController::class, 'update']);
+    Route::get('/admin/experience/delete/{id}', [ExperienceController::class, 'destroy']);
+
+
+    //education
+    Route::get('/admin/education', [EducationController::class, 'index']);
+    Route::post('/admin/education/add', [EducationController::class, 'store']);
+    Route::post('/admin/education/edit', [EducationController::class, 'update']);
+    Route::get('/admin/education/delete/{id}', [EducationController::class, 'destroy']);
 });
 
 Route::middleware(['auth:faculty,admin,clubco'])->group(function () {

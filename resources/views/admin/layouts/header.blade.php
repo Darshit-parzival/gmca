@@ -126,27 +126,43 @@
                     </li>
                     
                     @endif
-                    @if(session('role') === 'admin' || session('role') === 'faculty')
+                    @if(session('role') === 'faculty')
                     <li class="sidebar-item">
-                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                            <i class="mdi mdi-receipt"></i>
-                            <span class="hide-menu">Forms </span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse first-level">
-                            <li class="sidebar-item">
-                                <a href="form-basic.html" class="sidebar-link">
-                                    <i class="mdi mdi-note-outline"></i>
-                                    <span class="hide-menu"> Form Basic </span>
-                                </a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="form-wizard.html" class="sidebar-link">
-                                    <i class="mdi mdi-note-plus"></i>
-                                    <span class="hide-menu"> Form Wizard </span>
-                                </a>
-                            </li>
-                        </ul>
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/experience" aria-expanded="false">
+                          <i class="mdi mdi-image-multiple"></i>
+                          <span class="hide-menu">Work Experience</span>
+                      </a>
                     </li>
+                   
+                    <li class="sidebar-item">
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/education" aria-expanded="false">
+                          <i class="mdi mdi-image-multiple"></i>
+                          <span class="hide-menu">Education Qualification</span>
+                      </a>
+                    </li>
+                    
+                    <li class="sidebar-item">
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false">
+                          <i class="mdi mdi-image-multiple"></i>
+                          <span class="hide-menu">Training Workshop</span>
+                      </a>
+                    </li>
+                   
+                    <li class="sidebar-item">
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false">
+                          <i class="mdi mdi-image-multiple"></i>
+                          <span class="hide-menu">Work Experience</span>
+                      </a>
+                    </li>
+                
+                    
+                    <li class="sidebar-item">
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false">
+                          <i class="mdi mdi-image-multiple"></i>
+                          <span class="hide-menu">Expert Lecture</span>
+                      </a>
+                    </li>
+                    
                     @endif
     
                     <li class="sidebar-item">
