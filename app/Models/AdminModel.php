@@ -19,4 +19,15 @@ class AdminModel extends Model
     {
         return $this->hasMany(EducationModel::class, 'staff_id', 'staff_id');
     }
+
+    public function trainings()
+    {
+        return $this->hasMany(TrainingModel::class, 'staff_id', 'staff_id');
+    }
+
+    public function expertLectures()
+    {
+        return $this->hasMany(ExpertLectureModel::class, 'staff_id', 'staff_id');
+    }
+
 }

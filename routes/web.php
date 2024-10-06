@@ -14,7 +14,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\EducationController;
-
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\ExpertLectureController;
 
 // Client Routes
 
@@ -121,6 +122,19 @@ Route::middleware(['auth:faculty,admin'])->group(function () {
     Route::post('/admin/education/add', [EducationController::class, 'store']);
     Route::post('/admin/education/edit', [EducationController::class, 'update']);
     Route::get('/admin/education/delete/{id}', [EducationController::class, 'destroy']);
+
+    //training
+    Route::get('/admin/training', [TrainingController::class, 'index']);
+    Route::post('/admin/training/add', [TrainingController::class, 'store']);
+    Route::post('/admin/training/edit', [TrainingController::class, 'update']);
+    Route::get('/admin/training/delete/{id}', [TrainingController::class, 'destroy']);
+
+    // Expert Lecture Routes
+    Route::get('/admin/expert-lecture', [ExpertLectureController::class, 'index'])->name('expert.index');
+    Route::post('/admin/expert-lecture/add', [ExpertLectureController::class, 'store'])->name('expert.add');
+    Route::post('/admin/expert-lecture/edit', [ExpertLectureController::class, 'update'])->name('expert.edit');
+    Route::get('/admin/expert-lecture/delete/{id}', [ExpertLectureController::class, 'destroy'])->name('expert.delete');
+
 });
 
 Route::middleware(['auth:faculty,admin,clubco'])->group(function () {
