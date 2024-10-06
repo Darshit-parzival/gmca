@@ -11,6 +11,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\WebPortalController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ProfileController;
+
 
 
 // Client Routes
@@ -100,11 +102,13 @@ Route::middleware(['auth:faculty,admin'])->group(function () {
     Route::post('/student/add', [StudentController::class, 'add']);
     Route::post('/student/edit', [StudentController::class, 'edit']);
     Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
-    
 
-    Route::get('/admin/profile', function () {
-        return view('admin.profile');
-    });
+    Route::get('/admin/profile', [ProfileController::class, 'index']);
+    Route::post('/admin/profile/edit_profile', [ProfileController::class, 'edit_profile']);
+    Route::post('/admin/profile/edit_password', [ProfileController::class, 'edit_password']);
+
+
+    
 });
 
 Route::middleware(['auth:faculty,admin,clubco'])->group(function () {
