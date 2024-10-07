@@ -113,19 +113,19 @@
                         @endif
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $background->id }}">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $background->bg_id }}">
                             Edit
                         </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $background->id }}">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $background->bg_id }}">
                             Delete
                         </button>
                     </td>
                 </tr>
 
                 <!-- Confirm Delete Modal -->
-                <div class="modal fade" id="confirmDeleteModal{{ $background->id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel{{ $background->id }}" aria-hidden="true">
+                <div class="modal fade" id="confirmDeleteModal{{ $background->bg_id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel{{ $background->bg_id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -137,23 +137,23 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <a href="{{ url('/admin/staff-background/delete/'. $background->id) }}" class="btn btn-danger">Delete</a>
+                                <a href="{{ url('/admin/staff-background/delete/'. $background->bg_id) }}" class="btn btn-danger">Delete</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Edit Modal -->
-                <div class="modal fade" id="editModal{{ $background->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $background->id }}" aria-hidden="true">
+                <div class="modal fade" id="editModal{{ $background->bg_id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $background->bg_id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $background->id }}">Edit Background</h5>
+                                <h5 class="modal-title" id="editModalLabel{{ $background->bg_id }}">Edit Background</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form method="post" action="{{ url('/admin/staff-background/edit') }}">
                                 @csrf
-                                <input type="hidden" name="bg_id" value="{{ $background->id }}">
+                                <input type="hidden" name="bg_id" value="{{ $background->bg_id }}">
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label for="type" class="form-label">Type</label>
