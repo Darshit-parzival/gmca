@@ -244,7 +244,7 @@
                                                 <li><a href="">Menu 2</a></li>
                                                 <li><a href="">Menu 3</a></li>
                                             </ul></li>
-                                            <li><a href="/staff">Staff</a><ul class="submenu">
+                                            <li><a href="https://gmca.ac.in/staff.php">Staff</a><ul class="submenu">
                                                 <li><a href="">Menu 1</a></li>
                                                 <li><a href="">Menu 2</a></li>
                                                 <li><a href="">Menu 3</a></li>
