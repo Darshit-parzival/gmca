@@ -16,6 +16,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\ExpertLectureController;
+use App\Http\Controllers\StaffBackgroundController;
 
 // Client Routes
 
@@ -135,6 +136,10 @@ Route::middleware(['auth:faculty,admin'])->group(function () {
     Route::post('/admin/expert-lecture/edit', [ExpertLectureController::class, 'update'])->name('expert.edit');
     Route::get('/admin/expert-lecture/delete/{id}', [ExpertLectureController::class, 'destroy'])->name('expert.delete');
 
+    Route::get('/admin/staff-background', [StaffBackgroundController::class, 'index']);
+    Route::post('/admin/staff-background/add', [StaffBackgroundController::class, 'store']);
+    Route::post('/admin/staff-background/edit', [StaffBackgroundController::class, 'update']);
+    Route::get('/admin/staff-background/delete/{id}', [StaffBackgroundController::class, 'destroy']);
 });
 
 Route::middleware(['auth:faculty,admin,clubco'])->group(function () {

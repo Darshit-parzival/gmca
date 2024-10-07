@@ -29,5 +29,8 @@ class AdminModel extends Model
     {
         return $this->hasMany(ExpertLectureModel::class, 'staff_id', 'staff_id');
     }
-
+    public function backgrounds()
+    {
+        return $this->hasMany(StaffBackgroundModel::class, 'staff_id', 'staff_id');
+    }
 }

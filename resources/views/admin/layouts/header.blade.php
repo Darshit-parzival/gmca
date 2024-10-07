@@ -129,32 +129,38 @@
                     @if(session('role') === 'faculty')
                     <li class="sidebar-item">
                       <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/experience" aria-expanded="false">
-                          <i class="mdi mdi-image-multiple"></i>
+                          <i class="mdi mdi-briefcase-variant"></i>
                           <span class="hide-menu">Work Experience</span>
                       </a>
                     </li>
                    
                     <li class="sidebar-item">
                       <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/education" aria-expanded="false">
-                          <i class="mdi mdi-image-multiple"></i>
+                          <i class="mdi mdi-school"></i>
                           <span class="hide-menu">Education Qualification</span>
                       </a>
                     </li>
                     
                     <li class="sidebar-item">
                       <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/training" aria-expanded="false">
-                          <i class="mdi mdi-image-multiple"></i>
+                          <i class="mdi mdi-account-wrench-outline"></i>
                           <span class="hide-menu">Training Workshop</span>
                       </a>
                     </li>
                    
                     <li class="sidebar-item">
                       <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/expert-lecture" aria-expanded="false">
-                          <i class="mdi mdi-image-multiple"></i>
+                          <i class="mdi mdi-human-male-board"></i>
                           <span class="hide-menu">Expert Lecture</span>
                       </a>
                     </li>
-                    
+
+                    <li class="sidebar-item">
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href=" /admin/staff-background" aria-expanded="false">
+                          <i class="mdi mdi-clipboard-text-clock"></i>
+                          <span class="hide-menu">Staff Background</span>
+                      </a>
+                    </li>
                     @endif
     
                     <li class="sidebar-item">
