@@ -68,7 +68,7 @@
 
 @if(!$educations->isEmpty())
 <div class="table-responsive">
-    <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
+    <table id="pagetable" class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
         <thead>
             <tr class="table-dark">
                 <th>Id</th>
@@ -79,7 +79,7 @@
                 <th>CGPA</th>
                 <th>Pass Year</th>
                 <th>Status</th>
-                <th colspan="2">Operation</th>
+                <th>Operation</th>
             </tr>
         </thead>
         <tbody>
@@ -100,14 +100,15 @@
                     @endif
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $education->edu_id }}">
+                    <div class="d-flex justify-content-center">
+                    <button type="button" class="me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $education->edu_id }}">
                         Edit
                     </button>
-                </td>
-                <td>
+                
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $education->edu_id }}">
                         Delete
                     </button>
+                    </div>
                 </td>
             </tr>
 

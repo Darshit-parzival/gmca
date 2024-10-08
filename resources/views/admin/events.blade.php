@@ -16,66 +16,68 @@
             </button>
         </div>
     </div>
+
    <!-- Add Modal -->
    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Add Event</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Add Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="{{ url('/event/add') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="txtname" class="form-label">Event Title</label>
+                            <input type="text" class="form-control" name="txtname" id="txtname">
+                            <span class="text-danger mt-2">@error('txtname') {{ $message }} @enderror</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtdate" class="form-label">Date</label>
+                            <input type="date" class="form-control" name="txtdate" id="txtdate">
+                            <span class="text-danger mt-2">
+                                @error('txtemail') 
+                                    {{ $message }} 
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtreport" class="form-label">Report</label>
+                            <input type="file" class="form-control" name="txtreport" id="txtreport" value="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtdetails" class="form-label">Details</label>
+                            <textarea class="form-control" name="txtdetails" id="txtdetails"></textarea>    
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtstatus" class="form-label">Active</label>
+                            <input type="checkbox" class="form-check-input" name="txtstatus" id="txtstatus" value="1">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Event</button>
+                    </div>
+                </form>
             </div>
-            <form method="post" action="{{ url('/event/add') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="txtname" class="form-label">Event Title</label>
-                        <input type="text" class="form-control" name="txtname" id="txtname">
-                        <span class="text-danger mt-2">@error('txtname') {{ $message }} @enderror</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtdate" class="form-label">Date</label>
-                        <input type="date" class="form-control" name="txtdate" id="txtdate">
-                        <span class="text-danger mt-2">
-                            @error('txtemail') 
-                                {{ $message }} 
-                            @enderror
-                        </span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtreport" class="form-label">Report</label>
-                        <input type="file" class="form-control" name="txtreport" id="txtreport" value="1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtdetails" class="form-label">Details</label>
-                        <textarea class="form-control" name="txtdetails" id="txtdetails"></textarea>    
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtstatus" class="form-label">Active</label>
-                        <input type="checkbox" class="form-check-input" name="txtstatus" id="txtstatus" value="1">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Add Event</button>
-                </div>
-            </form>
         </div>
     </div>
-</div>
+
     @if(!$events->isEmpty())
     <div class="table-responsive">
-    <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
-        <thead>
-            <tr class="table-dark">
-                <th>Id</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Details</th>
-                <th>Status</th>
-                <th colspan="2">Operation</th>
-            </tr>
-        </thead>
-        <tbody>
+        <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle" id="pagetable">
+            <thead>
+                <tr class="table-dark">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Details</th>
+                    <th>Status</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
                 @foreach ($events as $i => $event)
                 <tr>
                     <td>{{ $i + 1 }}</td>
@@ -90,14 +92,15 @@
                         @endif
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $event->id }}">
+                        <div class="d-flex justify-content-center">
+                        <button type="button" class="me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $event->id }}">
                             Edit
                         </button>
-                    </td>
-                    <td>
+                    
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $event->id }}">
                             Delete
                         </button>
+                        </div>
                     </td>
                 </tr>
 
@@ -110,7 +113,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Are you sure you want to delete this admin?
+                                Are you sure you want to delete this event?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -125,7 +128,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $event->id }}">Edit Admin</h5>
+                                <h5 class="modal-title" id="editModalLabel{{ $event->id }}">Edit Event</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form method="post" action="{{ url('/event/edit') }}" enctype="multipart/form-data">
@@ -148,7 +151,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtreport" class="form-label">Report</label>
-                                        <input type="file" class="form-control" name="txtreport" id="txtreport" value="1" value="{{$event->report}}">
+                                        <input type="file" class="form-control" name="txtreport" id="txtreport" value="{{$event->report}}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtdetails" class="form-label">Details</label>
@@ -171,13 +174,11 @@
             </tbody>
         </table>
     </div>
-        @else
-        <div class="p-5 m-5 text-center">
-            <h1>No Events Yet!</h1>
-        </div>
-        @endif
-
- 
+    @else
+    <div class="p-5 m-5 text-center">
+        <h1>No Events Yet!</h1>
+    </div>
+    @endif
 
     <div class="mt-4">
         @if(session('error'))
@@ -192,4 +193,5 @@
         @endif
     </div>
 </div>
+
 @endsection

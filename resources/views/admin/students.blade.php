@@ -19,7 +19,7 @@
 
     @if(!$students->isEmpty())
     <div class="table-responsive">
-    <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
+    <table id="pagetable" class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
         <thead>
             <tr class="table-dark">
                 <th>Id</th>
@@ -31,7 +31,7 @@
                 <th>Admission Year</th>
                 <th>Graduation Stream</th>
                 <th>Admission Category</th>
-                <th colspan="2">Operation</th>
+                <th>Operation</th>
             </tr>
         </thead>
         <tbody>
@@ -47,14 +47,16 @@
                     <td>{{ $student->graduation_stream }}</td>
                     <td>{{ $student->admission_cat }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editStudentModal{{ $student->stud_id }}">
+                        <div class="d-flex justify-content-center">
+
+                        <button type="button" class="me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#editStudentModal{{ $student->stud_id }}">
                             Edit
                         </button>
-                    </td>
-                    <td>
+                    
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteStudentModal{{ $student->stud_id }}">
                             Delete
                         </button>
+                        </div>
                     </td>
                 </tr>
 

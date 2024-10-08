@@ -79,24 +79,36 @@
                 </div>
                 <div class="col-md-7">
                     <h4 class="contact-title">send your massage</h4>
-                    <form id="contact-form" action="include/contact_insert.php" method="post">
+                    <form id="contact-form" action="/contact/add" method="POST">
+                        @csrf  
                         <div class="row">
-                            <div class="col-md-4 input-container">
-                                <input type="text" name="name" placeholder="Your Name" pattern="[A-Za-z]{3,}" required >
+                            <div class="col-md-4">
+                                <input type="text" name="name" placeholder="Your Name" required pattern="[A-Za-z\s]{3,}" />
                             </div>
                             <div class="col-md-4">
-                                <input type="email" name="email" placeholder="Your Email" required >
+                                <input type="email" name="email" placeholder="Your Email" required />
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="contact_no" pattern="[0-9]{10}" placeholder="Your Contact Number" required>
+                                <input type="text" name="mobile" placeholder="Your Contact Number" pattern="[0-9]{10}" required />
                             </div>
                             <div class="col-md-12">
-                                <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
                                 <button type="submit" class="button-default">SUBMIT</button>
                             </div>
                         </div>
                     </form>
-                    <p class="form-messege"></p>
+                    <div class="mt-4">
+                        @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                        @endif
+                        @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

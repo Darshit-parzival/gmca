@@ -5,9 +5,21 @@
     <link href="{{asset('assets/admin/css/style.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/admin/css/custom.css')}}" rel="stylesheet" />
     
+    
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"/>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/static/logo.png') }}">
+   
+    
+      <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+
+    <script src="{{ asset('assets/admin/js/pagination.js') }}"></script>
 
   </head>
 

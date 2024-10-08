@@ -18,7 +18,7 @@
 
     @if(!$admins->isEmpty())
     <div class="table-responsive">
-        <table class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
+        <table id="pagetable" class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
             <thead>
                 <tr class="table-dark">
                     <th>Id</th>
@@ -27,7 +27,7 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Designation</th>
-                    <th colspan="3">Operation</th>
+                    <th>Operation</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,18 +44,18 @@
                     <td>{{ $user->phone }}</td>
                     <td>{{ $user->designation }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <div class="d-flex justify-content-center">
+                        <button type="button" class="me-2 -ml-6btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#editModal{{ $user->staff_id }}">
                             Edit
                         </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                   
+                        <button type="button" class="me-2 btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
                             Delete
                         </button>
-                    </td>
-                    <td>
+                        
+                    
                         <form action="/admin/generate-password" method="post">
                             @csrf
                             <input type="hidden" id="txtid" name="txtid" value="{{$user->staff_id}}" />
@@ -63,6 +63,7 @@
                                 Generate Password
                             </button>
                         </form>
+                    </div>
                     </td>
                 </tr>
 

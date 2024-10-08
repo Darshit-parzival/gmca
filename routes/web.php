@@ -17,6 +17,8 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\ExpertLectureController;
 use App\Http\Controllers\StaffBackgroundController;
+use App\Http\Controllers\ContactController;
+
 
 // Client Routes
 
@@ -52,6 +54,12 @@ Route::get('/mandatory', function () {
 Route::get('/rti', function () {
     return view('rti');
 });
+ 
+//contactus client side
+
+route::post('/contact/add', [ContactController::class, 'store']);
+
+
 route::get('/gallery', [DummyController::class, 'fetch_gallery']);
 
 // Authentication Routes (Accessible to all users)
