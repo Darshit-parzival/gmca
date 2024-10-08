@@ -50,8 +50,7 @@
                                     data-bs-target="#collapse{{ $i }}" aria-expanded="false"
                                     aria-controls="collapse{{ $i }}">
                                     <span class="me-2">
-                                        <h5 class="event-name">{{ $i + 1 }}. {{ $event->name }}
-                                        </h5>
+                                        <h5 class="event-name">{{ $i + 1 }}. {{ $event->name }}</h5>
                                     </span>
                                 </button>
                             </div>
@@ -90,6 +89,7 @@
                     </div>
                 @endforeach
             </div>
+            <div id="pagination" class="d-flex justify-content-center mt-4"></div>
         @else
             <div class="p-5 m-5 text-center">
                 <h1>No Events Yet!</h1>
@@ -109,6 +109,7 @@
             @endif
         </div>
     </div>
+
     <div class="modal fade" id="addImageModal" tabindex="-1" aria-labelledby="addImageModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -136,21 +137,53 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var addImageModal = document.getElementById('addImageModal');
-            addImageModal.addEventListener('show.bs.modal', function(event) {
-                var button = event.relatedTarget;
-                var eventId = button.getAttribute('data-event-id');
-                var modalEventIdInput = addImageModal.querySelector('#event_id');
-                modalEventIdInput.value = eventId;
+            const itemsPerPage = 4; // Number of items to show per page
+            const items = document.querySelectorAll('.accordion-item');
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+
+            // Show only items for the current page
+            function showPage(page) {
+                items.forEach((item, index) => {
+                    item.style.display = (Math.floor(index / itemsPerPage) === page) ? 'block' : 'none';
+                });
+            }
+
+            // Create pagination buttons
+            function createPagination() {
+                const pagination = document.getElementById('pagination');
+                pagination.innerHTML = '';
+                for (let i = 0; i < totalPages; i++) {
+                    const btn = document.createElement('button');
+                    btn.innerText = i + 1;
+                    btn.className = 'btn btn-secondary mx-1';
+                    btn.addEventListener('click', () => {
+                        showPage(i);
+                    });
+                    pagination.appendChild(btn);
+                }
+            }
+
+            showPage(0); // Show first page initially
+            createPagination(); // Create pagination buttons
+
+            // Filter events by search input
+            $('#searchInput').on('keyup', function() {
+                const value = $(this).val().toLowerCase();
+                items.forEach(item => {
+                    const eventName = item.querySelector('.event-name').innerText.toLowerCase();
+                    item.style.display = eventName.includes(value) ? 'block' : 'none';
+                });
             });
 
-            $('#searchInput').on('keyup', function() {
-                var value = $(this).val().toLowerCase();
-                $('.accordion-item').filter(function() {
-                    $(this).toggle($(this).find('.event-name').text().toLowerCase().indexOf(value) >
-                        -1);
-                });
+            // Modal image add functionality
+            const addImageModal = document.getElementById('addImageModal');
+            addImageModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const eventId = button.getAttribute('data-event-id');
+                const modalEventIdInput = addImageModal.querySelector('#event_id');
+                modalEventIdInput.value = eventId;
             });
         });
     </script>
+
 @endsection

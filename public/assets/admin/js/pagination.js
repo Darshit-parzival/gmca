@@ -4,10 +4,6 @@ $(document).ready(function() {
         "ordering": true,   
         "searching": true,
         "lengthChange": true,
-        "createdRow": function(row, data, dataIndex) {
-            $('td', row).css('text-align', 'center');
-            $('th', row).css('text-align', 'center');
-        }
     });
 
     function formatDate(dateString) {
