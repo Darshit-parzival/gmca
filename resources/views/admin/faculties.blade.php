@@ -6,8 +6,8 @@
     </div>
     <hr class="mb-5" />
     <div class="top-actions d-flex">
-        <div style="flex: 1">
-            <a href="#" class="btn btn-secondary">Export</a>
+        <div style="flex: 1;">
+            <button id="exportButton" class="btn btn-secondary">Export</button>
         </div>
         <div style="margin-left: auto">
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">

@@ -1,3 +1,8 @@
+#pagetable th, #pagetable td {
+    text-align: center; /* Center both headers and data cells */
+}
+
+
 th{
     color:white  !important;
 }

@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
 
     <script src="{{ asset('assets/admin/js/pagination.js') }}"></script>
+    <!-- Include the XLSX.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
   </head>
 

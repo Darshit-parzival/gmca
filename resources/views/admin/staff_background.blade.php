@@ -7,13 +7,15 @@
     </div>
     <hr class="mb-5">
     <div class="top-actions d-flex">
+        <div style="flex: 1;">
+            <button id="exportButton" class="btn btn-secondary">Export</button>
+        </div>
         <div style="margin-left:auto;">
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
                 Add New Background
             </button>
         </div>
     </div>
-
     <!-- Filter Form -->
     <form method="GET" action="{{ url('/admin/staff-background') }}" class="mb-2 mt-3">
         <div class="mb-3">
