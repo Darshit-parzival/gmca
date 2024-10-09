@@ -21,21 +21,22 @@ class GalleryController extends Controller
             'event_id' => 'required|exists:event_data,id',
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
+    
         $event_id = $req->input('event_id');
         $images = $req->file('images');
+    
         foreach ($images as $image) {
-            $imageName = time() . '.' . $req->file('images')->extension();
+            $imageName = uniqid() . '.' . $image->extension();
             $image->move(public_path('assets/admin/images/events'), $imageName);
-            
             $gallery = new GalleryModel;
             $gallery->event_id = $event_id;
             $gallery->image = $imageName;
             $gallery->status = 1;
             $gallery->save();
         }
-        
         return redirect()->back()->with('success', 'Images uploaded successfully.');
     }
+    
     public function delete($id)
     {
     $gallery = GalleryModel::find($id);
