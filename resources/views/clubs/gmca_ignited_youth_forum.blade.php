@@ -37,7 +37,26 @@
         border-radius: 5px;
         z-index: 200;
         transition: all 0.3s ease;
-        /* Above the sidebar */
+    }
+
+    .toggle-sidebar:hover {
+        opacity: 0;
+    }
+
+    .toggle-sidebar:hover + .club-sidebar {
+        transform: scaleX(1); 
+    }
+
+    .club-sidebar:hover {
+        transform: scaleX(1); 
+    }
+
+    .club-sidebar:hover + .toggle-sidebar {
+        opacity: 0;
+    }
+
+    .toggle-sidebar {
+        opacity: 1;
     }
 
     .club-sidebar a {
@@ -64,12 +83,10 @@
 
     .tab-section {
         display: none;
-        /* Hide all sections initially */
     }
 
     .tab-section.active {
         display: block;
-        /* Show the active section */
     }
 
     .club-info {
@@ -102,7 +119,8 @@
         color: #555;
         line-height: 1.5;
     }
-/* 
+
+    /* 
     #club-events {
         padding: 20px;
         background-color: #f9f9f9;
@@ -219,9 +237,9 @@
 
     </div>
 
-    <div class="toggle-sidebar" onclick="toggleSidebar()">Menu</div>
+    <div class="toggle-sidebar">Menu</div>
     <div class="club-sidebar">
-        <span class="close-btn" onclick="toggleSidebar()" style="cursor: pointer;">✖</span>
+        <!-- <span class="close-btn" onclick="toggleSidebar()" style="cursor: pointer;">✖</span> -->
         <a onclick="showSection('club-home')">Home</a>
         <a onclick="showSection('club-events')">Events</a>
         <a onclick="showSection('club-gallery')">Gallery</a>
@@ -239,16 +257,15 @@
         // Show the selected section
         document.getElementById(sectionId).classList.add('active');
 
-        toggleSidebar();
+        // toggleSidebar();
     }
 
-    function toggleSidebar() {
-        const sidebar = document.querySelector('.club-sidebar');
-        sidebar.style.transform = sidebar.style.transform === 'scaleX(1)' ? 'scaleX(0)' : 'scaleX(1)';
-        const toggleBtn = document.querySelector('.toggle-sidebar');
-        toggleBtn.style.display = toggleBtn.style.display === 'none' ? 'block' : 'none';
-        
-    }
+    // function toggleSidebar() {
+    //    const sidebar = document.querySelector('.club-sidebar');
+    //    sidebar.style.transform = sidebar.style.transform === 'scaleX(1)' ? 'scaleX(0)' : 'scaleX(1)';
+    //    const toggleBtn = document.querySelector('.toggle-sidebar');
+    //    toggleBtn.style.display = toggleBtn.style.display === 'none' ? 'block' : 'none';
+    // }
 </script>
 
 @endsection

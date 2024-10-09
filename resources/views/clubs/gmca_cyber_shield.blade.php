@@ -37,7 +37,26 @@
         border-radius: 5px;
         z-index: 200;
         transition: all 0.3s ease;
-        /* Above the sidebar */
+    }
+
+    .toggle-sidebar:hover {
+        opacity: 0;
+    }
+
+    .toggle-sidebar:hover + .club-sidebar {
+        transform: scaleX(1); 
+    }
+
+    .club-sidebar:hover {
+        transform: scaleX(1); 
+    }
+
+    .club-sidebar:hover + .toggle-sidebar {
+        opacity: 0;
+    }
+
+    .toggle-sidebar {
+        opacity: 1;
     }
 
     .club-sidebar a {
@@ -219,9 +238,9 @@
 
     </div>
 
-    <div class="toggle-sidebar" onclick="toggleSidebar()">Menu</div>
+    <div class="toggle-sidebar">Menu</div>
     <div class="club-sidebar">
-        <span class="close-btn" onclick="toggleSidebar()" style="cursor: pointer;">✖</span>
+        <!-- <span class="close-btn" onclick="toggleSidebar()" style="cursor: pointer;">✖</span> -->
         <a onclick="showSection('club-home')">Home</a>
         <a onclick="showSection('club-events')">Events</a>
         <a onclick="showSection('club-gallery')">Gallery</a>
@@ -242,13 +261,13 @@
         toggleSidebar();
     }
 
-    function toggleSidebar() {
-        const sidebar = document.querySelector('.club-sidebar');
-        sidebar.style.transform = sidebar.style.transform === 'scaleX(1)' ? 'scaleX(0)' : 'scaleX(1)';
-        const toggleBtn = document.querySelector('.toggle-sidebar');
-        toggleBtn.style.display = toggleBtn.style.display === 'none' ? 'block' : 'none';
+    // function toggleSidebar() {
+    //     const sidebar = document.querySelector('.club-sidebar');
+    //     sidebar.style.transform = sidebar.style.transform === 'scaleX(1)' ? 'scaleX(0)' : 'scaleX(1)';
+    //     const toggleBtn = document.querySelector('.toggle-sidebar');
+    //     toggleBtn.style.display = toggleBtn.style.display === 'none' ? 'block' : 'none';
         
-    }
+    // }
 </script>
 
 @endsection
