@@ -203,27 +203,34 @@
                 <div id="club-events" class="tab-section">
                     <h2>Events</h2>
                     <div class="event-list">
+                        @if(isset($events) && count($events) > 0)
+                        @foreach($events as $event)
                         <div class="event-item">
-                            <h3>Leadership Workshop</h3>
-                            <p class="event-date">Sept 30, 2024</p>
+                            <h3>{{ $event->name }}</h3>
+                            <p class="event-date">{{ \Carbon\Carbon::parse($event->date)->format('M d, Y') }}</p>
                         </div>
-                        <div class="event-item">
-                            <h3>Community Service Project</h3>
-                            <p class="event-date">Oct 15, 2024</p>
-                        </div>
-                        <div class="event-item">
-                            <h3>Annual Youth Conference</h3>
-                            <p class="event-date">Nov 10, 2024</p>
-                        </div>
+                        @endforeach
+                        @else
+                        <p>No events found.</p>
+                        @endif
                     </div>
                 </div>
 
                 <!-- Gallery Section -->
                 <div id="club-gallery" class="tab-section">
                     <h2>Event Gallery</h2>
-                    <img src="{{ asset('assets/admin/images/events/1722791025_img1.jpg') }}" alt="Event 1">
-                    <img src="{{ asset('assets/admin/images/events/1722791025_img2.jpg') }}" alt="Event 1">
-                    <img src="{{ asset('assets/admin/images/events/1722791025_img3.jpg') }}" alt="Event 1">
+                    @if(isset($gallery) && count($gallery) > 0)
+                    @foreach($gallery as $photo)
+                    @if($photo->status == 1)
+                    @php
+                    $imagePath = asset('assets/admin/images/events/' . $photo->image);
+                    @endphp
+                    <img src="{{ $imagePath }}" alt="Event Photo" />
+                    @endif
+                    @endforeach
+                    @else
+                    <p>No images found for IYFE events.</p>
+                    @endif
                 </div>
 
                 <!-- Contact Section -->

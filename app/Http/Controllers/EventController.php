@@ -4,15 +4,39 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\EventModel;
+use App\Models\GalleryModel;
 class EventController extends Controller
 {
     function view_events(){
         $events = EventModel::all();
         return view('admin.events', compact('events'));
     }
+    function view_iyfevents(){
+        // $events = EventModel::all();
+        $events = EventModel::where('type', 'iyfe')->where('status', 1)->get();
+        
+        $gallery = GalleryModel::join('event_data', 'gallery_data.event_id', '=', 'event_data.id')
+             ->where('event_data.type', 'iyfe')
+             ->where('event_data.status', 1) // Optional: check for state if needed
+             ->select('gallery_data.image', 'gallery_data.status')
+             ->get();
+        return view('clubs.gmca_ignited_youth_forum', compact('events', 'gallery'));
+    }
+    function view_csevents(){
+        // $events = EventModel::all();
+        $events = EventModel::where('type', 'cse')->where('status', 1)->get();
+        
+        $gallery = GalleryModel::join('event_data', 'gallery_data.event_id', '=', 'event_data.id')
+             ->where('event_data.type', 'cse')
+             ->where('event_data.status', 1) // Optional: check for state if needed
+             ->select('gallery_data.image', 'gallery_data.status')
+             ->get();
+        return view('clubs.gmca_cyber_shield', compact('events', 'gallery'));
+    }
     public function add(Request $req){
         $req->validate([
             'txtname' => 'required|string',
+            'txttype' => 'required|string',
             'txtdate' => 'required|date',
             'txtreport' => 'required|file|mimes:pdf',
             'txtdetails' => 'required|string',
@@ -20,6 +44,7 @@ class EventController extends Controller
         ]);
         $event = new EventModel;
         $event->name = $req->txtname;
+        $event->type = $req->txttype;
         $event->date = $req->txtdate;
         $event->details = $req->txtdetails;
         $event->status = $req->has('txtstatus') ? 1 : 0;
@@ -29,8 +54,11 @@ class EventController extends Controller
             $file->move(public_path('assets/admin/reports'), $filename);
             $event->report = $filename;
         }
-        $event->save();
-        return redirect()->back()->with('success', 'Event added successfully!');
+        if ($event->save()) {
+            return redirect()->back()->with('success', 'Event added successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to add the event.');
+        }
     }
     function delete($id){
         $event=EventModel::find($id);
@@ -46,6 +74,7 @@ class EventController extends Controller
     function edit(Request $req){
         $req->validate([
             'txtname' => 'required|string',
+            'txttype' => 'required|string',
             'txtdate' => 'required|date',
             'txtreport' => 'nullable|mimes:pdf',
             'txtdetails' => 'string',
@@ -56,6 +85,7 @@ class EventController extends Controller
             return redirect()->back()->with('error', 'Event not found.');
         }
         $event->name = $req->txtname;
+        $event->type = $req->txttype;
         $event->date = $req->txtdate;
         $event->details = $req->txtdetails;
         $event->status = $req->has('txtstatus') ? 1 : 0;

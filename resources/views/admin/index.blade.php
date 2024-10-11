@@ -1,5 +1,13 @@
 @extends('admin.layouts.main')
 @section('main-section')
+<style>
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
 <div class="d-flex justify-content-center align-items-center min-vh-100">
     <div class="ms-4 row g-4">
         <div class="col-md-4">

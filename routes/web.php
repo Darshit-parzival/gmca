@@ -42,12 +42,8 @@ Route::get('/notice', function () {
 Route::get('/clubs', function () {
     return view('clubs/student_clubs');
 });
-Route::get('/giyf', function () {
-    return view('clubs/gmca_ignited_youth_forum');
-});
-Route::get('/gcs', function () {
-    return view('clubs/gmca_cyber_shield');
-});
+Route::get('/giyf', [EventController::class, 'view_iyfevents']);
+Route::get('/gcs', [EventController::class, 'view_csevents']);
 Route::get('/mandatory', function () {
     return view('mandatory');
 });

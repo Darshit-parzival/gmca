@@ -17,8 +17,8 @@
         </div>
     </div>
 
-   <!-- Add Modal -->
-   <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <!-- Add Modal -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -31,24 +31,39 @@
                         <div class="mb-3">
                             <label for="txtname" class="form-label">Event Title</label>
                             <input type="text" class="form-control" name="txtname" id="txtname">
-                            <span class="text-danger mt-2">@error('txtname') {{ $message }} @enderror</span>
+                            <span class="text-danger mt-2">
+                                @error('txtname')
+                                {{ $message }}
+                                @enderror
+                            </span>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="txttype" class="form-label">Type</label>
+                            <select class="form-select" name="txttype" id="txttype">
+                                <option value="" hidden>---Select Event---</option>
+                                <option value="ce">College Event</option>
+                                <option value="iyfe">Ignited Youth Forum Event</option>
+                                <option value="cse">Cyber Shield Event</option>
+                            </select>
+                        </div>
+
                         <div class="mb-3">
                             <label for="txtdate" class="form-label">Date</label>
                             <input type="date" class="form-control" name="txtdate" id="txtdate">
                             <span class="text-danger mt-2">
-                                @error('txtemail') 
-                                    {{ $message }} 
+                                @error('txtemail')
+                                {{ $message }}
                                 @enderror
                             </span>
                         </div>
                         <div class="mb-3">
                             <label for="txtreport" class="form-label">Report</label>
-                            <input type="file" class="form-control" name="txtreport" id="txtreport" value="1">
+                            <input type="file" class="form-control" name="txtreport" id="txtreport" value="1" accept=".jpg, .jpeg, .png, .pdf">
                         </div>
                         <div class="mb-3">
                             <label for="txtdetails" class="form-label">Details</label>
-                            <textarea class="form-control" name="txtdetails" id="txtdetails"></textarea>    
+                            <textarea class="form-control" name="txtdetails" id="txtdetails"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="txtstatus" class="form-label">Active</label>
@@ -86,20 +101,20 @@
                     <td>{{ $event->details }}</td>
                     <td>
                         @if ($event->status)
-                          <div class="text-success">Active</div>  
+                        <div class="text-success">Active</div>
                         @else
-                          <div class="text-danger">Inactive</div>  
+                        <div class="text-danger">Inactive</div>
                         @endif
                     </td>
                     <td>
                         <div class="d-flex justify-content-center">
-                        <button type="button" class="me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $event->id }}">
-                            Edit
-                        </button>
-                    
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $event->id }}">
-                            Delete
-                        </button>
+                            <button type="button" class="me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $event->id }}">
+                                Edit
+                            </button>
+
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $event->id }}">
+                                Delete
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -133,19 +148,31 @@
                             </div>
                             <form method="post" action="{{ url('/event/edit') }}" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="txtid" value="{{$event->id}}"/>
+                                <input type="hidden" name="txtid" value="{{$event->id}}" />
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label for="txtname" class="form-label">Event Title</label>
                                         <input type="text" class="form-control" name="txtname" id="txtname" value="{{$event->name}}">
-                                        <span class="text-danger mt-2">@error('txtname') {{ $message }} @enderror</span>
+                                        <span class="text-danger mt-2">
+                                            @error('txtname')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="txttype" class="form-label">Type</label>
+                                        <select class="form-select" name="txttype" id="txttype">
+                                            <option value="ce" @selected($event->type == 'ce')>College Event</option>
+                                            <option value="iyfe" @selected($event->type == 'iyfe')>Ignited Youth Forum Event</option>
+                                            <option value="cse" @selected($event->type == 'cse')>Cyber Shield Event</option>
+                                        </select>
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtdate" class="form-label">Date</label>
                                         <input type="date" class="form-control" name="txtdate" id="txtdate" value="{{$event->date}}">
                                         <span class="text-danger mt-2">
-                                            @error('txtemail') 
-                                                {{ $message }} 
+                                            @error('txtemail')
+                                            {{ $message }}
                                             @enderror
                                         </span>
                                     </div>
@@ -155,7 +182,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtdetails" class="form-label">Details</label>
-                                        <textarea class="form-control" name="txtdetails" id="txtdetails">{{$event->details}}</textarea>    
+                                        <textarea class="form-control" name="txtdetails" id="txtdetails">{{$event->details}}</textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtstatus" class="form-label">Active</label>
