@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\EventModel;
 use App\Models\GalleryModel;
+
 class EventController extends Controller
 {
     function view_events(){
@@ -24,13 +25,14 @@ class EventController extends Controller
     }
     function view_csevents(){
         // $events = EventModel::all();
-        $events = EventModel::where('type', 'cse')->where('status', 1)->get();
+        $events = EventModel::where('type', 'cse')->where('status', 1)->orderBy('date','desc')->get();
         
         $gallery = GalleryModel::join('event_data', 'gallery_data.event_id', '=', 'event_data.id')
              ->where('event_data.type', 'cse')
              ->where('event_data.status', 1) // Optional: check for state if needed
              ->select('gallery_data.image', 'gallery_data.status')
              ->get();
+        
         return view('clubs.gmca_cyber_shield', compact('events', 'gallery'));
     }
     public function add(Request $req){
