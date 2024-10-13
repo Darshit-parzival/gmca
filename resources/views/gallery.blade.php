@@ -185,7 +185,7 @@
             @if ($gallery->status == 1)
             <div class="col-md-3" style="margin-bottom:36px;">
                 <a data-fancybox="gallery" href="{{ asset('assets/admin/images/events') . '/' . $gallery->image }}">
-                    <img src="{{ asset('assets/admin/images/events') . '/' . $gallery->image }}" class="img-responsive img-thumbnail" style="height: 200px; width: 250px;"/>
+                    <img src="{{ asset('assets/admin/images/events/') . '/' . $gallery->image }}" class="img-responsive img-thumbnail" style="height: 200px; width: 250px;"/>
                 </a>
             </div>
             @endif

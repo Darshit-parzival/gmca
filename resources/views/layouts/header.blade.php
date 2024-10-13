@@ -89,9 +89,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
 
     <style>
         .header-top {
@@ -163,44 +163,35 @@
                                         <nav>
                                             <ul id="nav">
                                                 <li class="current"><a href="/">Home</a>
-                                                <ul class="account-dropdown">
-                                                    <li><a href="/#vm" id="vmlink">Vision & Mission</a></li>
-                                                    <li><a href="/#news">News</a></li>
-                                                    <li><a href="/#notice">Notice</a></li>
-                                                </ul>
+                                                    <ul class="account-dropdown">
+                                                        <li><a href="/#vm" id="vmlink">Vision & Mission</a></li>
+                                                        <li><a href="/#news">News</a></li>
+                                                        <li><a href="/#notice">Notice</a></li>
+                                                    </ul>
                                                 </li>
-                                                <li><a href="/about">About</a><ul>
-                                                    <li><a href="">Menu 1</a></li>
-                                                    <li><a href="">Menu 2</a></li>
-                                                    <li><a href="">Menu 3</a></li>
-                                                </ul></li>
-                                                <li><a href="https://gmca.ac.in/staff.php">Staff</a><ul>
-                                                    <li><a href="">Menu 1</a></li>
-                                                    <li><a href="">Menu 2</a></li>
-                                                    <li><a href="">Menu 3</a></li>
-                                                </ul> </li>
-                                                <li><a href="event.php">Event</a><ul>
-                                                    <li><a href="">Menu 1</a></li>
-                                                    <li><a href="">Menu 2</a></li>
-                                                    <li><a href="">Menu 3</a></li>
-                                                </ul></li>
-                                                <li><a href="/gallery">Gallery</a><ul>
-                                                    <li><a href="">Menu 1</a></li>
-                                                    <li><a href="">Menu 2</a></li>
-                                                    <li><a href="">Menu 3</a></li>
-                                                </ul></li>
+                                                <li><a href="/about">About</a>
+                                                </li>
+                                                <li><a href="https://gmca.ac.in/staff.php">Staff</a>
+                                                    <ul>
+                                                        <li><a href="/staff">Teaching</a></li>
+                                                        <li><a href="/staff">Non Teaching</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="event.php">Event</a>
+                                                </li>
+                                                <li><a href="/gallery">Gallery</a>
+                                                </li>
                                                 <li>
                                                     <a href="academic.php">Academic</a>
                                                     <ul>
+                                                        <li><a href="/student">Library</a></li>
                                                         <li><a href="/student">Student Section</a></li>
                                                         <li><a href="/clubs">Student Clubs</a></li>
+                                                        <li><a href="/clubs">Clubs Testinomials</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="/contact">Contact</a><ul>
-                                                    <li><a href="">Menu 1</a></li>
-                                                    <li><a href="">Menu 2</a></li>
-                                                    <li><a href="">Menu 3</a></li>
-                                                </ul></li>
+                                                <li><a href="/contact">Contact</a>
+                                                </li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -234,44 +225,36 @@
                                 <div class="mobile-menu">
                                     <nav id="dropdown">
                                         <ul>
-                                            <li><a href="/">HOME</a><ul class="submenu">
-                                                <li><a href="/#vm">Vision & Mission</a></li>
-                                                <li><a href="/#news">News</a></li>
-                                                <li><a href="/#notice">Notice</a></li>
-                                            </ul></li>
-                                            <li><a href="/about">About Us</a><ul class="submenu">
-                                                <li><a href="">Menu 1</a></li>
-                                                <li><a href="">Menu 2</a></li>
-                                                <li><a href="">Menu 3</a></li>
-                                            </ul></li>
-                                            <li><a href="https://gmca.ac.in/staff.php">Staff</a><ul class="submenu">
-                                                <li><a href="">Menu 1</a></li>
-                                                <li><a href="">Menu 2</a></li>
-                                                <li><a href="">Menu 3</a></li>
-                                            </ul></li>
-                                            <li><a href="event.php">Event</a><ul class="submenu">
-                                                <li><a href="">Menu 1</a></li>
-                                                <li><a href="">Menu 2</a></li>
-                                                <li><a href="">Menu 3</a></li>
-                                            </ul> </li>
-                                            <li><a href="Gallery.php">Gallery</a><ul class="submenu">
-                                                <li><a href="">Menu 1</a></li>
-                                                <li><a href="">Menu 2</a></li>
-                                                <li><a href="">Menu 3</a></li>
-                                            </ul></li>
+                                            <li><a href="/">HOME</a>
+                                                <ul class="submenu">
+                                                    <li><a href="/#vm">Vision & Mission</a></li>
+                                                    <li><a href="/#news">News</a></li>
+                                                    <li><a href="/#notice">Notice</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/about">About Us</a></li>
+                                            <li><a href="https://gmca.ac.in/staff.php">Staff</a>
+                                                <ul class="submenu">
+                                                    <li><a href="">Teaching</a></li>
+                                                    <li><a href="">Non Teaching</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="event.php">Event</a>
+                                            </li>
+                                            <li><a href="Gallery.php">Gallery</a>
+                                            </li>
                                             <li>
                                                 <a href="academic.php">Academic</a>
                                                 <ul class="submenu">
+                                                    <li><a href="/student">Library</a></li>
                                                     <li><a href="/student">Student Section</a></li>
                                                     <li><a href="/clubs">Student Clubs</a></li>
+                                                    <li><a href="/clubs">Clubs Testinomials</a></li>
                                                     <!-- Add more submenu items here -->
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.php">Contact</a><ul class="submenu">
-                                                <li><a href="">Menu 1</a></li>
-                                                <li><a href="">Menu 2</a></li>
-                                                <li><a href="">Menu 3</a></li>
-                                            </ul></li>
+                                            <li><a href="contact.php">Contact</a>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>

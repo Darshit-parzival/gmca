@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{ asset('assets/client/css/footer.css') }}">
-
+<?php
+$galleryImages = \App\Models\GalleryModel::all();
+?>
 <div class="footer-widget-area">
     <div class="container" style="padding-bottom:2%;">
         <div class="row">
@@ -14,24 +16,14 @@
                             <button class="pre-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             <button class="nxt-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             <div class="product-container">
+                                @foreach($galleryImages as $image)
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="{{ asset('assets/static/1.jpg') }}" class="product-thumb"
-                                            alt="">
+                                        <img src="{{ asset('assets/admin/images/events'. '/' . $image->image) }}" class="product-thumb" alt="">
                                     </div>
                                 </div>
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="{{ asset('assets/static/2.jpg') }}" class="product-thumb"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="{{ asset('assets/static/3.jpg') }}" class="product-thumb"
-                                            alt="">
-                                    </div>
-                                </div>
+                                @endforeach
+                            </div>
                         </section>
                         <!-- <div class="carousel slide media-carousel" id="media">
                                     <div class="carousel-inner">
