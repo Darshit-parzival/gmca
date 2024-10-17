@@ -105,6 +105,28 @@
             flex-grow: 1;
             /* This allows the container to take up all available space */
         }
+
+        .admin-link {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            color: #ffa500;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .admin-link i {
+            margin-right: 5px;
+        }
+        
+        .admin-link:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .admin-link:visited{
+            color: #ffa500;
+        }
     </style>
 </head>
 
@@ -116,6 +138,7 @@
             <!--Header Area Start-->
             <header>
                 <div class="header-top">
+                    <a href="/admin" class="admin-link"><i class="mdi mdi-account"></i>Admin</a>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
@@ -171,20 +194,20 @@
                                                 </li>
                                                 <li><a href="/about">About</a>
                                                 </li>
-                                                <li><a href="https://gmca.ac.in/staff.php">Staff</a>
+                                                <li><a href="/staff">Staff</a>
                                                     <ul>
-                                                        <li><a href="/staff">Teaching</a></li>
-                                                        <li><a href="/staff">Non Teaching</a></li>
+                                                        <li><a href="/staff#t">Teaching</a></li>
+                                                        <li><a href="/staff#nt">Non Teaching</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="event.php">Event</a>
+                                                <li><a href="/event">Event</a>
                                                 </li>
                                                 <li><a href="/gallery">Gallery</a>
                                                 </li>
                                                 <li>
-                                                    <a href="academic.php">Academic</a>
+                                                    <a href="/academic">Academic</a>
                                                     <ul>
-                                                        <li><a href="/student">Library</a></li>
+                                                        <li><a href="/library">Library</a></li>
                                                         <li><a href="/student">Student Section</a></li>
                                                         <li><a href="/clubs">Student Clubs</a></li>
                                                         <li><a href="/clubs">Clubs Testinomials</a></li>
@@ -233,27 +256,27 @@
                                                 </ul>
                                             </li>
                                             <li><a href="/about">About Us</a></li>
-                                            <li><a href="https://gmca.ac.in/staff.php">Staff</a>
+                                            <li><a href="/staff">Staff</a>
                                                 <ul class="submenu">
-                                                    <li><a href="">Teaching</a></li>
-                                                    <li><a href="">Non Teaching</a></li>
+                                                    <li><a href="/staff#t">Teaching</a></li>
+                                                    <li><a href="/staff#nt">Non Teaching</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="event.php">Event</a>
+                                            <li><a href="/event">Event</a>
                                             </li>
-                                            <li><a href="Gallery.php">Gallery</a>
+                                            <li><a href="/gallery">Gallery</a>
                                             </li>
                                             <li>
-                                                <a href="academic.php">Academic</a>
+                                                <a href="/academic">Academic</a>
                                                 <ul class="submenu">
-                                                    <li><a href="/student">Library</a></li>
+                                                    <li><a href="/library">Library</a></li>
                                                     <li><a href="/student">Student Section</a></li>
                                                     <li><a href="/clubs">Student Clubs</a></li>
                                                     <li><a href="/clubs">Clubs Testinomials</a></li>
                                                     <!-- Add more submenu items here -->
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.php">Contact</a>
+                                            <li><a href="/contact">Contact</a>
                                             </li>
                                         </ul>
                                     </nav>

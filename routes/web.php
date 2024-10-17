@@ -18,7 +18,7 @@ use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\ExpertLectureController;
 use App\Http\Controllers\StaffBackgroundController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\StaffController;
 
 // Client Routes
 
@@ -28,10 +28,10 @@ Route::get('/student', function () {
     return view('students/index');
 });
 Route::get('/about', function () {
-    return view('about');
+    return view('static-pages/about');
 });
 Route::get('/contact', function () {
-    return view('contact');
+    return view('static-pages/contact');
 });
 Route::get('/news', function () {
     return view('news');
@@ -39,16 +39,31 @@ Route::get('/news', function () {
 Route::get('/notice', function () {
     return view('notice');
 });
+Route::get('/disclaimer', function () {
+    return view('static-pages/disclaimer');
+});
+Route::get('/library', function () {
+    return view('static-pages/library');
+});
+Route::get('/academic', function () {
+    return view('static-pages/academic');
+});
 Route::get('/clubs', function () {
     return view('clubs/student_clubs');
 });
+
+Route::get('/staff', [StaffController::class, 'get_staff']);
+Route::get('/staffdetails/{staff_id}', [StaffController::class, 'get_staff_details']);
+
+Route::get('/event', [EventController::class, 'view_public_events']);
+
 Route::get('/giyf', [EventController::class, 'view_iyfevents']);
 Route::get('/gcs', [EventController::class, 'view_csevents']);
 Route::get('/mandatory', function () {
     return view('mandatory');
 });
 Route::get('/rti', function () {
-    return view('rti');
+    return view('static-pages/rti');
 });
  
 //contactus client side

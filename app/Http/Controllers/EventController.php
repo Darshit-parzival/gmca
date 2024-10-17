@@ -12,6 +12,10 @@ class EventController extends Controller
         $events = EventModel::all();
         return view('admin.events', compact('events'));
     }
+    function view_public_events(){
+        $events = EventModel::where('status', 1)->get();
+        return view('event', compact('events'));
+    }
     function view_iyfevents(){
         // $events = EventModel::all();
         $events = EventModel::where('type', 'iyfe')->where('status', 1)->get();

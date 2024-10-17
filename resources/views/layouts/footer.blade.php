@@ -160,7 +160,7 @@ $galleryImages = \App\Models\GalleryModel::all();
             <div class="col-md-6 col-sm-5">
                 <div class="column-right disclaimer">
                     <!-- <span>Privacy Policy , Terms &amp; Conditions</span> -->
-                    <span><a href="disclaimer.php">DISCLAIMER</a></span>
+                    <span><a href="/disclaimer">DISCLAIMER</a></span>
                 </div>
             </div>
         </div>

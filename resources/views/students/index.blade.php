@@ -39,8 +39,8 @@
     .support-item h2 {
         margin-top: 0;
         font-size: 1.5em;
-        color: #007bff;
-        border-bottom: 2px solid #007bff;
+        color: #2d3e50;
+        border-bottom: 2px solid #2d3e50;
         padding-bottom: 10px;
         margin-bottom: 20px;
     }
@@ -77,7 +77,7 @@
         font-size: 1em;
         font-weight: bold;
         color: #ffffff;
-        background-color: #007bff;
+        background-color: #2d3e50;
         border: none;
         border-radius: 5px;
         text-decoration: none;
@@ -85,7 +85,7 @@
     }
 
     .button:hover {
-        background-color: #0056b3;
+        background-color: #576473;
     }
 
     /* Responsive Styles */
@@ -110,6 +110,82 @@
         }
     }
 </style>
+<!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">Student Section</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center">
+                            <li><a href="index.php">Home</a>
+                            </li>
+                            <li><a href="academic.php">Academic</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="event-area section-padding bg-white" style="padding-top: 50px; padding-bottom: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title" style="padding-bottom: 5px;">
+                        <h3>Student Section of GMCA</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="single-comment">
+            <div class="comment-text">
+                <div class="author-info">
+                    <h4>The student section at GMCA College serves as the central administrative unit dedicated to managing various aspects & responsibilities crucial to student life and academic affairs.</h4>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:30px;">
+            <p style="font-family:'montserratregular'; font-size:14px; text-align:justify;">
+                It overlooks essential functions such as reporting of students after ACPC admissions, university enrollment, and academic records maintenance for students. The student section also coordinates examinations, facilitates managing student databases, term fee collection and student feedback collection and analysis. Additionally, it plays a crucial role in handling student queries, providing information on scholarships, travel concession passes, various certificates like No Objection Certificate, language certificate , bonafide certificate By ensuring efficient operations and support services, the student section department contributes significantly to fostering a conducive learning environment and overall student satisfaction at GMCA college.
+            </p>
+        </div>
+        <hr>
+        <ul style="text-align: justify; padding:0 30px; font-family:'montserratregular';   list-style-type: disc;">
+            <li style="margin-bottom:10px"><b>Admissions and Enrollment: </b>Handling the admission process, including application reviews, document verification, and enrollment procedures for new and continuing students.</li>
+            
+            <li style="margin-bottom:10px"><b>Academic Records: </b>Maintaining accurate records of students' academic progress, including grades, transcripts, and certifications.</li>
+            
+            <li style="margin-bottom:10px"><b>Fee collection: </b>Handling term fee collection and resolving queries related to the same.</li>
+            
+            <li style="margin-bottom:10px"><b>Scholarships and Financial Aid: </b>Providing information on available scholarships, grants, and financial aid options, as well as assisting students with applications and disbursements.</li>
+            
+            <li style="margin-bottom:10px"><b>Student Services: </b>Addressing student queries and concerns related to administrative processes, academic policies, and general information as well as providing support for scholarships, travel concession passes, anti-ragging, various certificates like No Objection Certificate, language certificate, bonafide certificate etc.</li>
+        
+            <li style="margin-bottom:10px"><b>Student Grievances: </b>Handling complaints and grievances from students, ensuring fair and prompt resolution through established procedures.</li>
+            
+            <li style="margin-bottom:10px"><b>Student Feedback collection: </b>Handling collection and analysis of student feedbacks for all courses and program.</li>
+        </ul>
+        
+        <hr>
+        <h3 style="font-family: 'Segoe UI, Arial, Hevetica, sans-serif'; font-weight:bold;">Enrollment Cancellation:</h3>
+        <ul style="text-align: justify; padding:0 30px; font-family:'montserratregular'; list-style-type: disc;">
+            <li style="margin-top:10px;">Properly drafted handwritten application of student clearly stating reason for admission cancellation signed by Student with declaration by Parent/Guardian with sign.</li>
+            <li style="margin-top:10px;">Properly filled Admission cancellation form with <b>Rs. 300/- cancellation charges</b></li>
+            <li style="margin-top:10px;">NOC from Institute</li>
+            <li style="margin-top:10px;"><a href="{{asset('assets/static/FORMAT_FOR_ENROLLMENT_CANCELLATION_APPLICATION_FOR_STUDENT.pdf')}}" target="_blank">FORMAT FOR ENROLLMENT CANCELLATION APPLICATION FOR STUDENT</a></li>
+            <li style="margin-top:10px;"><a href="{{ asset('assets/static/GMCA_NOC_FOR_ENROLLMENT_CANCELLATION.pdf')}}" target="_blank">GMCA NOC FOR ENROLLMENT CANCELLATION</a></li>
+        </ul>
+    </div>
+</div>
+
+
 <div class="student-support">
     <div class="container">
         <main>
