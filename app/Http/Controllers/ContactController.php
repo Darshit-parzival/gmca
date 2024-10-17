@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactModel;
-
+use App\Mail\ContactReplyMail;
+use Illuminate\Support\Facades\Mail;
 class ContactController extends Controller
 {
+    public function view(){
+        $contacts=ContactModel::all();
+        return view('admin.contactreply')->with(compact('contacts'));
+    }
     public function store(Request $request)
     {
         $request->validate([
@@ -23,6 +28,16 @@ class ContactController extends Controller
         $contact->mobile = $request->mobile;
         $contact->message = $request->message;
         $contact->save();
-        return redirect()->back()->with('success', 'Thank you for your message!');
+        return redirect('/contact')->with('success', 'Thank you for your message!');
+    }
+
+    public function sendReply(Request $request)
+    {
+        $contact = ContactModel::find($request->c_id); 
+        $replyMessage = $request->replyMessage;
+        Mail::to($contact->email)->send(new ContactReplyMail($contact->name, $replyMessage, $contact->message));
+        $contact->status=1;
+        $contact->save();
+        return redirect()->back()->with('success', 'Reply sent successfully!');
     }
 }
