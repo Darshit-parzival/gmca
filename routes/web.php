@@ -116,6 +116,10 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/admin/webportal/vision/add', [WebPortalController::class, 'vision_add']);
     Route::post('/admin/webportal/mission', [WebPortalController::class, 'view_webportal']);
     Route::post('/admin/webportal/mission/add', [WebPortalController::class, 'mission_add']);
+
+    //contact routes 
+    Route::get('/admin/contact-us', [ContactController::class, 'view']);
+    Route::post('/admin/contact/reply', [ContactController::class, 'sendReply']);
 });
 
 Route::middleware(['auth:faculty,admin'])->group(function () {

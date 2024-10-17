@@ -4,10 +4,8 @@
 <style>
     .border
     {
-        /*border-bottom-color: black;*/
         border: orange;
         border-style:ridge ;
-        /*padding: 10px;*/
         .input-container input:focus ~ label,
             .input-container input:valid ~ label{
             top:-12px;
@@ -58,8 +56,6 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d58760.11486242859!2d72.617823!3d23.005143!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd79c4285bf4f7081!2sGovernment%20MCA%20College!5e0!3m2!1sen!2sin!4v1611344713218!5m2!1sen!2sin" width="100%" height="385px"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
-    <!--End of Google Map Area-->
-    <!--Contact Form Area Start-->
     <div class="contact-form-area" style="margin-top:30px;margin-bottom:30px">
         <div class="container">
             <div class="row">
@@ -99,12 +95,12 @@
                     </form>
                     <div class="mt-4">
                         @if(session('error'))
-                        <div class="alert alert-danger">
+                        <div class="">
                             {{ session('error') }}
                         </div>
                         @endif
                         @if(session('success'))
-                        <div class="alert alert-success">
+                        <div class="">
                             {{ session('success') }}
                         </div>
                         @endif
@@ -113,8 +109,6 @@
             </div>
         </div>
     </div>
-    <!--End of Contact Form-->
-
     <!--<script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFr5PKEUaw45PLBusmppl8z9tgk6bL1PA&callback=initMap"></script>-->
     <!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
     <script>
