@@ -144,6 +144,12 @@
                           <span class="hide-menu">Contact Us</span>
                       </a>
                     </li>
+                    <li class="sidebar-item">
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/testimonial/view" aria-expanded="false">
+                          <i class="mdi mdi-mail"></i>
+                          <span class="hide-menu">Tesimonials</span>
+                      </a>
+                    </li>
                     
                     @endif
                     @if(session('role') === 'faculty')

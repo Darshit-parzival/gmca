@@ -210,7 +210,6 @@
                                                         <li><a href="/library">Library</a></li>
                                                         <li><a href="/student">Student Section</a></li>
                                                         <li><a href="/clubs">Student Clubs</a></li>
-                                                        <li><a href="/clubs">Clubs Testinomials</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="/contact">Contact</a>
@@ -272,7 +271,7 @@
                                                     <li><a href="/library">Library</a></li>
                                                     <li><a href="/student">Student Section</a></li>
                                                     <li><a href="/clubs">Student Clubs</a></li>
-                                                    <li><a href="/clubs">Clubs Testinomials</a></li>
+                                                        
                                                     <!-- Add more submenu items here -->
                                                 </ul>
                                             </li>

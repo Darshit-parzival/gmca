@@ -124,6 +124,11 @@ Route::middleware(['auth:admin'])->group(function () {
     //contact routes 
     Route::get('/admin/contact-us', [ContactController::class, 'view']);
     Route::post('/admin/contact/reply', [ContactController::class, 'sendReply']);
+
+    Route::get('/admin/testimonial/view', [TestimonialsController::class, 'view_testimonials']);
+    Route::get('/admin/testimonials/activate/{id}', [TestimonialsController::class, 'activate']);
+    Route::get('/admin/testimonials/deactivate/{id}', [TestimonialsController::class, 'deactivate']);
+    Route::get('/admin/testimonials/delete/{id}', [TestimonialsController::class, 'delete']);
 });
 
 Route::middleware(['auth:faculty,admin'])->group(function () {

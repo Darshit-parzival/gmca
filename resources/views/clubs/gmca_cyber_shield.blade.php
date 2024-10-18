@@ -99,8 +99,8 @@
                         @if (isset($testimonials) && count($testimonials) > 0)
                         @foreach ($testimonials as $testimonial)
                         <div class="testimonial-card">
-                            <p class="testimonial-quote">"<? $testimonial->message ?>"</p>
-                            <span class="testimonial-author"><span class="author-title">- <? $testimonial->name ?></span></span>
+                            <p class="testimonial-quote">"{{$testimonial->message }}"</p>
+                            <span class="testimonial-author"><span class="author-title">- {{$testimonial->name}}</span></span>
                         </div>
                         @endforeach
                         @else
