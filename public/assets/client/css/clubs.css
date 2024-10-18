@@ -1,0 +1,299 @@
+.club-container {
+    margin: 50px auto;
+    width: 90%;
+    font-family: 'montserratregular', sans-serif;
+    display: flex;
+}
+
+.club-sidebar {
+    width: 200px;
+    background-color: #e67f22;
+    height: auto;
+    padding: 20px;
+    border-radius: 30px 0 0 30px;
+    box-sizing: border-box;
+    color: #2d3e50;
+    position: fixed;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.toggle-sidebar {
+    cursor: pointer;
+    position: fixed;
+    right: -20px;
+    transform: rotate(90deg);
+    background: #e67f22;
+    color: #2d3e50;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 200;
+    transition: all 0.3s ease;
+}
+
+.toggle-sidebar:hover {
+    opacity: 0;
+}
+
+.toggle-sidebar:hover+.club-sidebar {
+    transform: scaleX(1);
+}
+
+.club-sidebar:hover {
+    transform: scaleX(1);
+}
+
+.club-sidebar:hover+.toggle-sidebar {
+    opacity: 0;
+}
+
+.toggle-sidebar {
+    opacity: 1;
+}
+
+.club-sidebar a {
+    display: block;
+    color: #2d3e50;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    /* Change to pointer for clickable */
+}
+
+.club-sidebar a:hover {
+    background-color: white;
+    color: #333;
+}
+
+.club-content {
+    width: calc(100% - 250px);
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.tab-section {
+    display: none;
+    /* Hide all sections initially */
+}
+
+.tab-section.active {
+    display: block;
+    /* Show the active section */
+}
+
+.club-info {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.club-info img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.club-details {
+    flex-flow: column;
+    flex-grow: 1;
+    align-items: flex-start;
+
+}
+
+.club-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.club-details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 
+    #club-events {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    } */
+
+h2 {
+    font-size: 28px;
+    color: #2d3e50;
+    margin-bottom: 20px;
+}
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.event-item {
+    background-color: #fffbbb;
+    border-radius: 3px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.event-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.event-item h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #2d3e50;
+}
+
+.event-date {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .club-sidebar {
+        /* width: 100%; */
+        height: auto;
+        position: fixed;
+    }
+
+    .club-info {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .club-info img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* Gallery Section */
+#club-gallery {
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Light background for contrast */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Adjust size as needed */
+    gap: 15px;
+    /* Space between items */
+}
+
+.gallery-item {
+    overflow: hidden;
+    /* Hide overflow to create a clean crop */
+    position: relative;
+    /* For hover effect */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+.gallery-img {
+    width: 100%;
+    /* Make images responsive */
+    height: 200px;
+    /* Fixed height */
+    object-fit: cover;
+    /* Maintain aspect ratio while covering */
+    transition: transform 0.3s ease;
+    /* Smooth scaling on hover */
+}
+
+/* Hover effect */
+.gallery-img:hover {
+    transform: scale(1.1);
+    /* Scale up on hover */
+}
+
+/* Lightbox effect for larger image on click */
+.lightbox {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dark overlay */
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    /* Max width of the image */
+    max-height: 90%;
+    /* Max height of the image */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+/* Testimonials Styling */
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-quote {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    margin-top: 10px;
+}
+
+.author-title {
+    display: block;
+    font-size: 14px;
+    color: #888;
+}
+
+.modal {
+    z-index: 1050;
+}
+
+.modal.show {
+    display: block !important;
+    opacity: 1 !important;
+}

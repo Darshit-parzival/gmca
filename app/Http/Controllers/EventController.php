@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\EventModel;
 use App\Models\GalleryModel;
+use App\Models\TestimonialsModel;
 
 class EventController extends Controller
 {
@@ -25,7 +26,8 @@ class EventController extends Controller
              ->where('event_data.status', 1) // Optional: check for state if needed
              ->select('gallery_data.image', 'gallery_data.status')
              ->get();
-        return view('clubs.gmca_ignited_youth_forum', compact('events', 'gallery'));
+        $testimonials = TestimonialsModel::where('club', 'iyf')->where('status', 1)->get();
+        return view('clubs.gmca_ignited_youth_forum', compact('events', 'gallery', 'testimonials'));
     }
     function view_csevents(){
         // $events = EventModel::all();
@@ -36,8 +38,10 @@ class EventController extends Controller
              ->where('event_data.status', 1) // Optional: check for state if needed
              ->select('gallery_data.image', 'gallery_data.status')
              ->get();
+
+        $testimonials = TestimonialsModel::where('club', 'cs')->where('status', 1)->get();
         
-        return view('clubs.gmca_cyber_shield', compact('events', 'gallery'));
+        return view('clubs.gmca_cyber_shield', compact('events', 'gallery', 'testimonials'));
     }
     public function add(Request $req){
         $req->validate([

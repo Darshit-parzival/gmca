@@ -19,6 +19,7 @@ use App\Http\Controllers\ExpertLectureController;
 use App\Http\Controllers\StaffBackgroundController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TestimonialsController;
 
 // Client Routes
 
@@ -59,6 +60,9 @@ Route::get('/event', [EventController::class, 'view_public_events']);
 
 Route::get('/giyf', [EventController::class, 'view_iyfevents']);
 Route::get('/gcs', [EventController::class, 'view_csevents']);
+Route::post('/testimonials/add', [TestimonialsController::class, 'add_testimonial']);
+
+
 Route::get('/mandatory', function () {
     return view('mandatory');
 });
