@@ -12,7 +12,7 @@
                     <h1 class="text-center">Academic</h1>
                     <div class="breadcrumb-bar">
                         <ul class="breadcrumb text-center">
-                            <li><a href="index.php">Home</a>
+                            <li><a href="/">Home</a>
                             </li>
                             <li>Academic</li>
                         </ul>

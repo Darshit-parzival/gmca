@@ -64,8 +64,9 @@ Route::post('/testimonials/add', [TestimonialsController::class, 'add_testimonia
 
 
 Route::get('/mandatory', function () {
-    return view('mandatory');
+    return view('static-pages/mandatory');
 });
+
 Route::get('/rti', function () {
     return view('static-pages/rti');
 });

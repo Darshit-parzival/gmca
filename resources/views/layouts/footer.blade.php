@@ -109,7 +109,7 @@ $galleryImages = \App\Models\GalleryModel::all();
 
                     <div class="col-md-1 col-xs-2" style="padding-bottom:5px;"><i class="fa fa-map-marker"></i></div>
                     <div class="col-md-10 col-xs-10" style="padding-bottom:5px;"><a class="noborder"
-                            href="../contact.php" style="color:#fff"><span>
+                            href="/contact" style="color:#fff"><span>
                                 Government MCA College, <br> K. K. Shashtri Education
                                 Campus, <br> Maninagar (East),
                                 <br> Ahmedabad - 380008, INDIA</span>
@@ -123,9 +123,9 @@ $galleryImages = \App\Models\GalleryModel::all();
                     <a class="noborder" href="/">Home</a>
                     <a class="noborder" href="/staff">Teachers &amp; Staff</a>
                     <a class="noborder" href="/about">About</a>
-                    <a class="noborder" href="event.php">Events</a>
-                    <a class="noborder" href="Gallery.php">Gallery</a>
-                    <a class="noborder" href="academic.php">Academics</a>
+                    <a class="noborder" href="/event">Events</a>
+                    <a class="noborder" href="/gallery">Gallery</a>
+                    <a class="noborder" href="/academic">Academics</a>
                     <a class="noborder" href="/mandatory">Mandatory Disclosure</a>
                     <a class="noborder" href="/contact">Contact US</a>
                     <a class="noborder" href="/rti">RTI</a>

@@ -92,9 +92,9 @@
                 <div id="club-testimonials" class="tab-section">
                     <h2>Testimonials <button class="btn btn-success" style="float: right; background-color: #2d3e50;" onclick="showAddModal()">Add Testimonial</button> </h2>
                     @if(session('success'))
-                        <div class="alert alert-success" role="alert">
-                            Testimonial request has been submitted. Please wait until it is approved by the admin.
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        Testimonial request has been submitted. Please wait until it is approved by the admin.
+                    </div>
                     @endif
                     <div class="testimonial-container">
                         @if (isset($testimonials) && count($testimonials) > 0)
@@ -116,30 +116,30 @@
 
     <!-- Add Testimonial Modal -->
     <div class="modal fade" id="addTestimonialModal" tabindex="-1" aria-labelledby="addTestimonialModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addTestimonialModalLabel">Add Testimonial</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/testimonials/add" method="POST">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <label for="testimonial-message">Message</label>
-                                <textarea id="testimonial-message" name="message" class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="testimonial-name">Name</label>
-                                <input type="text" id="testimonial-name" name="name" class="form-control" required>
-                            </div>
-                            <input type="hidden" name="club" value="iyf">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTestimonialModalLabel">Add Testimonial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/testimonials/add" method="POST">
+                        @csrf
+                        <div class="form-group mb-3">
+                            <label for="testimonial-message">Message</label>
+                            <textarea id="testimonial-message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="testimonial-name">Name</label>
+                            <input type="text" id="testimonial-name" name="name" class="form-control" required>
+                        </div>
+                        <input type="hidden" name="club" value="iyf">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
     <div class="toggle-sidebar">Menu</div>
     <div class="club-sidebar">
@@ -190,9 +190,9 @@
     window.addEventListener('hashchange', showSectionFromHash);
 
     function showAddModal() {
-            const modal = new bootstrap.Modal(document.getElementById('addTestimonialModal'));
-            modal.show();
-        }
+        const modal = new bootstrap.Modal(document.getElementById('addTestimonialModal'));
+        modal.show();
+    }
 </script>
 
 @endsection

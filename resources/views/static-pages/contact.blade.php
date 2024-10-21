@@ -36,7 +36,7 @@
                         <h1 class="text-center">CONTACT US</h1>
                         <div class="breadcrumb-bar">
                             <ul class="breadcrumb text-center">
-                                <li><a href="index.php">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li>CONTACT</li>
                             </ul>
                         </div>

@@ -9,7 +9,7 @@
         const lightbox = document.createElement('div');
         lightbox.classList.add('lightbox');
         document.body.appendChild(lightbox);
-        
+
         galleryItems.forEach(item => {
             item.addEventListener('click', function() {
                 const imgSrc = this.querySelector('.gallery-img').src;
@@ -39,7 +39,7 @@
                     <p>Cyber Shield (GMCA) is dedicated to promoting cybersecurity awareness, knowledge sharing, and skill development in the field of cybersecurity. As technology advances, protecting data and information becomes more crucial than ever, and Cyber Shield is at the forefront of this mission.</p>
                     <p>Our club hosts various workshops, events, and hands-on training sessions to help students stay ahead in cybersecurity trends. Join us to enhance your skills, understand the challenges of the digital world, and be a part of the future defenders of cyber safety.</p>
                 </div>
-                
+
                 <!-- Events Section -->
                 <div id="club-events" class="tab-section">
                     <h2>Events</h2>
@@ -56,7 +56,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 <!-- Gallery Section -->
                 <div id="club-gallery" class="tab-section">
                     <h2>Event Gallery</h2>
@@ -77,8 +77,8 @@
                     <p>No images found for IYFE events.</p>
                     @endif
                 </div>
-                
-                
+
+
                 <!-- Contact Section -->
                 <div id="club-contact" class="tab-section">
                     <h2>Contact Us</h2>
@@ -86,14 +86,14 @@
                     <p>Phone: +91 9876543210</p>
                     <p>Address: GMCA Campus, Room 101, Youth Forum Office</p>
                 </div>
-                
+
                 <!-- Testimonials Section -->
                 <div id="club-testimonials" class="tab-section">
                     <h2>Testimonials <button class="btn btn-success" style="float: right; background-color: #2d3e50;" onclick="showAddModal()">Add Testimonial</button> </h2>
                     @if(session('success'))
-                        <div class="alert alert-success" role="alert">
-                            Testimonial request has been submitted. Please wait until it is approved by the admin.
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        Testimonial request has been submitted. Please wait until it is approved by the admin.
+                    </div>
                     @endif
                     <div class="testimonial-container">
                         @if (isset($testimonials) && count($testimonials) > 0)
@@ -109,10 +109,10 @@
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
-        
+
         <!-- Add Testimonial Modal -->
         <div class="modal fade" id="addTestimonialModal" tabindex="-1" aria-labelledby="addTestimonialModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -139,7 +139,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="toggle-sidebar">Menu</div>
         <div class="club-sidebar">
             <!-- <span class="close-btn" onclick="toggleSidebar()" style="cursor: pointer;">✖</span> -->
