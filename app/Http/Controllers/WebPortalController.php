@@ -14,7 +14,7 @@ class WebPortalController extends Controller
         $about_data = WebPortalModel::where('webportal_type', 'about')->first();
         $vision_data = WebPortalModel::where('webportal_type', 'vision')->first();
         $mission_data = WebPortalModel::where('webportal_type', 'mission')->first();
-        return view('admin.webportal', compact('webportal_datas', 'about_data', 'vision_data','mission_data'));
+        return view('admin.webportal', compact('webportal_datas', 'about_data', 'vision_data', 'mission_data'));
     }
 
     public function add(Request $req)
@@ -75,28 +75,38 @@ class WebPortalController extends Controller
     public function vision_add(Request $req)
     {
         $req->validate([
-            'vision_file' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf,doc,docx',
             'vision_details' => 'required|string|max:2000',
+            'vision_file' => 'nullable|mimes:jpeg,png,jpg,gif,svg,pdf,doc,docx',
         ]);
 
-        $fileName = time() . '.' . $req->file('vision_file')->extension();
-        $req->file('vision_file')->move(public_path('assets/admin/static/vision'), $fileName);
+        $fileName = null;
+
+        if ($req->hasFile('vision_file')) {
+            $fileName = time() . '.' . $req->file('vision_file')->extension();
+            $req->file('vision_file')->move(public_path('assets/admin/static/vision'), $fileName);
+        }
 
         $webportal = WebPortalModel::where('webportal_type', 'vision')->first();
 
         if ($webportal) {
-            $oldFile = public_path('assets/admin/static/vision/') . $webportal->webportal_file;
-            if (File::exists($oldFile)) {
-                File::delete($oldFile);
+            if ($fileName) {
+                $oldFile = public_path('assets/admin/static/vision/') . $webportal->webportal_file;
+                if (File::exists($oldFile)) {
+                    File::delete($oldFile);
+                }
+                $webportal->webportal_file = $fileName;
             }
-
-            $webportal->webportal_file = $fileName;
+            $webportal->webportal_type = 'vision';
+            $webportal->webportal_title = 'vision Title';
             $webportal->webportal_details = $req->vision_details;
+            $webportal->webportal_status = true;
         } else {
             $webportal = new WebPortalModel;
             $webportal->webportal_type = 'vision';
+            $webportal->webportal_title = 'vision Title';
             $webportal->webportal_file = $fileName;
             $webportal->webportal_details = $req->vision_details;
+            $webportal->webportal_status = true;
         }
 
         $webportal->save();
@@ -107,34 +117,45 @@ class WebPortalController extends Controller
     public function mission_add(Request $req)
     {
         $req->validate([
-            'mission_file' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf,doc,docx',
+            'mission_file' => 'nullable|mimes:jpeg,png,jpg,gif,svg,pdf,doc,docx',
             'mission_details' => 'required|string|max:2000',
         ]);
 
-        $fileName = time() . '.' . $req->file('mission_file')->extension();
-        $req->file('mission_file')->move(public_path('assets/admin/static/mission'), $fileName);
+        $fileName = null;
+
+        if ($req->hasFile('mission_file')) {
+            $fileName = time() . '.' . $req->file('mission_file')->extension();
+            $req->file('mission_file')->move(public_path('assets/admin/static/mission'), $fileName);
+        }
 
         $webportal = WebPortalModel::where('webportal_type', 'mission')->first();
 
         if ($webportal) {
-            $oldFile = public_path('assets/admin/static/mission/') . $webportal->webportal_file;
-            if (File::exists($oldFile)) {
-                File::delete($oldFile);
+            if ($fileName) {
+                $oldFile = public_path('assets/admin/static/mission/') . $webportal->webportal_file;
+                if (File::exists($oldFile)) {
+                    File::delete($oldFile);
+                }
+                $webportal->webportal_type = 'mission';
+                $webportal->webportal_title = 'mission Title';
+                $webportal->webportal_file = $fileName;
+                $webportal->webportal_status = true;
             }
-
-            $webportal->webportal_file = $fileName;
             $webportal->webportal_details = $req->mission_details;
         } else {
             $webportal = new WebPortalModel;
             $webportal->webportal_type = 'mission';
+            $webportal->webportal_title = 'mission Title';
             $webportal->webportal_file = $fileName;
             $webportal->webportal_details = $req->mission_details;
+            $webportal->webportal_status = true;
         }
 
         $webportal->save();
 
         return redirect()->back()->with('success', 'Mission section added/updated successfully!');
     }
+
 
     public function change_status($id)
     {

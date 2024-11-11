@@ -29,17 +29,15 @@ Route::get('/student', function () {
     return view('students/index');
 });
 Route::get('/about', function () {
-    return view('static-pages/about');
+    return view('about');
 });
 Route::get('/contact', function () {
     return view('static-pages/contact');
 });
-Route::get('/news', function () {
-    return view('news');
-});
-Route::get('/notice', function () {
-    return view('notice');
-});
+Route::get('/news', [NewsController::class, 'display_news']);
+
+Route::get('/notice', [NewsController::class, 'display_notice']);
+
 Route::get('/disclaimer', function () {
     return view('static-pages/disclaimer');
 });
@@ -70,7 +68,7 @@ Route::get('/mandatory', function () {
 Route::get('/rti', function () {
     return view('static-pages/rti');
 });
- 
+
 //contactus client side
 
 route::post('/contact/add', [ContactController::class, 'store']);
@@ -90,7 +88,7 @@ Route::get('/admin', [AdminHomeController::class, 'view_admin']);
 
 // Admin Routes (only admin role should have access)
 Route::middleware(['auth:admin'])->group(function () {
-    
+
     Route::get('/admin/admins', [AdminController::class, 'view_admin']);
     Route::post('/admin/edit', [AdminController::class, 'edit']);
     Route::post('/admin/add', [AdminController::class, 'add']);
@@ -142,7 +140,7 @@ Route::middleware(['auth:faculty,admin'])->group(function () {
     Route::get('/admin/profile', [ProfileController::class, 'index']);
     Route::post('/admin/profile/edit_profile', [ProfileController::class, 'edit_profile']);
     Route::post('/admin/profile/edit_password', [ProfileController::class, 'edit_password']);
-    
+
 
     //experience
     Route::get('/admin/experience', [ExperienceController::class, 'index']);
@@ -189,4 +187,3 @@ Route::middleware(['auth:faculty,admin,clubco'])->group(function () {
     Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete']);
     Route::get('/admin/gallery/op/{id}', [GalleryController::class, 'change_status']);
 });
-

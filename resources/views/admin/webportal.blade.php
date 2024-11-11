@@ -219,7 +219,7 @@
                             <div class="d-flex justify-content-between w-100">
                                 <h5 class="mb-4">Update Mission</h5>
                                 <h5 class="mb-4"><a href="" data-bs-toggle="modal"
-                                    data-bs-target="#missionModal"> Current Mission</a></h5>
+                                        data-bs-target="#missionModal"> Current Mission</a></h5>
                             </div>
                         </div>
                         <form action="{{ url('/admin/webportal/mission/add') }}" method="POST"
@@ -317,7 +317,7 @@
                         <a href="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
                             target="_blank" class="img-fluid mb-3">Vision File</a>
                         <h6 class="mt-3"><u>Vision Description</u></h6>
-                        <p>{{ $vision_data->webportal_details }}</p>
+                        <p>{!! nl2br(e($vision_data->webportal_details)) !!}</p>
                     @else
                         <p>No Vision data available.</p>
                     @endif
@@ -339,7 +339,7 @@
                         <a href="{{ asset('assets/admin/static/mission/' . $mission_data->webportal_file) }}"
                             target="_blank" class="img-fluid mb-3">Mission File</a>
                         <h6 class="mt-3"><u>Mission Description</u></h6>
-                        <p>{{ $mission_data->webportal_details }}</p>
+                        <p>{!! nl2br(e($mission_data->webportal_details)) !!}</p>
                     @else
                         <p>No Mission data available.</p>
                     @endif

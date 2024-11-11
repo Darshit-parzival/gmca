@@ -2714,3 +2714,30 @@ span.c-text {display: inline-block;}
 .block.padding .btn-group {margin-bottom: 22px;}
 .btn-toolbar.padding {margin-bottom: 20px;}
 .btn-toolbar.padding:nth-last-of-type(1) {margin-bottom: 0;}
+
+.notice-scroll {
+    animation: scrollUp 10s linear infinite;
+    display: flex;
+    flex-direction: column;
+}
+
+.notice-item {
+    padding: 10px 0;
+}
+
+@keyframes scrollUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Optional styling for a clean look */
+.notice-item h4 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.notice-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}

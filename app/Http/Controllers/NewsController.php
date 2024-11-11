@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\NewsModel; 
+use App\Models\NewsModel;
 use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
     public function view_news()
     {
-        $news= NewsModel::all();
-        return view('admin.news')->with(compact('news')); 
+        $news = NewsModel::all();
+        return view('admin.news')->with(compact('news'));
         // dd($notice);
         // dd($news);
     }
@@ -50,7 +50,7 @@ class NewsController extends Controller
             'txtreport' => 'nullable|file|mimes:pdf,doc,docx',
             'txtstatus' => 'nullable|boolean',
         ]);
-        $id=$req->txtid;
+        $id = $req->txtid;
         $news = NewsModel::findOrFail($id);
         $news->title = $req->input('txttitle');
         $news->type = $req->input('txttype');
@@ -59,7 +59,7 @@ class NewsController extends Controller
         if ($req->hasFile('txtreport')) {
             $file = $req->file('txtreport');
             $timestamp = now()->timestamp;
-            $extension = $file->getClientOriginalExtension(); 
+            $extension = $file->getClientOriginalExtension();
             $fileName = $timestamp . '.' . $extension;
             $file->move(public_path('assets/admin/reports'), $fileName);
             if ($news->report) {
@@ -70,19 +70,30 @@ class NewsController extends Controller
             }
             $news->report = $fileName;
         }
-        
+
         $news->save();
         return redirect()->back()->with('success', 'News/Notice updated successfully!');
     }
     public function delete($id)
     {
-        $news=NewsModel::find($id);
-        if(!is_null($news)){
+        $news = NewsModel::find($id);
+        if (!is_null($news)) {
             $news->delete();
-            return redirect('/admin/news')->with('success','News has been deleted!');
+            return redirect('/admin/news')->with('success', 'News has been deleted!');
+        } else {
+            return redirect('/admin/news')->with('error', 'Something went wrong!');
         }
-        else{
-            return redirect('/admin/news')->with('error','Something went wrong!');
-        }
+    }
+
+    public function display_news()
+    {
+        $news_data = NewsModel::where('type', 'news')->where('status', true)->get();
+        return view('news')->with(compact('news_data'));
+    }
+
+    public function display_notice()
+    {
+        $notice_data = NewsModel::where('type', 'notice')->where('status', true)->get();
+        return view('notice')->with(compact('notice_data'));
     }
 }

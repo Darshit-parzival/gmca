@@ -34,14 +34,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="single-latest-text">
-                    <ul>
-                        <h4>
-                            <li style="list-style-type: circle;">
-                                <a href='1.pdf' target=_blank>Detail</a>
-                            </li>
-                        </h4>
-                    </ul>
+                <div class="single-latest-text" style="height: 200px; overflow: hidden; position: relative;">
+                    <div class="notice-scroll">
+                        @foreach ($notice_data as $notice)
+                            <div class="notice-item mb-3">
+                                <h4><a href="{{ asset('assets/admin/news_reports/' . $notice->report) }}"
+                                        target="_blank">{{ $notice->title }}</a></h4>
+                                <p>{{ $notice->details }}</p>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

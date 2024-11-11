@@ -33,20 +33,26 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="single-latest-item">
-                        <div class="single-latest-text">
-                            <h3>
-                                Title
-                            </h3>
-                            <div class="single-item-comment-view">
-                                <span><i class="zmdi zmdi-calendar-check"></i>Date</span>
+            <div class="row d-flex flex-wrap">
+                @foreach ($news_data as $news)
+                    <div class="col-md-3 d-flex">
+                        <div class="single-latest-item w-100">
+                            <div class="single-latest-text">
+                                <h3>{{ $news->title }}</h3>
+                                <div class="single-item-comment-view">
+                                    <span><i class="zmdi zmdi-calendar-check"></i>
+                                        {{ $news->updated_at->format('d M Y') }}</span>
+                                </div>
+                                @if (!empty($news->report))
+                                    <a href="{{ asset('assets/admin/news_reports/' . $news->report) }}"
+                                        target="_blank">Click Here For Download</a>
+                                @else
+                                    <p>No file available for download</p>
+                                @endif
                             </div>
-                            <a href='1.pdf' target=_blank> Click Here For Download </a>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
