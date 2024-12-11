@@ -34,6 +34,29 @@
             transform: scale(1);
             /* Scale up to full size when .modal-active is added */
         }
+        .row.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 20px; */
+}
+
+.col-md-3 {
+    display: flex; /* Ensures all columns stretch equally */
+    flex-direction: column;
+}
+
+.single-latest-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is distributed evenly */
+    height: 100%; /* Matches the height of other cards */
+    background: #f9f9f9; /* Optional background styling */
+    border: 1px solid #ddd; /* Optional border for better visibility */
+    /*padding: 15px;*/
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
     </style>
 
 
@@ -49,10 +72,10 @@
                             @php
                                 $active = true;
                             @endphp
-                            <img src="{{ asset('/assets/admin/images/slider/' . $item->webportal_file) }}" alt="alt">
+                            <img src="{{ asset('/public/assets/admin/images/slider/' . $item->webportal_file) }}" alt="alt">
                             <div class="carousel-caption">
                                 <h1 class="title1">{{ $item->webportal_title }}</h1>
-                                <p style="font-size: 20px;">{{ $item->webportal_details }}</p>
+                                <p style="font-size: 20px;" class="text-center">{{ $item->webportal_details }}</p>
                             </div>
                         </div>
                     @endif
@@ -114,26 +137,26 @@
                     </div>
                 </div>
                 <div class="row d-flex flex-wrap">
-                    @foreach ($news_data as $news)
-                        <div class="col-md-3 d-flex">
-                            <div class="single-latest-item w-100">
-                                <div class="single-latest-text">
-                                    <h3>{{ $news->title }}</h3>
-                                    <div class="single-item-comment-view">
-                                        <span><i class="zmdi zmdi-calendar-check"></i>
-                                            {{ $news->updated_at->format('d M Y') }}</span>
-                                    </div>
-                                    @if (!empty($news->report))
-                                        <a href="{{ asset('assets/admin/news_reports/' . $news->report) }}"
-                                            target="_blank">Click Here For Download</a>
-                                    @else
-                                        <p>No file available for download</p>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+    @foreach ($news_data as $news)
+        <div class="col-md-3 d-flex">
+            <div class="single-latest-item w-100">
+                <div class="single-latest-text" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                    <h3>{{ $news->title }}</h3>
+                    <div class="single-item-comment-view">
+                        <span><i class="zmdi zmdi-calendar-check"></i>
+                            {{ $news->updated_at->format('d M Y') }}</span>
+                    </div>
+                    @if (!empty($news->report))
+                        <a href="{{ asset('public/assets/admin/news_reports/' . $news->report) }}" target="_blank">Click Here For Download</a>
+                    @else
+                        <p>No file available for download</p>
+                    @endif
                 </div>
+            </div>
+        </div>
+    @endforeach
+</div>
+
                 <a class="button-default" href="/news">Read All News</a>
                 <div id="notice"></div>
                 <div class="row">
@@ -157,7 +180,7 @@
                                 <div class="notice-scroll">
                                     @foreach ($notice_data as $notice)
                                         <div class="notice-item mb-3">
-                                            <h4><a href="{{ asset('assets/admin/news_reports/' . $notice->report) }}" target="_blank">{{ $notice->title }}</a></h4>
+                                            <h4><a href="{{ asset('public/assets/admin/news_reports/' . $notice->report) }}" target="_blank">{{ $notice->title }}</a></h4>
                                             <p>{{ $notice->details }}</p>
                                         </div>
                                     @endforeach
@@ -166,7 +189,7 @@
                         </div>
                     </div>
                     
-                </div><a class="button-default" href="/notice">View All Notice </a>
+                </div><a class="button-default mt-3" href="/notice">View All Notice </a>
             </div>
         </div>
 
@@ -188,7 +211,7 @@
 
                                     @if (!empty($vision_data->webportal_file))
                                         <li class="mt-3">
-                                            <a href="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
+                                            <a href="{{ asset('public/assets/admin/static/vision/' . $vision_data->webportal_file) }}"
                                                 target="_blank" class="text-white vis">
                                                 <i class="mdi mdi-paperclip"></i> Vision Document
                                             </a>
@@ -213,7 +236,7 @@
                                         <p>{!! nl2br(e($mission_data->webportal_details)) !!}</p>
                                         @if (!empty($mission_data->webportal_file))
                                             <li class="mt-3">
-                                                <a href="{{ asset('assets/admin/static/mission/' . $mission_data->webportal_file) }}"
+                                                <a href="{{ asset('public/assets/admin/static/mission/' . $mission_data->webportal_file) }}"
                                                     target="_blank" class="text-white vis"><i class="mdi mdi-paperclip"></i>
                                                     Mission Document</a>
                                             </li>
@@ -234,7 +257,7 @@
         <div id="visionMissionModal" class="modal">
             <div class="modal-content" id="modal-content">
                 <div class="popup-logo">
-                    <img src="{{ asset('assets/static/logo_with_name.png') }}" alt="">
+                    <img src="{{ asset('public/assets/static/logo_with_name.png') }}" alt="">
                 </div>
                 <span class="mdi mdi-close close"></span>
                 <h4>Our Vision</h4>
@@ -247,7 +270,7 @@
                         @endforeach
                         @if (!empty($vision_data->webportal_file))
                             <li>
-                                <a href="{{ asset('assets/admin/static/vision/' . $vision_data->webportal_file) }}"
+                                <a href="{{ asset('public/assets/admin/static/vision/' . $vision_data->webportal_file) }}"
                                     target="_blank" class="img-fluid mb-3"><i class="mdi mdi-paperclip"></i>
                                     Vision Document</a>
                             </li>
@@ -267,7 +290,7 @@
                         @endforeach
                         @if (!empty($mission_data->webportal_file))
                             <li>
-                                <a href="{{ asset('assets/admin/static/mission/' . $mission_data->webportal_file) }}"
+                                <a href="{{ asset('public/assets/admin/static/mission/' . $mission_data->webportal_file) }}"
                                     target="_blank" class="img-fluid mb-3"><i class="mdi mdi-paperclip"></i>
                                     Mission Document</a>
                             </li>

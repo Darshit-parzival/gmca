@@ -115,9 +115,13 @@
                             <span class="hide-menu">Web Portal</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/calendar" aria-expanded="false">
+                            <i class="mdi mdi-calendar-account-outline"></i>
+                            <span class="hide-menu">Academic Calender</span>
+                        </a>
+                    </li>
                     @endif
-    
-                    
     
                     @if(session('role') === 'admin' || session('role') === 'faculty' || session('role') === 'clubco')
                     <li class="sidebar-item">

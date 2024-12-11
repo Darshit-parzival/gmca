@@ -20,6 +20,7 @@ use App\Http\Controllers\StaffBackgroundController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\CalendarController;
 
 // Client Routes
 
@@ -50,6 +51,7 @@ Route::get('/academic', function () {
 Route::get('/clubs', function () {
     return view('clubs/student_clubs');
 });
+Route::get('/calendar', [CalendarController::class, 'view_calendar_client']);
 
 Route::get('/staff', [StaffController::class, 'get_staff']);
 Route::get('/staffdetails/{staff_id}', [StaffController::class, 'get_staff_details']);
@@ -128,6 +130,10 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/testimonials/activate/{id}', [TestimonialsController::class, 'activate']);
     Route::get('/admin/testimonials/deactivate/{id}', [TestimonialsController::class, 'deactivate']);
     Route::get('/admin/testimonials/delete/{id}', [TestimonialsController::class, 'delete']);
+
+    Route::get('/admin/calendar', [CalendarController::class, 'view_calendar']);
+    Route::post('/admin/calendar/add', [CalendarController::class, 'add']);
+    Route::get('/admin/calendar/delete/{id}', [CalendarController::class, 'delete']);
 });
 
 Route::middleware(['auth:faculty,admin'])->group(function () {

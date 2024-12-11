@@ -15,6 +15,6 @@ class EducationModel extends Model
 
     public function staff()
     {
-        return $this->belongsTo(StaffModel::class, 'staff_id', 'staff_id');
+        return $this->belongsTo(StaffBackgroundModel::class, 'staff_id', 'staff_id');
     }
 }

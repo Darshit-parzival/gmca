@@ -28,110 +28,120 @@
         </div>
 
         @if (!$admins->isEmpty())
-        <div class="table-responsive">
-            <table id="pagetable" class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Id</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Photo</th>
-                        <th>Operation</th> <!-- Only one column for operations -->
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($admins as $i => $user)
+            <div class="table-responsive">
+                <table id="pagetable"
+                    class="table table-bordered bg-white text-dark text-center p-3 mt-4 shadow rounded-3 align-middle">
+                    <thead class="table-dark">
                         <tr>
-                            <td>{{ $i + 1 }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone }}</td>
-                            <td><img src="{{ url('/assets/admin/images/admins/') }}/{{ $user->photo }}" alt="Photo" width="50"></td>
-                            <td>
-                                <div class="d-flex justify-content-center"> <!-- Flexbox for aligning buttons -->
-                                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
-                                        data-bs-target="#editModal{{ $user->staff_id }}">
-                                        Edit
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Photo</th>
+                            <th>Operation</th> <!-- Only one column for operations -->
                         </tr>
-            
-                        <!-- Confirm Delete Modal -->
-                        <div class="modal fade" id="confirmDeleteModal{{ $user->staff_id }}" tabindex="-1"
-                            aria-labelledby="confirmDeleteModalLabel{{ $user->staff_id }}" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                    </thead>
+                    <tbody>
+                        @foreach ($admins as $i => $user)
+                            <tr>
+                                <td>{{ $i + 1 }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->phone }}</td>
+                                <td><img src="{{ url('/assets/admin/images/admins/') }}/{{ $user->photo }}" alt="Photo"
+                                        width="50"></td>
+                                <td>
+                                    <div class="d-flex justify-content-center"> <!-- Flexbox for aligning buttons -->
+                                        <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
+                                            data-bs-target="#editModal{{ $user->staff_id }}">
+                                            Edit
+                                        </button>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#confirmDeleteModal{{ $user->staff_id }}">
+                                            Delete
+                                        </button>
                                     </div>
-                                    <div class="modal-body">
-                                        Are you sure you want to delete this admin?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cancel</button>
-                                        <a href="{{ url('/admin/delete/' . $user->staff_id) }}"
-                                            class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+
+                            <!-- Confirm Delete Modal -->
+                            <div class="modal fade" id="confirmDeleteModal{{ $user->staff_id }}" tabindex="-1"
+                                aria-labelledby="confirmDeleteModalLabel{{ $user->staff_id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this admin?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                            <a href="{{ url('/admin/delete/' . $user->staff_id) }}"
+                                                class="btn btn-danger">Delete</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-            
-                        <!-- Edit Modal -->
-<div class="modal fade" id="editModal{{ $user->staff_id }}" tabindex="-1"
-    aria-labelledby="editModalLabel{{ $user->staff_id }}" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel{{ $user->staff_id }}">Edit Admin</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form method="post" action="{{ url('/admin/edit') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <input type="hidden" name="staff_id" value="{{ $user->staff_id }}">
-                    
-                    <div class="mb-3">
-                        <label for="txtname" class="form-label">Username</label>
-                        <input type="text" class="form-control" name="txtname" id="txtname" value="{{ $user->name }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtemail" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="txtemail" id="txtemail" value="{{ $user->email }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtphone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" name="txtphone" id="txtphone" value="{{ $user->phone }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtphoto" class="form-label">Photo</label>
-                        <input type="file" class="form-control" id="txtphoto" name="txtphoto">
-                        <img src="{{ url('/assets/admin/images/admins/') }}/{{ $user->photo }}" alt="Current Photo" width="50">
-                    </div>
-                    <!-- Add other fields as necessary -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
-                    @endforeach
-                </tbody>
-            </table>
-            
-        </div>
+                            <!-- Edit Modal -->
+                            <div class="modal fade" id="editModal{{ $user->staff_id }}" tabindex="-1"
+                                aria-labelledby="editModalLabel{{ $user->staff_id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel{{ $user->staff_id }}">Edit Admin
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <form method="post" action="{{ url('/admin/edit') }}"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="modal-body">
+                                                <input type="hidden" name="staff_id" value="{{ $user->staff_id }}">
+
+                                                <div class="mb-3">
+                                                    <label for="txtname" class="form-label">Username</label>
+                                                    <input type="text" class="form-control" name="txtname" id="txtname"
+                                                        value="{{ $user->name }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="txtemail" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" name="txtemail"
+                                                        id="txtemail" value="{{ $user->email }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="txtphone" class="form-label">Phone</label>
+                                                    <input type="text" class="form-control" name="txtphone"
+                                                        id="txtphone" value="{{ $user->phone }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="txtphoto" class="form-label">Photo</label>
+                                                    <input type="file" class="form-control" id="txtphoto"
+                                                        name="txtphoto">
+                                                    <img src="{{ url('/assets/admin/images/admins/') }}/{{ $user->photo }}"
+                                                        alt="Current Photo" width="50">
+                                                </div>
+                                                <!-- Add other fields as necessary -->
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
         @else
             <div class="p-5 m-5 text-center">
                 <h1>No admins</h1>
