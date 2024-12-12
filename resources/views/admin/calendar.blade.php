@@ -85,21 +85,21 @@
                                             <h5 class="modal-title">Edit Calendar</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
-                                        <form method="post" action="{{ url('/calendar/edit') }}"
+                                        <form method="post" action="{{ url('/admin/calendar/edit') }}"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $calendar->calendar_id }}">
-                                            <div class="mb-3">
-                                                <label for="calendarName" class="form-label">Calender Name</label>
-                                                <input type="text" class="form-control" name="calendarName"
-                                                    id="calendarName">
-                                                <span class="text-danger mt-2">
-                                                    @error('calendarName')
-                                                        {{ $message }}
-                                                    @enderror
-                                                </span>
-                                            </div>
                                             <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="calendarName" class="form-label">Calender Name</label>
+                                                    <input type="text" class="form-control" name="calendarName"
+                                                        id="calendarName" value="{{$calendar->calendar_name}}">
+                                                    <span class="text-danger mt-2">
+                                                        @error('calendarName')
+                                                            {{ $message }}
+                                                        @enderror
+                                                    </span>
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="calendarFile" class="form-label">Upload File</label>
                                                     <input type="file" class="form-control" id="calendarFile"

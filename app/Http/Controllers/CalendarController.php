@@ -64,25 +64,40 @@ class CalendarController extends Controller
         }
         return redirect()->back()->with('error', 'calendar not found.');
     }
-    function edit(Request $req)
+    public function edit(Request $req)
     {
         $req->validate([
-            "calendarFile" => "required|mimes:pdf,png,jpg,webp",
+            "calendarFile" => "mimes:pdf,png,jpg,webp",
             "calendarName" => "required|max:255",
             'term' => 'required|in:odd,even',
             'organization_type' => 'required|in:institute,university',
+            "id" => "required",
         ]);
 
-        $calendar = CalendarModel::find($req->id);
+        $calendar = CalendarModel::where("calendar_id", $req->id)->first();
 
-        if ($req->hasFile('calendarFile')) {
-            $filename = time() . '.' . $req->file('calendarFile')->getClientOriginalExtension();
-            $req->file('calendarFile')->move(public_path('assets/admin/files/calendars/'), $filename);
-            if ($calendar->file && file_exists(public_path('assets/admin/files/calendars/' . $calendar->file))) {
-                unlink(public_path('assets/admin/images/admins/' . $calendar->file));
+        if ($calendar) {
+            $calendar->calendar_name = $req->calendarName;
+            $calendar->is_odd_term = $req->term === 'odd';
+            $calendar->is_even_term = $req->term === 'even';
+            $calendar->is_institute = $req->organization_type === 'institute';
+            $calendar->is_university = $req->organization_type === 'university';
+
+            if ($req->hasFile('calendarFile')) {
+                $filename = time() . '.' . $req->file('calendarFile')->getClientOriginalExtension();
+                $req->file('calendarFile')->move(public_path('assets/admin/files/calendars/'), $filename);
+
+                if ($calendar->file && file_exists(public_path('assets/admin/files/calendars/' . $calendar->file))) {
+                    unlink(public_path('assets/admin/files/calendars/' . $calendar->file));
+                }
+                $calendar->file = $filename;
             }
-            $calendar->file = $filename;
+
+            $calendar->save();  // Save changes to the database
+
+            return redirect()->back()->with('success', 'Calendar updated successfully.');
         }
-        return redirect()->back()->with('error', 'calendar not found.');
+
+        return redirect()->back()->with('error', 'Calendar not found.');
     }
 }
