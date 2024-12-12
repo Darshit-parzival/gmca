@@ -134,6 +134,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/calendar', [CalendarController::class, 'view_calendar']);
     Route::post('/admin/calendar/add', [CalendarController::class, 'add']);
     Route::get('/admin/calendar/delete/{id}', [CalendarController::class, 'delete']);
+    Route::get('/admin/calendar/edit/', [CalendarController::class, 'edit']);
 });
 
 Route::middleware(['auth:faculty,admin'])->group(function () {

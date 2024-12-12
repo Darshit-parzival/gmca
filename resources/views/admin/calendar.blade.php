@@ -16,9 +16,6 @@
             </div>
         @endif
         <div class="top-actions d-flex">
-            <div style="flex: 1;">
-                <button id="exportButton" class="btn btn-secondary">Export</button>
-            </div>
             <div style="margin-left:auto;">
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCalendar">
                     Add New
@@ -80,7 +77,7 @@
                             </div>
 
                             <!-- Edit Modal -->
-                            <div class="modal fade" id="editCalendarModal{{ $calendar->id }}" tabindex="-1"
+                            <div class="modal fade" id="editCalendarModal{{ $calendar->calendar_id }}" tabindex="-1"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -91,7 +88,17 @@
                                         <form method="post" action="{{ url('/calendar/edit') }}"
                                             enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="id" value="{{ $calendar->id }}">
+                                            <input type="hidden" name="id" value="{{ $calendar->calendar_id }}">
+                                            <div class="mb-3">
+                                                <label for="calendarName" class="form-label">Calender Name</label>
+                                                <input type="text" class="form-control" name="calendarName"
+                                                    id="calendarName">
+                                                <span class="text-danger mt-2">
+                                                    @error('calendarName')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </span>
+                                            </div>
                                             <div class="modal-body">
                                                 <div class="mb-3">
                                                     <label for="calendarFile" class="form-label">Upload File</label>

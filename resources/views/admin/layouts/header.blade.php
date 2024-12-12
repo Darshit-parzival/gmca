@@ -121,6 +121,12 @@
                             <span class="hide-menu">Academic Calender</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/social" aria-expanded="false">
+                            <i class="mdi mdi-link"></i>
+                            <span class="hide-menu">Social Links</span>
+                        </a>
+                    </li>
                     @endif
     
                     @if(session('role') === 'admin' || session('role') === 'faculty' || session('role') === 'clubco')
