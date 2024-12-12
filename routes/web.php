@@ -21,6 +21,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\SocialController;
 
 // Client Routes
 
@@ -135,6 +136,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/admin/calendar/add', [CalendarController::class, 'add']);
     Route::get('/admin/calendar/delete/{id}', [CalendarController::class, 'delete']);
     Route::post('/admin/calendar/edit/', [CalendarController::class, 'edit']);
+
+    Route::get('/admin/social', [SocialController::class, 'view_social']);
+    Route::post('/admin/social/edit', [SocialController::class, 'edit']);
 });
 
 Route::middleware(['auth:faculty,admin'])->group(function () {
